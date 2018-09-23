@@ -18,6 +18,14 @@
 		   class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
 			   value= "{{old('rut_empresa', $ticket->rut_empresa)}}" />
 			   
+			   @if($errors->has('rut_empresa'))
+			   <span class ="form-text">
+					<strong>{{$errors->first('rut_empresa')}}</strong>		   
+	
+			   </span>
+			   
+			   @endif
+			   
 		   </div>
 		    <div class="form-group">
 		   		<label for="correo_cliente">Correo Cliente</label>

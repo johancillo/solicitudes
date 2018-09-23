@@ -93,7 +93,7 @@ class TicketController extends Controller
     public function update(Request $request, Ticket $ticket)
     {
 		
-		/*	$request->validate([
+			$this->validate($request,[
 			'rut_empresa' 		=> 'required',
 			'correo_cliente' 	=> 'required',
 			'horas_estimadas' 	=> 'required',
@@ -105,7 +105,7 @@ class TicketController extends Controller
 			'tipo' 				=> 'required'
 				
 			]);
-			*/
+			
         
 			$ticket->rut_empresa = request('rut_empresa');
 			$ticket->correo_cliente = request('correo_cliente');

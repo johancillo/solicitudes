@@ -24,7 +24,7 @@
 			  <a class="btn btn-primary" href="/tickets/create" >Agregar Solicitud</a>
 			  <a class="btn btn-primary" href="#" >Agregar  Avance Solicitud</a>
 			  
-            <table class="table table-striped table-sm" style="width: 1300px;">
+            <table class="table table-striped table-sm" style="width: 2300px;">
               <thead>
                 <tr>
                 
