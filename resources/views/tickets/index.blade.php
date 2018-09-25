@@ -2,8 +2,8 @@
 @extends('layouts.main')
 
 @section('content')
-   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" >
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom" >
             <h1 class="h2">Solicitudes</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
 			
@@ -18,13 +18,13 @@
               </button>
             </div>
           </div>
-         
-          <div class="table-responsive">
+	
+          <div class="table-responsive" style="width: 100%;" >
 			  
-			  <a class="btn btn-primary" href="/tickets/create" >Agregar Solicitud</a>
+			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
 			  <a class="btn btn-primary" href="#" >Agregar  Avance Solicitud</a>
 			  
-            <table class="table table-striped table-sm" style="width: 2300px;">
+            <table class="table table-striped table-sm" >
               <thead>
                 <tr>
                 
@@ -56,9 +56,18 @@
 					<td>{{  $ticket->estado }}</td>
 					<td>{{  $ticket->tipo }}</td>
 					<td>
-					<a href="/tickets/{{ $ticket->id }}" class="btn btn-primary" style="width:100px">Actualizar</a>
-					<a href="/tickets/delete/{{ $ticket->id }}" class="btn btn-danger" style="width:100px">Eliminar</a>
+				<!--	<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" style="width:100px">Actualizar</a> 
+		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger" style="width:100px">Eliminar</a>
 					</td>		
+				-->
+		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg">
+		   <span class="glyphicon glyphicon-eye-open"></span></a>
+		
+		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-trash" ></span>  
+        </a>
+						
+				
                 </tr>
                @endforeach
               </tbody>
