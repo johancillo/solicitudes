@@ -70,7 +70,7 @@
 		   
 		   
 		   <button class="btn btn-primary" type="submit" style="width:100px">Actualizar</button>
-		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Back</a>
+		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 	   </form>
          

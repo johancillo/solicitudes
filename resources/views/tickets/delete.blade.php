@@ -53,7 +53,7 @@
 		   </div>
 		   
 		   <button class="btn btn-danger" type="submit" style="width:100px">Eliminar</button>
-		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Back</a>
+		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 	   </form>
          

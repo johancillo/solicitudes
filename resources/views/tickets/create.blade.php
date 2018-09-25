@@ -66,8 +66,8 @@
 		   
 		 
 		   
-		   <button class="btn btn-primary" type="submit">Agregar</button>
-		   <a href="{{route('tickets.index')}}" class="btn btn-secondary">Back</a>
+		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
+		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 	   </form>
          

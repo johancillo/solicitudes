@@ -22,7 +22,6 @@
           <div class="table-responsive" style="width: 100%;" >
 			  
 			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
-			  <a class="btn btn-primary" href="#" >Agregar  Avance Solicitud</a>
 			  
             <table class="table table-striped table-sm" >
               <thead>
@@ -63,10 +62,12 @@
 		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		
-		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
+		<a href="#" class="btn btn-warning btn-lg">
+          <span class="glyphicon glyphicon-inbox"></span> 
         </a>
-						
+			<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-trash" ></span>  
+        </a>				
 				
                 </tr>
                @endforeach
