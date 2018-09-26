@@ -11,10 +11,10 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
 			    <li class="nav-item active">
-              <a class="nav-link" href="#">Solicitudes <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/solicitudes">Solicitudes <span class="sr-only">(current)</span></a>
             </li>
 			    <li class="nav-item active">
-              <a class="nav-link" href="#">Clientes <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/empresas">Empresas <span class="sr-only">(current)</span></a>
             </li>
 			    <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>

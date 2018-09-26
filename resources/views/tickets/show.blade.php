@@ -20,8 +20,8 @@
 			   
 			   @if($errors->has('rut_empresa'))
 			   <span class ="form-text">
-					<strong>{{$errors->first('rut_empresa')}}</strong>		   
-	
+					<strong>Debes ingresar Rut de la Empresa</strong>		   
+					
 			   </span>
 			   
 			   @endif

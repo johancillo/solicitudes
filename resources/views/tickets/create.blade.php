@@ -27,11 +27,11 @@
 		   </div>
 		    <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
-		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control"/>
+		   		<input type="datepicker" id="horas_estimadas" name="horas_estimadas" class="form-control"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="descripcion">Descripción</label>
-		   		<input type="text" id="descripcion" name="descripcion" class="form-control"/>
+		   		<input type="text" id="descripcion" name="descripcion" class="date form-control"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
@@ -62,21 +62,27 @@
 			</select>
 		</div>
 		   <br>
-		   
-		   
-		 
-		   
+		    <div class="input-group date" data-provide="datepicker" >
+    <input type="text" class="form-control" data-date-format='yy-mm-dd' id="datepicker">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+		
+		   <br>
+
 		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
 		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 	   </form>
          
         </main>
+
 <script type="text/javascript">
 
-    $('.date').datepicker({  
+    $('.datapicker').datepicker({  
 
-  //     format: 'mm-dd-yyyy',
+       format: 'yy-mm-dd',
 	   Language: "es",
         autoclose: true
 

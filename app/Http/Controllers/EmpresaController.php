@@ -14,7 +14,9 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        $empresas = Empresa::latest()->get();
+		//dd($tickets);
+        return view('empresa.indexemp', compact('empresas'));
     }
 
     /**
@@ -24,7 +26,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('empresa.createemp');
     }
 
     /**
@@ -35,7 +37,19 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        	Empresa::create([
+			'id' => request('id'),
+			'razon_social' => request('razon_social'),
+			'nombre_empresa' => request('nombre_empresa'),
+			'telefono' => request('telefono'),
+			'direccion' => request('direccion'),
+			'giro' => request('giro'),
+			
+		
+			
+		]);
+		
+		return redirect()->route('empresa.index');
     }
 
     /**
@@ -46,7 +60,7 @@ class EmpresaController extends Controller
      */
     public function show(Empresa $empresa)
     {
-        //
+         return view('empresa.showemp', compact('empresa'));
     }
 
     /**
