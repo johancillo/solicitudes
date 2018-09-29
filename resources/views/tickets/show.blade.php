@@ -16,7 +16,7 @@
 		   		<label for="rut_empresa">Rut Empresa</label>
 		<input type="text" id="rut_empresa" name="rut_empresa" 
 		   class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
-			   value= "{{old('rut_empresa', $ticket->rut_empresa)}}" />
+			   value= "{{old('rut_empresa', $ticket->rut_empresa)}}"  />
 			   
 			   @if($errors->has('rut_empresa'))
 			   <span class ="form-text">
@@ -41,28 +41,43 @@
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
-		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control" value="{{$ticket->fecha_solicitud}}"/>
+		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" value="{{$ticket->fecha_solicitud}}" style=" height:35px; width:200px"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_inicio">Fecha Inicio</label>
-		   		<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control" value="{{$ticket->fecha_inicio}}"/>
+		   		<input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" value="{{$ticket->fecha_inicio}}" style=" height:35px; width:200px"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_fin_estimada">Fecha Entrega Estimada</label>
-		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" value="{{$ticket->fecha_fin_estimada}}"/>
+		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" value="{{$ticket->fecha_fin_estimada}}" style=" height:35px; width:200px"/>
 		   </div>
 				      
-		    <div class="form-group">
+		<!--
+		   <div class="form-group">
 		   		<label for="tipo">Tipo</label>
-		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}"/>
+		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}" />
 		   </div>
+		   -->
+	<div class="form-group">
+	  <label for="Tipo">Tipo</label>
+		<select class="form-control" id="tipo" name="tipo" value="{{$ticket->tipo}} " style=" height:35px; width:200px" >
+		<option value="Normal" {{ $ticket->tipo=="Normal"? "selected" :"" }}>Normal</option>
+    	<option value="Emergencia" {{ $ticket->tipo=="Emergencia"? "selected" :"" }}>Emergencia</option>
+		<option value="Contrato mensual" {{ $ticket->tipo=="Contrato mensual"? "selected" :"" }}>Contrato mensual</option>
+			
+		</select>
+	</div>   
+		   
+		   
+		   
+		   
 		   
 	<div class="form-group">
 		  <label for="estado">Estado</label>
 		<select class="form-control" id="estado" name="estado" value="{{$ticket->estado}} " style=" height:35px; width:200px" >
 	<option value="Progreso" {{ $ticket->estado=="Progreso"? "selected" :"" }}>Progreso</option>
     <option value="Evaluacion" {{ $ticket->estado=="Evaluacion"? "selected" :"" }}>Evaluación</option>
-	<option value="Terminado" {{ $ticket->estado=="<Terminado></Terminado>"? "selected" :"" }}>Terminado</option>
+	<option value="Terminado" {{ $ticket->estado=="Terminado"? "selected" :"" }}>Terminado</option>
 			
 		</select>
 	</div>

@@ -35,7 +35,7 @@
 					<td>{{  $ticket->correo_cliente }}</td>
 				<!--	<td>{{  $ticket->horas_estimadas }}</td>  -->
 					<td>{{  $ticket->descripcion }}</td>
-					<td>{{  $ticket->fecha_solicitud }}</td>
+					<td>{{ date('d-m-Y', strtotime($ticket->fecha_solicitud)) }}</td>
 				<!--	<td>{{  $ticket->fecha_inicio }}</td> -->
 				<!--	<td>{{  $ticket->fecha_fin_estimada }}</td>  -->
 					<td>{{  $ticket->estado }}</td>
@@ -45,8 +45,8 @@
 		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger" style="width:100px">Eliminar</a>
 					</td>		
 				-->
-		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg">
-		   <span class="glyphicon glyphicon-eye-open"></span></a>
+		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" >
+		   <span class="glyphicon glyphicon-eye-open" ></span></a>
 		
 		<a href="#" class="btn btn-warning btn-lg">
           <span class="glyphicon glyphicon-inbox"></span> 

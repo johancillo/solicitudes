@@ -18,7 +18,14 @@
 	   		
 		   <div class="form-group">
 		   		<label for="rut_empresa">Rut Empresa</label>
-		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control"/>
+		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}"/>
+			     @if($errors->has('rut_empresa'))
+			   <span class ="form-text">
+					<strong>Debes ingresar Rut de la Empresa</strong>		   
+					
+			   </span>
+			   
+			   @endif
 		   </div>
 		    <div class="form-group">
 		   		<label for="correo_cliente">Correo Cliente</label>
@@ -35,22 +42,33 @@
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
-		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control"/>
+		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="width: 25%"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_inicio">Fecha Inicio</label>
-		   		<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control"/>
+		   		<input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" style="width: 25%"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_fin_estimada">Fecha Entrega Estimada</label>
-		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control"/>
+		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="width: 25%"/>
 		   </div>
 		   
-		
+		<!--
 		    <div class="form-group">
 		   		<label for="tipo">Tipo</label>
 		   		<input type="text" id="tipo" name="tipo" class="form-control"/>
 		   </div>
+		   -->
+		   
+		 <div class="form-group col-xs-20">
+		  <label for="tipo">Tipo</label>
+			<select class="form-control " id="tipo" name="tipo" style=" height:35px; width:200px"   >
+				<option value="Normal">Normal</option>
+				<option value="Emergencia">Emergencia</option>
+				<option value="Contrato mensual">Contrato mensual</option>
+			
+			</select>
+		</div>
 		   
 	   <div class="form-group col-xs-20">
 		  <label for="estado">Estado</label>
@@ -62,35 +80,22 @@
 			</select>
 		</div>
 		   <br>
-		    <div class="input-group date" data-provide="datepicker" >
-    <input type="text" class="form-control" data-date-format='yy-mm-dd' id="datepicker">
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
-</div>
-		
-		   <br>
-
+		  
 		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
-		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
+		   <a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>
 		   
 	   </form>
          
         </main>
 
-<script type="text/javascript">
-
-    $('.datapicker').datepicker({  
-
-       format: 'yy-mm-dd',
-	   Language: "es",
-        autoclose: true
-
-     });  
-
-</script>  
-
-
+<script>
+$('#dp5').datepicker()
+  .on('changeDate', function(ev){
+    if (ev.date.valueOf() < startDate.valueOf()){
+      ....
+    }
+  });
+</script>
 
 
 

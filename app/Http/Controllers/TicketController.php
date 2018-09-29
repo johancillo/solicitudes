@@ -45,6 +45,13 @@ class TicketController extends Controller
     public function store(Request $request)
     {
       //  dd('Store');
+		
+			$this->validate($request,[
+			'rut_empresa' 		=> 'required',
+			
+				
+			]);
+		
 		Ticket::create([
 			'rut_empresa' => request('rut_empresa'),
 			'correo_cliente' => request('correo_cliente'),

@@ -83,7 +83,7 @@
 
                 <ul class="list-unstyled components">
                    
-                    <li class="active">
+                    <li>
                         <a href="/solicitudes" >Solicitudes</a>
                         
                     </li>
@@ -101,7 +101,7 @@
                         <a href="#">Reportes</a>
                     </li>
                     <li>
-                        <a href="#">Usuarioss</a>
+                        <a href="#">Usuarios</a>
                     </li>
                     <li>
                         <a href="#">contacto</a>

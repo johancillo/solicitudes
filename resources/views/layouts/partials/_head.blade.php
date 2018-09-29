@@ -39,6 +39,8 @@
         <link rel="stylesheet" href="style2.css">
         <!-- Scrollbar Custom CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+		
+		<link href="datepicker.css" rel="stylesheet">
 
 <style>
   
