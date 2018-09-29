@@ -75,3 +75,40 @@
         </nav>
 
 -->
+
+ <nav id="sidebar"	>
+                <div class="sidebar-header">
+                    <h3 >Tuning </h3></h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                   
+                    <li class="active">
+                        <a href="/solicitudes" >Solicitudes</a>
+                        
+                    </li>
+					
+					 <li>
+                        <a href="/empresas">Empresas</a>
+                    </li>
+                    <li>
+                        <a href="#menu">Clientes</a>
+                        
+                        
+                    </li>
+                   
+                    <li>
+                        <a href="#">Reportes</a>
+                    </li>
+                    <li>
+                        <a href="#">Usuarioss</a>
+                    </li>
+                    <li>
+                        <a href="#">contacto</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+            </nav>
