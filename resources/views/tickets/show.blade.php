@@ -8,10 +8,14 @@
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
-          
+	  
+	   <a class="btn btn-info">
+		    <span class="glyphicon glyphicon-plus"></span>Agregar Avance
+	   </a>
+          <br>
 	   <form action="" method="post">
 		   {{csrf_field() }}
-	   		
+	   		    <br>
 		   <div class="form-group">
 		   		<label for="rut_empresa">Rut Empresa</label>
 		<input type="text" id="rut_empresa" name="rut_empresa" 
@@ -25,6 +29,7 @@
 			   </span>
 			   
 			   @endif
+		
 			   
 		   </div>
 		    <div class="form-group">
@@ -57,7 +62,7 @@
 		   		<label for="tipo">Tipo</label>
 		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}" />
 		   </div>
-		   -->
+		  -->
 	<div class="form-group">
 	  <label for="Tipo">Tipo</label>
 		<select class="form-control" id="tipo" name="tipo" value="{{$ticket->tipo}} " style=" height:35px; width:200px" >
@@ -67,8 +72,8 @@
 			
 		</select>
 	</div>   
-		   
-		   
+		
+		 
 		   
 		   
 		   

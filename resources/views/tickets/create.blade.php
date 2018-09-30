@@ -15,7 +15,7 @@
           
 	   <form action="" method="post">
 		   {{csrf_field() }}
-	   		
+	   	<!--	
 		   <div class="form-group">
 		   		<label for="rut_empresa">Rut Empresa</label>
 		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}"/>
@@ -27,6 +27,25 @@
 			   
 			   @endif
 		   </div>
+		   
+		   -->
+		<div class="form-group">
+		<a href="#" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-plus"></span> Añadir Empresa
+        </a>
+		<br>
+			<br>
+	  <label for="rut_empresa">Rut Empresa</label>
+							
+		<select class="form-control" id="rut_empresa" name="tipo"style="height:35px; width:200px">
+		
+			@foreach($empresas as $empresa)
+			<option value=" {{$empresa['id']}}"> {{ $empresa['id']
+				}} </option>
+		@endforeach
+		</select>
+		
+	</div>  
 		    <div class="form-group">
 		   		<label for="correo_cliente">Correo Cliente</label>
 		   		<input type="email" id="correo_cliente" name="correo_cliente" class="form-control" aria-describedby="emailHelp" placeholder="Ingresa correo electrónico" />
@@ -53,12 +72,12 @@
 		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="width: 25%"/>
 		   </div>
 		   
-		<!--
+		
 		    <div class="form-group">
 		   		<label for="tipo">Tipo</label>
 		   		<input type="text" id="tipo" name="tipo" class="form-control"/>
 		   </div>
-		   -->
+		 
 		   
 		 <div class="form-group col-xs-20">
 		  <label for="tipo">Tipo</label>
@@ -69,7 +88,19 @@
 			
 			</select>
 		</div>
-		   
+		 
+		   <!--
+		     	<div class="form-group">
+	  <label for="tipo">Tipo</label>
+		<select class="form-control" id="tipo" name="tipo"style="height:35px; width:200px">
+		
+			@foreach($empresas as $empresa)
+			<option value=" {{$empresa['id']}}"> {{ $empresa['nombre_empresa']
+				}} </option>
+		@endforeach
+		</select>
+	</div>   
+		-->   
 	   <div class="form-group col-xs-20">
 		  <label for="estado">Estado</label>
 			<select class="form-control " id="estado" name="estado" style=" height:35px; width:200px"   >

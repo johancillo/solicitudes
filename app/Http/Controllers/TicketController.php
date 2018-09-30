@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Empresa;
 use App\Ticket;
 use Illuminate\Http\Request;
 
@@ -26,7 +26,9 @@ class TicketController extends Controller
      */
     public function create()
     {
-        return view('tickets.create');
+		$empresas = Empresa::all();
+		
+        return view('tickets.create', compact('empresas'));
     }
 	
 	public function delete(Ticket $ticket){
