@@ -28,20 +28,19 @@
 			   @endif
 		   </div>
 		   
-		   -->
-		<div class="form-group">
-		<a href="#" class="btn btn-info btn-lg">
+		   
+		   <a href="#" class="btn btn-info btn-lg">
             <span class="glyphicon glyphicon-plus"></span> Añadir Empresa
-        </a>
-		<br>
+        </a>	
+
+		   -->
+		   <br>
 			<br>
+	<div class="form-group col-xs-20">	
 	  <label for="rut_empresa">Rut Empresa</label>
-							
-		<select class="form-control" id="rut_empresa" name="tipo"style="height:35px; width:200px">
-		
+		<select class="form-control" id="rut_empresa" name="rut_empresa"style="height:35px; width:200px">
 			@foreach($empresas as $empresa)
-			<option value=" {{$empresa['id']}}"> {{ $empresa['id']
-				}} </option>
+			<option value=" {{$empresa['id']}}"> {{ $empresa['id']}} </option>
 		@endforeach
 		</select>
 		
@@ -73,10 +72,6 @@
 		   </div>
 		   
 		
-		    <div class="form-group">
-		   		<label for="tipo">Tipo</label>
-		   		<input type="text" id="tipo" name="tipo" class="form-control"/>
-		   </div>
 		 
 		   
 		 <div class="form-group col-xs-20">
