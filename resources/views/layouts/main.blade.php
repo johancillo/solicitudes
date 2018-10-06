@@ -5,7 +5,7 @@
 <body>
 
 	@include('layouts.partials._navigation')
-	@include('layouts.partials._alerts')
+	
 	<div class="container-fluid">
 		<div class="row">	
 		@include('layouts.partials._sidebar')

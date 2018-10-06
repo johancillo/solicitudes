@@ -16,7 +16,7 @@
 		   		<label for="rut_empresa">Rut Empresa</label>
 		<input type="text" id="rut_empresa" name="rut_empresa" 
 		   class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
-			   value= "{{old('rut_empresa', $empresa->rut_empresa)}}" readonly="true"  onkeypress="return isNumberKey(event)"  />
+			   value= "{{old('rut_empresa', $empresa->rut_empresa)}}" readonly="true" style="height:35px; width:240px"  onkeypress="return isNumberKey(event)"  />
 			   
 			   @if($errors->has('rut_empresa'))
 			   <span class ="form-text">
@@ -29,23 +29,23 @@
 		   </div>
 		    <div class="form-group">
 		   		<label for="razon_social">Razon Social</label>
-		   		<input type="text" id="razon_social" name="razon_social" class="form-control" value="{{$empresa->razon_social}}"/>
+		   		<input type="text" id="razon_social" name="razon_social" class="form-control" value="{{$empresa->razon_social}}" style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="nombre_empresa">Nombre Empresa</label>
-		   		<input type="text" id="nombre_empresa" name="nombre_empresa" class="form-control" value="{{$empresa->nombre_empresa}}"/>
+		   		<input type="text" id="nombre_empresa" name="nombre_empresa" class="form-control" value="{{$empresa->nombre_empresa}}" style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="telefono">Telefono</label>
-		   		<input type="text" id="telefono" name="telefono" class="form-control" value="{{$empresa->telefono}}"/>
+		   		<input type="text" id="telefono" name="telefono" class="form-control" value="{{$empresa->telefono}}" style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="direccion">Dirección</label>
-		   		<input type="text" id="direccion" name="direccion" class="form-control" value="{{$empresa->direccion}}"/>
+		   		<input type="text" id="direccion" name="direccion" class="form-control" value="{{$empresa->direccion}}" style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="giro">Giro</label>
-		   		<input type="text" id="giro" name="giro" class="form-control" value="{{$empresa->giro}}"/>
+		   		<input type="text" id="giro" name="giro" class="form-control" value="{{$empresa->giro}}" style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 
 

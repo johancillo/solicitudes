@@ -14,7 +14,7 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        $empresas = Empresa::latest()->get();
+        $empresas = Empresa::latest()->paginate(10);
 		//dd($tickets);
         return view('empresa.indexemp', compact('empresas'));
     }
@@ -83,8 +83,33 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, Empresa $empresa)
     {
-        //
+        $this->validate($request,[
+            'rut_empresa'       => 'required',
+            'razon_social'    => 'required',
+            'nombre_empresa'   => 'required',
+            'telefono'       => 'required',
+            'direccion'   => 'required',
+            'giro'      => 'required',
+            
+                
+            ]);
+            
+        
+            $empresa->rut_empresa = request('rut_empresa');
+            $empresa->razon_social = request('razon_social');
+            $empresa->nombre_empresa = request('nombre_empresa');
+            $empresa->telefono = request('telefono');
+            $empresa->direccion = request('direccion');
+            $empresa->giro = request('giro');
+            $empresa->save();
+    
+        return redirect()->route('empresa.index')->withSuccess('¡Datos de la Empresa Modificados!');
+
+
+
     }
+
+
 
     /**
      * Remove the specified resource from storage.

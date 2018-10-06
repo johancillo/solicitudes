@@ -43,7 +43,7 @@
 			<option value="">-- Elegir Rut Empresa --</option>
 			@foreach($empresas as $empresa)
 			
-			<option value=" {{$empresa['id']}}"> {{ $empresa['id']}} </option>
+			<option value=" {{$empresa['rut_empresa']}}"> {{ $empresa['rut_empresa']}} </option>
 		@endforeach
 		</select>
 		@if($errors->has('rut_empresa'))
