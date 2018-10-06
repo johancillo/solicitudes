@@ -28,7 +28,7 @@
 			  @foreach($empresas as $empresa) 
                 <tr>
 
-                    <td>{{  $empresa->id   }}</td>
+                    <td>{{  $empresa->rut_empresa   }}</td>
                     
 					<td>{{  $empresa->razon_social }}</td>
 					<td>{{  $empresa->nombre_empresa }}</td>
@@ -39,7 +39,7 @@
 					<td>
 		
 			
-		<a href="/empresa/{{ $empresa->razon_social }}" class="btn btn-info btn-lg">
+		<a href="/empresa/{{ $empresa->id }}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		
 		<a href="#" class="btn btn-warning btn-lg">

@@ -67,7 +67,7 @@
 		   </div>
 		       <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
-		   		<input type="datepicker" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)" 	 style="height:35px; width:240px"/>
+		   		<input type="datepicker" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)"  maxlength="4"	 style="height:35px; width:240px"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>

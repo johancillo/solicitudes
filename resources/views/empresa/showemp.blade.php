@@ -4,7 +4,7 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Actualización de Empresa Rut: {{$empresa->id}}</h1>  
+            <h1 class="h2">Actualización de Empresa Rut: {{$empresa->rut_empresa}}</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -13,14 +13,14 @@
 		   {{csrf_field() }}
 	   		
 		   <div class="form-group">
-		   		<label for="id">Rut Empresa</label>
-		<input type="text" id="id" name="id" 
-		   class="form-control {{$errors->has('id') ? 'is-invalid':''}}" 
-			   value= "{{old('id', $empresa->id)}}" />
+		   		<label for="rut_empresa">Rut Empresa</label>
+		<input type="text" id="rut_empresa" name="rut_empresa" 
+		   class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
+			   value= "{{old('rut_empresa', $empresa->rut_empresa)}}" readonly="true"  onkeypress="return isNumberKey(event)"  />
 			   
-			   @if($errors->has('id'))
+			   @if($errors->has('rut_empresa'))
 			   <span class ="form-text">
-					<strong>{{$errors->first('id')}}</strong>		   
+					<strong>{{$errors->first('rut_empresa')}}</strong>		   
 	
 			   </span>
 			   

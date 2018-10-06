@@ -17,8 +17,8 @@
 		   {{csrf_field() }}
 	   		
 		   <div class="form-group">
-		   		<label for="id">Rut Empresa</label>
-		   		<input type="text" id="id" name="id" class="form-control" required oninput="checkRut(this)" placeholder="Ingrese RUT" maxlength="12" style="height:35px; width:240px"/>
+		   		<label for="rut_empresa">Rut Empresa</label>
+		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control" required oninput="checkRut(this)"  onkeypress="return isNumberKey(event)"  placeholder="Ingrese RUT" maxlength="11" style="height:35px; width:240px"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="razon_social">Razon Social</label>

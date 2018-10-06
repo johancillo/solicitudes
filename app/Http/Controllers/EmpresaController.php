@@ -38,7 +38,7 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         	Empresa::create([
-			'id' => request('id'),
+			'rut_empresa' => request('rut_empresa'),
 			'razon_social' => request('razon_social'),
 			'nombre_empresa' => request('nombre_empresa'),
 			'telefono' => request('telefono'),
