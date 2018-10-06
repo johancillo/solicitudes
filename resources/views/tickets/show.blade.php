@@ -20,7 +20,7 @@
 		   		<label for="rut_empresa">Rut Empresa</label>
 		<input type="text" id="rut_empresa" name="rut_empresa" 
 		   class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
-			   value= "{{old('rut_empresa', $ticket->rut_empresa)}}"  />
+			   value= "{{old('rut_empresa', $ticket->rut_empresa)}}"  readonly="true" style="height:35px; width:240px" />
 			   
 			   @if($errors->has('rut_empresa'))
 			   <span class ="form-text">
@@ -36,14 +36,15 @@
 		   		<label for="correo_cliente">Correo Cliente</label>
 		   		<input type="text" id="correo_cliente" name="correo_cliente" class="form-control" value="{{$ticket->correo_cliente}}"/>
 		   </div>
-		    <div class="form-group">
-		   		<label for="horas_estimadas">Horas Estimadas</label>
-		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" value="{{$ticket->horas_estimadas}}"/>
-		   </div>
-		    <div class="form-group">
+		      <div class="form-group">
 		   		<label for="descripcion">Descripción</label>
 		   		<input type="text" id="descripcion" name="descripcion" class="form-control" value="{{$ticket->descripcion}}"/>
 		   </div>
+		    <div class="form-group">
+		   		<label for="horas_estimadas">Horas Estimadas</label>
+		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" value="{{$ticket->horas_estimadas}}" onkeypress="return isNumberKey(event)" maxlength="4" style=" height:35px; width:200px"/>
+		   </div>
+		 
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
 		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" value="{{$ticket->fecha_solicitud}}" style=" height:35px; width:200px"/>
@@ -95,19 +96,6 @@
 	   </form>
          
         </main>
-<script type="text/javascript">
-
-    $('.date').datepicker({  
-
-      // format: 'mm-dd-yyyy',
-	   Language: "es",
-        autoclose: true
-
-     });  
-
-</script>  
-
-
 
 
 

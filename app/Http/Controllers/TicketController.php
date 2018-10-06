@@ -50,6 +50,15 @@ class TicketController extends Controller
 		
 			$this->validate($request,[
 			'rut_empresa' 		=> 'required',
+				'correo_cliente' 	=> 'required',
+			'horas_estimadas' 	=> 'required',
+			'descripcion' 		=> 'required',
+			'fecha_solicitud' 	=> 'required',
+			'fecha_inicio' 		=> 'required',
+			'fecha_fin_estimada'=> 'required',
+			'estado' 			=> 'required',
+			'tipo' 				=> 'required'
+				
 			
 				
 			]);

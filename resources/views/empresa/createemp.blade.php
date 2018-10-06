@@ -18,27 +18,27 @@
 	   		
 		   <div class="form-group">
 		   		<label for="id">Rut Empresa</label>
-		   		<input type="text" id="id" name="id" class="form-control"/>
+		   		<input type="text" id="id" name="id" class="form-control" required oninput="checkRut(this)" placeholder="Ingrese RUT" maxlength="12" style="height:35px; width:240px"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="razon_social">Razon Social</label>
-		   		<input type="text" id="razon_social" name="razon_social" class="form-control" />
+		   		<input type="text" id="razon_social" name="razon_social" class="form-control"  style="height:35px; width:50%" maxlength="200"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="nombre_empresa">Nombre Empresa</label>
-		   		<input type="text" id="nombre_empresa" name="nombre_empresa" class="form-control" />
+		   		<input type="text" id="nombre_empresa" name="nombre_empresa" class="form-control" style="height:35px; width:50%"  maxlength="200"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="telefono">Telefono</label>
-		   		<input type="text" id="telefono" name="telefono" class="form-control"/>
+		   		<input type="text" id="telefono" name="telefono" class="form-control" style="height:35px; width:50%" maxlength="200"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="direccion">Dirección</label>
-		   		<input type="text" id="direccion" name="direccion" class="form-control" />
+		   		<input type="text" id="direccion" name="direccion" class="form-control" style="height:35px; width:50%" maxlength="200"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="giro">Giro</label>
-		   		<input type="text" id="giro" name="giro" class="form-control" />
+		   		<input type="text" id="giro" name="giro" class="form-control" style="height:35px; width:50%" maxlength="200" />
 		   </div>
 
 		   <br>
