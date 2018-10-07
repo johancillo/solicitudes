@@ -29,9 +29,13 @@
 		   </div>
 		   
 		    -->
-		   <a href="/empresa/create" class="btn btn-info btn-lg">
-            <span class="glyphicon glyphicon-plus"></span> Añadir Empresa
-        </a>	
+		    <a href="/empresa/create" class="btn btn-info btn-lg">
+				<span class="glyphicon glyphicon-plus"></span> Añadir Empresa
+			</a>
+
+			<a href="#" class="btn btn-info btn-lg">
+				<span class="glyphicon glyphicon-plus"></span>  Añadir Cliente
+			</a>		
 
 		  
 		   <br>
@@ -46,6 +50,7 @@
 			<option value=" {{$empresa['rut_empresa']}}"> {{ $empresa['rut_empresa']}} </option>
 		@endforeach
 		</select>
+		
 		@if($errors->has('rut_empresa'))
 			   <span class ="form-text">
 					<strong  >Debes ingresar Rut de la Empresa</strong>		   
@@ -53,12 +58,11 @@
 			   </span>
 			   
 			   @endif
-		
 	</div>  
 		    <div class="form-group">
 		   		<label for="correo_cliente">Correo Cliente</label>
-		   		<input type="email" id="correo_cliente" name="correo_cliente" class="form-control" aria-describedby="emailHelp" placeholder="Ingresa correo electrónico" />
-				<small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico.</small>
+		   		<input type="email" id="correo_cliente" name="correo_cliente" class="form-control" aria-describedby="emailHelp" style="height:35px; width:240px" placeholder="Ingresa correo electrónico" />
+				<small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico.</small> 
 		   </div>
 		
 		    <div class="form-group">

@@ -9,6 +9,8 @@
 			  
 			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
 			  
+			  <br><br>
+			  
             <table class="table table-striped table-sm" >
               <thead>
                 <tr>
@@ -47,11 +49,12 @@
 				-->
 		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
-		
-		<a href="#" class="btn btn-warning btn-lg">
-          <span class="glyphicon glyphicon-inbox"></span> 
+		   
+		<a href="#" class="btn btn-success btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> 
         </a>
-			<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
+		   
+		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
         </a>				
 				

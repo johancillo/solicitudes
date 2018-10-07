@@ -8,12 +8,22 @@
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
-	  
-	   <a class="btn btn-info">
-		    <span class="glyphicon glyphicon-plus"></span>Agregar Avance
+		  
+		  
+	  <a href="/solicitud/modificar/{{ $ticket->id }}" class="btn btn-info">
+          <span class="glyphicon glyphicon-pencil" ></span> Modificar  
+        </a>
+	   <a class="btn btn-success">
+		    <span class="glyphicon glyphicon-plus"></span> Agregar Avance
 	   </a>
+	   <a class="btn btn-warning">
+		    <span class="glyphicon glyphicon-inbox"></span> Mostrar Avances
+	   </a>
+	   <a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger">
+          <span class="glyphicon glyphicon-trash" ></span> Eliminar  
+        </a>
           <br>
-	   <form action="" method="post">
+	   <form action="" method="post" class="fluid">
 		   {{csrf_field() }}
 	   		    <br>
 		   <div class="form-group">
@@ -34,28 +44,28 @@
 		   </div>
 		    <div class="form-group">
 		   		<label for="correo_cliente">Correo Cliente</label>
-		   		<input type="text" id="correo_cliente" name="correo_cliente" class="form-control" value="{{$ticket->correo_cliente}}"/>
+		   		<input type="text" id="correo_cliente" name="correo_cliente" class="form-control" value="{{$ticket->correo_cliente}}"  readonly="true"/>
 		   </div>
 		      <div class="form-group">
 		   		<label for="descripcion">Descripción</label>
-		   		<input type="text" id="descripcion" name="descripcion" class="form-control" value="{{$ticket->descripcion}}"/>
+		   		<input type="text" id="descripcion" name="descripcion" class="form-control" value="{{$ticket->descripcion}}"readonly="true" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
-		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" value="{{$ticket->horas_estimadas}}" onkeypress="return isNumberKey(event)" maxlength="4" style=" height:35px; width:200px"/>
+		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" value="{{$ticket->horas_estimadas}}" onkeypress="return isNumberKey(event)" maxlength="4" style=" height:35px; width:200px" readonly="true"/>
 		   </div>
 		 
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
-		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" value="{{$ticket->fecha_solicitud}}" style=" height:35px; width:200px"/>
+		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" value="{{$ticket->fecha_solicitud}}" style=" height:35px; width:200px" readonly="true"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_inicio">Fecha Inicio</label>
-		   		<input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" value="{{$ticket->fecha_inicio}}" style=" height:35px; width:200px"/>
+		   		<input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" value="{{$ticket->fecha_inicio}}" style=" height:35px; width:200px" readonly="true"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_fin_estimada">Fecha Entrega Estimada</label>
-		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" value="{{$ticket->fecha_fin_estimada}}" style=" height:35px; width:200px"/>
+		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" value="{{$ticket->fecha_fin_estimada}}" style=" height:35px; width:200px" readonly="true"/>
 		   </div>
 				      
 		<!--
@@ -64,34 +74,19 @@
 		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}" />
 		   </div>
 		  -->
-	<div class="form-group">
-	  <label for="Tipo">Tipo</label>
-		<select class="form-control" id="tipo" name="tipo" value="{{$ticket->tipo}} " style=" height:35px; width:200px" >
-		<option value="Normal" {{ $ticket->tipo=="Normal"? "selected" :"" }}>Normal</option>
-    	<option value="Emergencia" {{ $ticket->tipo=="Emergencia"? "selected" :"" }}>Emergencia</option>
-		<option value="Contrato mensual" {{ $ticket->tipo=="Contrato mensual"? "selected" :"" }}>Contrato mensual</option>
-			
-		</select>
-	</div>   
-		
-		 
+		  <div class="form-group">
+		   		<label for="tipo">Tipo</label>
+		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}" style=" height:35px; width:200px" readonly="true"/>
+		   </div>
+		   <div class="form-group">
+		   		<label for="estado">Estado</label>
+		   		<input type="text" id="estado" name="estado" class="form-control" value="{{$ticket->estado}}" style=" height:35px; width:200px" readonly="true"/>
+		   </div>
+			  	   
 		   
 		   
 		   
-	<div class="form-group">
-		  <label for="estado">Estado</label>
-		<select class="form-control" id="estado" name="estado" value="{{$ticket->estado}} " style=" height:35px; width:200px" >
-	<option value="Progreso" {{ $ticket->estado=="Progreso"? "selected" :"" }}>Progreso</option>
-    <option value="Evaluacion" {{ $ticket->estado=="Evaluacion"? "selected" :"" }}>Evaluación</option>
-	<option value="Terminado" {{ $ticket->estado=="Terminado"? "selected" :"" }}>Terminado</option>
-			
-		</select>
-	</div>
-		   
-		   
-		   
-		   <button class="btn btn-primary" type="submit" style="width:100px">Actualizar</button>
-		   <a href="{{route('tickets.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
+		   <a href="{{route('tickets.index')}}" class="btn btn-primary" style="width:100px">Volver</a>
 		   
 	   </form>
          
