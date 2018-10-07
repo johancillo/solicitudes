@@ -28,8 +28,7 @@
 			  @foreach($empresas as $empresa) 
                 <tr>
 
-                    <td>{{  $empresa->rut_empresa   }}</td>
-                    
+                    <td>{{  $empresa->rut_empresa   }}</td>   
 					<td>{{  $empresa->razon_social }}</td>
 					<td>{{  $empresa->nombre_empresa }}</td>
 					<td>{{  $empresa->telefono }}</td>

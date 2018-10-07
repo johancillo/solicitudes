@@ -2,8 +2,10 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+
 
 Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
 

@@ -2,6 +2,10 @@
 @extends('layouts.main')
 
 @section('content')
+
+
+
+
    <main role="main" class="col-md-9 ml-sm-auto col-lg-30 pt-1 px-4" >
          
 	
