@@ -29,7 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                       Gestión de Solicitudes
                     </a>
                 </div>
 
@@ -63,6 +63,8 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
+
                                 </ul>
                             </li>
                         @endif

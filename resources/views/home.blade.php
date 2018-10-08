@@ -14,7 +14,17 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Usuario Logueado!
+
+                                <br>
+                                    <li>
+                                        <br>
+                                        <a class="btn btn-primary" href="{{ route('tickets.index') }}">
+                                           Solicitudes
+                                        </a>
+
+
+                                    </li>
                 </div>
             </div>
         </div>
