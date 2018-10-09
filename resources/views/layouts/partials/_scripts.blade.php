@@ -138,3 +138,20 @@ function checkRut(id) {
     id.setCustomValidity('');
 }
 </script>
+
+
+<script type="text/javascript">
+$("#boton").click(function() {
+    
+  $("#descripcion").attr('disabled', !$("#descripcion").attr('disabled'));
+  $("#horas_estimadas").attr('disabled', !$("#horas_estimadas").attr('disabled'));
+  $("#fecha_solicitud").attr('disabled', !$("#fecha_solicitud").attr('disabled'));
+  $("#fecha_inicio").attr('disabled', !$("#fecha_inicio").attr('disabled'));
+  $("#fecha_fin_estimada").attr('disabled', !$("#fecha_fin_estimada").attr('disabled'));
+    $("#tipo").attr('disabled', !$("#tipo").attr('disabled'));
+  $("#estado").attr('disabled', !$("#estado").attr('disabled'));
+
+
+});
+
+</script>
