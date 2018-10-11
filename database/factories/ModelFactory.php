@@ -35,3 +35,20 @@ $factory->define(App\Empresa::class, function (Faker\Generator $faker) {
 			'giro' => $faker->bs,
     ];
 });
+
+$factory->define(App\Ticket::class, function (Faker\Generator $faker) {
+ 
+
+    return [
+            'rut_empresa' => $faker->unique()->randomNumber,
+            'correo_cliente' => $faker->email, 
+            'horas_estimadas' => $faker->numberBetween($min = 50, $max = 9000),
+            'descripcion' => $faker->bs,                      
+            'fecha_solicitud' => $faker->date,
+            'fecha_fin_estimada' => $faker->date,
+            'fecha_inicio' => $faker->date,
+            'estado' => str_random(10),
+            'tipo' => str_random(10),
+            
+    ];
+});

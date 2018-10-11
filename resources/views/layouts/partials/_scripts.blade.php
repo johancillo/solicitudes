@@ -150,6 +150,8 @@ $("#boton").click(function() {
   $("#fecha_fin_estimada").attr('disabled', !$("#fecha_fin_estimada").attr('disabled'));
     $("#tipo").attr('disabled', !$("#tipo").attr('disabled'));
   $("#estado").attr('disabled', !$("#estado").attr('disabled'));
+    $("#save").attr('disabled', !$("#save").attr('disabled'));
+  
 
 
 });

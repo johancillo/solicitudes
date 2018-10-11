@@ -87,7 +87,7 @@
 		   
 		   
 		   <a href="{{route('tickets.index')}}" class="btn btn-secundary" style="width:100px">Volver</a>
-		    <button class="btn btn-primary" type="submit" style="width:100px">Guardar</button>
+		    <button id="save" class="btn btn-primary" type="submit" style="width:100px" disabled="true">Guardar</button>
 		   
 	   </form>
          

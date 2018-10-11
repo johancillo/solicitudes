@@ -9,6 +9,14 @@ Route::get('/', function () {
 
 Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
 
+
+// ------------------ RUTAS DE PRUEBA
+Route::get('/x', 'TicketController@holamundo')->name('tickets.index'); // RUTA DE PRUEBAS
+
+
+
+ //------------------
+
 Route::get('/solicitud/create','TicketController@create')->name('tickets.create');
 Route::post('/solicitud/create','TicketController@store')->name('tickets.store');
 

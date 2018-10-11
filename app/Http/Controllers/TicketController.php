@@ -12,12 +12,12 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-		$tickets = Ticket::latest()->paginate(10);
-		//dd($tickets);
-        return view('tickets.index', compact('tickets'));
-    }
+	    public function index()
+	    {
+			$tickets = Ticket::latest()->paginate(10);
+			//dd($tickets);
+	        return view('tickets.index', compact('tickets'));
+	    }
 
     /**
      * Show the form for creating a new resource.
@@ -152,4 +152,14 @@ class TicketController extends Controller
 		
 		return redirect()->route('tickets.index')->withError('¡Solicitud Eliminada!');
     }
+
+    
+    
+        public function holamundo()
+	    {
+			$tickets = Ticket::latest()->paginate(10);
+			//dd($tickets);
+	        return view('tickets.index', compact('tickets'));
+	    }
+
 }
