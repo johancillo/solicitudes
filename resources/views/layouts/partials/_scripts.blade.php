@@ -180,7 +180,7 @@ $("#boton").click(function() {
 <script type="text/javascript">
 
    function populateEndDate() {
-  var date2 = $('#dateStart').datepicker('getDate');
+  var date2 = $('#fecha_solicitud').datepicker('getDate');
   date2.setDate(date2.getDate() + 1);
   $('#dateEnd').datepicker('setDate', date2);
   $("#dateEnd").datepicker("option", "minDate", date2);
@@ -188,18 +188,18 @@ $("#boton").click(function() {
 
 $(document).ready(function() {
 
-  $("#dateStart").datepicker({
-    dateFormat: "dd-M-yy",
+  $("#fecha_solicitud").datepicker({
+    dateFormat: "yy-mm-dd",
     minDate: 'dateToday',
     onSelect: function(date) {
       populateEndDate();
     }
-  }).datepicker("setDate", new Date());
+  });
   $('#dateEnd').datepicker({
     dateFormat: "dd-M-yy",
     minDate: 1,
     onClose: function() {
-      var dt1 = $('#dateStart').datepicker('getDate');
+      var dt1 = $('#fecha_solicitud').datepicker('getDate');
       var dt2 = $('#dateEnd').datepicker('getDate');
       if (dt2 <= dt1) {
         var minDate = $('#dateEnd').datepicker('option', 'minDate');

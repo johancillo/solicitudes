@@ -79,7 +79,7 @@
 		
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
-		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:240px"/>
+		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:240px"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_inicio">Fecha Inicio</label>
@@ -89,17 +89,17 @@
 
 		    <div class="form-group">
 		   		<label for="fecha_fin_estimada">Fecha Entrega Estimada</label>
-		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="height:35px; width:240px"/>
+		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="height:35px; width:240px"/>
 		   </div>
 
 
 
-
+<!--
 <label for="">start</label>
 <input type="text" class="form-control" id="dateStart" name="start">
 <label for="">end</label>
 <input type="text" class="form-control" id="dateEnd" name="end">
-
+-->
 
 		 <div class="form-group col-xs-20">
 		  <label for="tipo">Tipo</label>
