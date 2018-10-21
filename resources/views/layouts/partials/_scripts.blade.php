@@ -54,7 +54,7 @@
         <!-- jQuery Custom Scroller CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-		<script src="bootstrap-datepicker.js"></script>
+   		<script src="bootstrap-datepicker.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -68,6 +68,21 @@
             });
         </script>
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- ACA -->
+
+<!--
+<script>
+  $(function() {
+  $("#fecha_solicitud").datepicker({ minDate: 0 });
+  });
+</script>
+
+-->
+
+<!-- 
 <script>
 $('#dp5').datepicker()
   .on('changeDate', function(ev){
@@ -76,18 +91,22 @@ $('#dp5').datepicker()
     }
   });
 </script>
+-->
+
 <script type="text/javascript">
 function isNumberKey(evt)
   {
     var e = evt || window.event; // for trans-browser compatibility
     var charCode = e.which || e.keyCode;                        
-    if (charCode > 31 && (charCode < 47 || charCode > 57))
+    if (charCode > 31 && (charCode < 47 || charCode > 57) )
     return false;
     if (e.shiftKey) return false;
     return true;
  }
 
 </script>
+
+
 
 <script  type="text/javascript">
 function checkRut(id) {
@@ -156,4 +175,37 @@ $("#boton").click(function() {
 
 });
 
+</script>
+
+<script type="text/javascript">
+
+   function populateEndDate() {
+  var date2 = $('#dateStart').datepicker('getDate');
+  date2.setDate(date2.getDate() + 1);
+  $('#dateEnd').datepicker('setDate', date2);
+  $("#dateEnd").datepicker("option", "minDate", date2);
+}
+
+$(document).ready(function() {
+
+  $("#dateStart").datepicker({
+    dateFormat: "dd-M-yy",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  }).datepicker("setDate", new Date());
+  $('#dateEnd').datepicker({
+    dateFormat: "dd-M-yy",
+    minDate: 1,
+    onClose: function() {
+      var dt1 = $('#dateStart').datepicker('getDate');
+      var dt2 = $('#dateEnd').datepicker('getDate');
+      if (dt2 <= dt1) {
+        var minDate = $('#dateEnd').datepicker('option', 'minDate');
+        $('#dateEnd').datepicker('setDate', minDate);
+      }
+    }
+  }).datepicker("setDate", new Date());
+});
 </script>

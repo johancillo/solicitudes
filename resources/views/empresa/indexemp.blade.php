@@ -41,9 +41,7 @@
 		<a href="/empresa/{{ $empresa->id }}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		
-		<a href="#" class="btn btn-warning btn-lg">
-          <span class="glyphicon glyphicon-inbox"></span> 
-        </a>
+	
 			<a href="#" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
         </a>				

@@ -1,6 +1,9 @@
 
 
 @extends('layouts.main')
+
+
+
  <title>Ingreso Solicitudes</title>
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -71,8 +74,9 @@
 		   </div>
 		       <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
-		   		<input type="datepicker" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)"  maxlength="4"	 style="height:35px; width:240px"/>
+		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)"  maxlength="4"	 style="height:35px; width:240px"/>
 		   </div>
+		
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
 		   		<input type="date" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:240px"/>
@@ -81,14 +85,22 @@
 		   		<label for="fecha_inicio">Fecha Inicio</label>
 		   		<input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" style="height:35px; width:240px"/>
 		   </div>
+		
+
 		    <div class="form-group">
 		   		<label for="fecha_fin_estimada">Fecha Entrega Estimada</label>
-		   		<input type="date" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="height:35px; width:240px"/>
+		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="height:35px; width:240px"/>
 		   </div>
-		   
-		
-		 
-		   
+
+
+
+
+<label for="">start</label>
+<input type="text" class="form-control" id="dateStart" name="start">
+<label for="">end</label>
+<input type="text" class="form-control" id="dateEnd" name="end">
+
+
 		 <div class="form-group col-xs-20">
 		  <label for="tipo">Tipo</label>
 			<select class="form-control " id="tipo" name="tipo" style=" height:35px; width:200px"   >
@@ -99,6 +111,7 @@
 			</select>
 		</div>
 		 
+
 		   <!--
 		     	<div class="form-group">
 	  <label for="tipo">Tipo</label>
@@ -128,6 +141,8 @@
 	   </form>
          
         </main>
+
+
 
 
 @endsection
