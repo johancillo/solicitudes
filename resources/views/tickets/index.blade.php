@@ -54,7 +54,7 @@
 		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
 		   
-		<a href="#" class="btn btn-success btn-lg">
+		<a href="/avance/{{ $ticket->id }}" class="btn btn-success btn-lg">
           <span class="glyphicon glyphicon-plus"></span> 
         </a>
 		   

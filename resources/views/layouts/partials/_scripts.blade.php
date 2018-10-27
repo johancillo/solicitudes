@@ -181,9 +181,12 @@ $("#boton").click(function() {
 
    function populateEndDate() {
   var date2 = $('#fecha_solicitud').datepicker('getDate');
-  date2.setDate(date2.getDate() + 1);
-  $('#dateEnd').datepicker('setDate', date2);
-  $("#dateEnd").datepicker("option", "minDate", date2);
+ // date2.setDate(date2.getDate() );
+  $('#fecha_inicio').datepicker('setDate', date2);
+  $("#fecha_inicio").datepicker("option", "minDate", date2);
+   $("#fecha_fin_estimada").datepicker("option", "minDate", date2);
+     $("#fecha_avance").datepicker("option", "minDate", date2);
+   
 }
 
 $(document).ready(function() {
@@ -195,17 +198,32 @@ $(document).ready(function() {
       populateEndDate();
     }
   });
-  $('#dateEnd').datepicker({
-    dateFormat: "dd-M-yy",
+    $("#fecha_fin_estimada").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  });
+
+     $("#fecha_avance").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  });
+  $('#fecha_inicio').datepicker({
+    dateFormat: "yy-mm-dd",
     minDate: 1,
     onClose: function() {
       var dt1 = $('#fecha_solicitud').datepicker('getDate');
-      var dt2 = $('#dateEnd').datepicker('getDate');
+      var dt2 = $('#fecha_inicio').datepicker('getDate');
       if (dt2 <= dt1) {
-        var minDate = $('#dateEnd').datepicker('option', 'minDate');
-        $('#dateEnd').datepicker('setDate', minDate);
+        var minDate = $('#fecha_inicio').datepicker('option', 'minDate');
+        $('#fecha_inicio').datepicker('setDate', minDate);
       }
     }
-  }).datepicker("setDate", new Date());
+  })//.datepicker("setDate", new Date());
 });
 </script>
