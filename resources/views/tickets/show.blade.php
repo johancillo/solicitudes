@@ -15,8 +15,8 @@
         </a>
 	   <a class="btn btn-success">
 		    <span class="glyphicon glyphicon-plus"></span> Agregar Avance
-	   </a>
-	   <a class="btn btn-warning">
+	   </a>	
+	   <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-warning">
 		    <span class="glyphicon glyphicon-inbox"></span> Mostrar Avances
 	   </a>
 	   <a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger">

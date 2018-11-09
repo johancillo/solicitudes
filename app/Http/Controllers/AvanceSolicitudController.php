@@ -16,9 +16,13 @@ class AvanceSolicitudController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+
+
+        $consulta = avanceSolicitud::where('id_solicitud', $id)->first();
+            //dd($tickets);
+            return view('avance_solicitud.indexavance', compact('consulta'));
     }
 
     /**
@@ -45,9 +49,8 @@ class AvanceSolicitudController extends Controller
         avanceSolicitud::create([
 
             'id_solicitud' => request('id_solicitud'),
-            'rut_usuario' => request('rut_usuario'),
             'fecha_reg_avance' => request('fecha_reg_avance'),
-           
+            'rut_usuario' => request('rut_usuario'),
             'horas_netas' => request('horas_netas'),
             'tipo_hora' => request('tipo_hora'),
             'detalle_avance' => request('detalle_avance'),
@@ -75,6 +78,15 @@ class AvanceSolicitudController extends Controller
          return view('avance_solicitud.showavance', compact('ticket'));
     }
 
+    public function porId(Ticket $tickets)
+    {
+    /*$ticket = DB::table('Ticket')
+                ->where('id', '=', $tickets)
+                ->get();
+
+         return view('avance_solicitud.consultaavance', compact('ticket'));*/
+
+    }    
     /**
      * Show the form for editing the specified resource.
      *

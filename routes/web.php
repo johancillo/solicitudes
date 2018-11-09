@@ -1,8 +1,13 @@
 <?php
 
-
+/*
 Route::get('/', function () {
     return view('Auth/login');
+});
+
+*/
+Route::get('/', function () {
+    return view('welcome');
 });
 
 
@@ -29,7 +34,6 @@ Route::post('/solicitud/{ticket}','TicketController@update')->name('tickets.upda
 //Route::post('/tickets/{ticket}', 'TicketController@update')->name('tickets.update');
 //--------------------------------------------------------
 
-
 //---RUTAS EMPRESA--------
 Route::get('/empresas', 'EmpresaController@index')->name('empresa.index');
 
@@ -52,6 +56,7 @@ Route::post('/empresa/{empresa}','EmpresaController@update')->name('empresa.upda
 Route::get('/avance/{ticket}','AvanceSolicitudController@mostrar')->name('avanceSolicitud.mostrar');
 Route::post('/avance/{ticket}','AvanceSolicitudController@store')->name('avanceSolicitud.store');
 
+Route::get('/avances/solicitud/{ticket}','AvanceSolicitudController@index')->name('avanceSolicitud.index');
 
 
 

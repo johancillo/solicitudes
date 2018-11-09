@@ -30,33 +30,11 @@
 			   		<label for="id_solicitud">ID Solicitud</label>
 			   		<input type="text" id="id_solicitud" name="id_solicitud" value = "{{$ticket->id}}" class="form-control" style="height:35px; width:240px" readonly=/>
 			   </div>	
-<!--
+
 			    <div class="form-group">
 			   		<label for="rut_usuario">Rut Usuario</label>
 			   		<input type="text" id="rut_usuario" name="rut_usuario" class="form-control" style="height:35px; width:240px"/>
 			   </div>	
--->
-
-	<div class="form-group col-xs-20">	
-		
-	  <label for="rut_usuario">Rut Usuario</label>
-		<select class="form-control {{$errors->has('rut_usuario') ? 'is-invalid':''}}" id="rut_usuario" name="rut_usuario" style="height:35px; width:240px">
-			<option value="">-- Elegir Rut Usuario --</option>
-		@foreach($users as $user)
-			
-			<option value=" {{$user['rut_usuario']}}"> {{ $user['rut_usuario']}} </option>
-		@endforeach
-		</select>
-		
-		@if($errors->has('rut_usuario'))
-
-			   <span class ="form-text">
-					<strong  >Debes ingresar Rut de usuario</strong>		   
-					
-			   </span>
-			   
-			   @endif
-	</div> 
 
 			    <div class="form-group">
 		   		<label for="horas_netas">Horas Netas</label>
