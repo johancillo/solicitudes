@@ -12,9 +12,9 @@
 	 
   
 	
-          <div class="table-responsive" style="width: 140%;" >
+          <div class="table-responsive" style="width: 120%;" >
 			  
-			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
+		
 			  
 			  <br><br>
 			  
@@ -22,25 +22,31 @@
               <thead>
                 <tr>
                 
-                  <th>Id</th>
-                 <!-- <th>Rut Empresa</th> -->
-                  <th>Fecha Registro</th>
-                <!--  <th>Horas Estimada</th> -->
-				   <th>Descripción</th>
-					<th>Rut Usuario</th>
-			<!--		<th>Fecha Inicio</th> -->
-			<!--		<th>Fecha Estimada</th> -->
-					<th>Horas netas</th>
-					<th>Tipo Hora</th>
-					<th>Fecha Avance</th>
-					<th>Detalle Avance</th>
+                  <th>ID</th>  
+                  <th>Fecha Registro</th>   
+                  <th>Hora Registro</th>  
+				          <th>Descripción</th>
+					        <th>Rut Usuario</th>
+					        <th>Horas netas</th>
+					        <th>Tipo Hora</th>
+					        <th>Fecha Avance</th>
+					       
                 </tr>
               </thead>
               <tbody>
 			  @foreach($consulta as $consultas) 
                 <tr>
    
-					<td>{{  $consultas->detalle_avance }}</td>  
+					   <td>{{  $consultas->id_solicitud }}</td>
+              <td>{{  date('d-m-Y', strtotime( $consultas->fecha_reg_avance)) }}</td>  
+              <td>{{  date('H:i:s', strtotime( $consultas->fecha_reg_avance)) }}</td>  
+              <td>{{  $consultas->detalle_avance }}</td>  
+              <td>{{  $consultas->rut_usuario }}</td>  
+              <td>{{  $consultas->horas_netas }}</td>
+              <td>{{  $consultas->tipo_hora }}</td>
+            <!--  <td>{{ date('d-m-Y', strtotime($consultas->fecha_avance))   }}</td>                    -->
+            
+
 				
 					<td>
 		

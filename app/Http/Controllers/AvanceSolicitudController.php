@@ -16,11 +16,11 @@ class AvanceSolicitudController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index(Request $request,$id)
     {
 
 
-        $consulta = avanceSolicitud::where('id_solicitud', $id)->first();
+        $consulta = avanceSolicitud::where('id_solicitud', $id)->get();
             //dd($tickets);
             return view('avance_solicitud.indexavance', compact('consulta'));
     }
