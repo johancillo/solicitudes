@@ -93,7 +93,10 @@ $('#dp5').datepicker()
 </script>
 -->
 
+
+
 <script type="text/javascript">
+  //para solo escribir numeros
 function isNumberKey(evt)
   {
     var e = evt || window.event; // for trans-browser compatibility
@@ -109,6 +112,7 @@ function isNumberKey(evt)
 
 
 <script  type="text/javascript">
+//validar rut
 function checkRut(id) {
     // Despejar Puntos
     var valor = id.value.replace('.','');
@@ -160,6 +164,7 @@ function checkRut(id) {
 
 
 <script type="text/javascript">
+  //desactivar campos para modficar soliitudes
 $("#boton").click(function() {
     
   $("#descripcion").attr('disabled', !$("#descripcion").attr('disabled'));
@@ -178,7 +183,7 @@ $("#boton").click(function() {
 </script>
 
 <script type="text/javascript">
-
+//para calendarios
    function populateEndDate() {
   var date2 = $('#fecha_solicitud').datepicker('getDate');
  // date2.setDate(date2.getDate() );
@@ -190,7 +195,7 @@ $("#boton").click(function() {
 }
 
 $(document).ready(function() {
-
+  //para validar fechas
   $("#fecha_solicitud").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: 'dateToday',

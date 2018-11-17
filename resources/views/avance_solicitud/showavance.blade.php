@@ -36,20 +36,29 @@
 			   		<input type="text" id="rut_usuario" name="rut_usuario" class="form-control" style="height:35px; width:240px"/>
 			   </div>	
 
+			  <div class="form-group">
+      			<label for="detalle_avance">Descripción del avance</label>
+      		<textarea class="form-control" rows="5" id="detalle_avance" name="detalle_avance" ></textarea>
+    		</div>
+
+	
+		 <div class="form-group col-xs-20">
+		  <label for="tipo_hora">Tipo Hora</label>
+			<select class="form-control " id="tipo_hora" name="tipo_hora" style=" height:35px; width:200px"   >
+				<option value="1">Normal</option>
+				<option value="2">Extra</option>
+				
+			
+			</select>
+		</div>
+
+
+
 			    <div class="form-group">
 		   		<label for="horas_netas">Horas Netas</label>
-		   		<input type="text" id="horas_netas" name="horas_netas" class="form-control" style="height:35px; width:240px"/>
+		   		<input type="text" id="horas_netas" name="horas_netas"  onkeypress="return isNumberKey(event)" maxlength="2" class="form-control" style="height:35px; width:240px"/>
 		   </div>
-		  <div class="form-group">
-		   		<label for="tipo_hora">Tipo Hora</label>
-		   		<input type="text" id="tipo_hora" name="tipo_hora" class="form-control" style="height:35px; width:240px"/>
-		   </div>
-			
-
-		  <div class="form-group">
-		   		<label for="detalle_avance">Detalle Avance</label>
-		   		<input type="text" id="detalle_avance" name="detalle_avance" class="form-control" />
-		   </div>
+	
 
 		   <div class="form-group">
 		   		<label for="fecha_avance">Fecha Avance</label>

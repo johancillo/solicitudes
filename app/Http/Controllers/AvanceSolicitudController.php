@@ -25,6 +25,9 @@ class AvanceSolicitudController extends Controller
             return view('avance_solicitud.indexavance', compact('consulta'));
     }
 
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,6 +48,16 @@ class AvanceSolicitudController extends Controller
      */
     public function store(Request $request)
     {
+
+
+            $this->validate($request,[
+            'id_solicitud'       => 'required',
+            'rut_usuario'   => 'required',
+            'horas_netas'       => 'required',
+            'tipo_hora'   => 'required',
+            'detalle_avance'      => 'required',
+    
+            ]);
                 
         avanceSolicitud::create([
 
@@ -69,8 +82,10 @@ class AvanceSolicitudController extends Controller
      */
     public function show(avanceSolicitud $avanceSolicitud)
     {
-         return view('avance_solicitud.showavance', compact('avanceSolicitud'));
+         
+         return view('avance_solicitud.actualizaravance', compact('avanceSolicitud'));
     }
+
 
     public function mostrar(Ticket $ticket)
     {
@@ -107,7 +122,26 @@ class AvanceSolicitudController extends Controller
      */
     public function update(Request $request, avanceSolicitud $avanceSolicitud)
     {
-        //
+
+            $this->validate($request,[
+            'rut_usuario'   =>'required',
+            'horas_netas'       => 'required',
+            'tipo_hora'    => 'required',
+            'detalle_avance'   => 'required',
+            'fecha_avance'       => 'required',
+                
+            ]);
+
+       
+            $avanceSolicitud->rut_usuario = request('rut_usuario');  
+            $avanceSolicitud->horas_netas = request('horas_netas');
+            $avanceSolicitud->tipo_hora = request('tipo_hora');
+            $avanceSolicitud->detalle_avance = request('detalle_avance');
+            $avanceSolicitud->fecha_avance = request('fecha_avance');
+            $avanceSolicitud->save();
+
+            return redirect()->route('tickets.index');
+
     }
 
     /**

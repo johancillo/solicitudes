@@ -9,12 +9,7 @@
             </div>
           </div>
         
-	 
-  
-	
           <div class="table-responsive" style="width: 120%;" >
-			  
-		
 			  
 			  <br><br>
 			  
@@ -22,24 +17,23 @@
               <thead>
                 <tr>
                 
-                  <th>ID</th>  
                   <th>Fecha Registro</th>   
                   <th>Hora Registro</th>  
 				          <th>Descripción</th>
 					        <th>Rut Usuario</th>
 					        <th>Horas netas</th>
 					        <th>Tipo Hora</th>
-					        <th>Fecha Avance</th>
-					       
+					     <!--   <th>Fecha Avance</th> -->
+					        <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
 			  @foreach($consulta as $consultas) 
                 <tr>
    
-					   <td>{{  $consultas->id_solicitud }}</td>
+					 <!--  <td>{{  $consultas->id_solicitud }}</td>-->
               <td>{{  date('d-m-Y', strtotime( $consultas->fecha_reg_avance)) }}</td>  
-              <td>{{  date('H:i:s', strtotime( $consultas->fecha_reg_avance)) }}</td>  
+              <td>{{  date('H:i', strtotime( $consultas->fecha_reg_avance)) }}</td>  
               <td>{{  $consultas->detalle_avance }}</td>  
               <td>{{  $consultas->rut_usuario }}</td>  
               <td>{{  $consultas->horas_netas }}</td>
@@ -51,12 +45,9 @@
 					<td>
 		
 				
-		<a href="#" class="btn btn-info btn-lg" >
+		<a href="/avances/solicitud/modificar/{{$consultas->id}}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
 		   
-		<a href="#" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-plus"></span> 
-        </a>
 		   
 		<a href="#" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  

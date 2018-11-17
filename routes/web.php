@@ -53,12 +53,17 @@ Route::post('/empresa/{empresa}','EmpresaController@update')->name('empresa.upda
 
 //Route::get('/avance/{avanceSolicitud}','AvanceSolicitudController@show')->name('avanceSolicitud.show');
 	
-Route::get('/avance/{ticket}','AvanceSolicitudController@mostrar')->name('avanceSolicitud.mostrar');
-Route::post('/avance/{ticket}','AvanceSolicitudController@store')->name('avanceSolicitud.store');
-
-Route::get('/avances/solicitud/{ticket}','AvanceSolicitudController@index')->name('avanceSolicitud.index');
+Route::get('/avance/{ticket}','AvanceSolicitudController@mostrar')->name('avanceSolicitud.mostrar');//abre ventana de creacion avance
+Route::post('/avance/{ticket}','AvanceSolicitudController@store')->name('avanceSolicitud.store');//almacenamiento
 
 
+
+Route::get('/avances/solicitud/{ticket}','AvanceSolicitudController@index')->name('avanceSolicitud.index'); //muestra lista avances por id
+
+
+
+ Route::get('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@show')->name('avanceSolicitud.show');
+Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@update')->name('avanceSolicitud.update');
 
 
 

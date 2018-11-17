@@ -56,12 +56,14 @@
 		   
 		<a href="/avance/{{ $ticket->id }}" class="btn btn-success btn-lg">
           <span class="glyphicon glyphicon-plus"></span> 
-        </a>
-		   
-		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
+		</a>	
+		   <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-warning btn-lg">
+		    <span class="glyphicon glyphicon-inbox"></span>
+	   </a>			
+						<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
-        </a>				
-				
+        </a>	
+
                 </tr>
                @endforeach
               </tbody>

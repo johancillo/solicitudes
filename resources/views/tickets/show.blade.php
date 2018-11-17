@@ -26,12 +26,13 @@
 	   <form action="" method="post" class="fluid">
 		   {{csrf_field() }}
 	   		    <br>
+		
+
 		   <div class="form-group">
 		   		<label for="rut_empresa">Rut Empresa</label>
-		<input type="text" id="rut_empresa" name="rut_empresa" 
-		   class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
-			   value= "{{old('rut_empresa', $ticket->rut_empresa)}}"  readonly="true" style="height:35px; width:240px" />
-			   
+				<input type="text" id="rut_empresa" name="rut_empresa" 
+		   				class="form-control {{$errors->has('rut_empresa') ? 'is-invalid':''}}" 
+			   			value= "{{old('rut_empresa', $ticket->rut_empresa)}}"  readonly="true" style="height:35px; width:240px" />
 			   @if($errors->has('rut_empresa'))
 			   <span class ="form-text">
 					<strong>Debes ingresar Rut de la Empresa</strong>		   
