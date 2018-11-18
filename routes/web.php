@@ -12,7 +12,7 @@ Route::get('/', function () {
 */
 
 
-Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
+
 
 
 // ------------------ RUTAS DE PRUEBA
@@ -21,13 +21,13 @@ Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
 
 
  //-------------RUTAS SOLICITUDES-------------
+Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
 
 Route::get('/solicitud/create','TicketController@create')->name('tickets.create');
 Route::post('/solicitud/create','TicketController@store')->name('tickets.store');
 
 Route::get('/solicitud/delete/{ticket}','TicketController@delete')->name('tickets.delete');
 Route::post('/solicitud/delete/{ticket}','TicketController@destroy')->name('tickets.destroy');
-
 
 Route::get('/solicitud/{ticket}','TicketController@show')->name('tickets.show');
 Route::post('/solicitud/{ticket}','TicketController@update')->name('tickets.update');
@@ -61,12 +61,30 @@ Route::post('/avance/{ticket}','AvanceSolicitudController@store')->name('avanceS
 Route::get('/avances/solicitud/{ticket}','AvanceSolicitudController@index')->name('avanceSolicitud.index'); //muestra lista avances por id
 
 
-
- Route::get('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@show')->name('avanceSolicitud.show');
+// MUESTRA LOS AVANCES DE UNA SOLICITUD
+Route::get('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@show')->name('avanceSolicitud.show');
+//ACTUALIZA UNA SOLICITUD
 Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@update')->name('avanceSolicitud.update');
 
+// RUTAS DE CLIENTES
+
+Route::get('/clientes', 'ClienteController@index')->name('clientes.index');
+
+Route::get('/clientes/create','ClienteController@create')->name('clientes.create');
+Route::post('/clientes/create','ClienteController@store')->name('clientes.store');
+
+Route::get('/clientes/delete/{cliente}','ClienteController@delete')->name('clientes.delete');
+Route::post('/clientes/delete/{cliente}','ClienteController@destroy')->name('clientes.destroy');
+
+Route::get('/clientes/{cliente}','ClienteController@show')->name('clientes.show');
+Route::post('/clientes/{cliente}','ClienteController@update')->name('clientes.update');
 
 
+// RUTAS DE CONEXION
 
+Route::get('/conexion/{empresa}','ConexionController@index')->name('conexion.index'); //muestra lista avances por id
+
+
+//USUARIOS
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

@@ -51,7 +51,7 @@ class TicketController extends Controller
 		
 			$this->validate($request,[
 			'rut_empresa' 		=> 'required',
-				'correo_cliente' 	=> 'required',
+			'correo_cliente' 	=> 'required',
 			'horas_estimadas' 	=> 'required',
 			'descripcion' 		=> 'required',
 			'fecha_solicitud' 	=> 'required',
@@ -88,6 +88,7 @@ class TicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
+    	
         return view('tickets.show', compact('ticket'));
     }
 

@@ -14,7 +14,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
- 
+            $clientes = Cliente::latest()->paginate(10);
+            //dd($tickets);
+            return view('clientes.index_cliente', compact('clientes'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+         return view('clientes.create_cliente');
     }
 
     /**
@@ -35,7 +37,27 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'correo_cliente'       => 'required',
+            'nombre'    => 'required',
+            'telefono'   => 'required',
+            'telefono_alt'       => 'required',
+            'correo_alt'   => 'required',
+            'cod_area'      => 'required',     
+                
+            ]);
+        
+        Cliente::create([
+            'correo_cliente' => request('correo_cliente'),
+            'nombre' => request('nombre'),
+            'telefono' => request('telefono'),
+            'telefono_alt' => request('telefono_alt'),
+            'correo_alt' => request('correo_alt'),
+            'cod_area' => request('cod_area'),
+            
+        ]);
+        
+        return redirect()->route('clientes.index');
     }
 
     /**
@@ -46,7 +68,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+       return view('clientes.show_cliente', compact('cliente'));
     }
 
     /**
@@ -69,7 +91,27 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+            $this->validate($request,[
+            'correo_cliente'       => 'required',
+            'nombre'    => 'required',
+            'telefono'   => 'required',
+            'telefono_alt'       => 'required',
+            'correo_alt'   => 'required',
+            'cod_area'      => 'required',
+            
+                
+            ]);
+            
+        
+            $cliente->correo_cliente = request('correo_cliente');
+            $cliente->nombre = request('nombre');
+            $cliente->telefono = request('telefono');
+            $cliente->telefono_alt = request('telefono_alt');
+            $cliente->correo_alt = request('correo_alt');
+            $cliente->cod_area = request('cod_area');
+            $cliente->save();
+    
+        return redirect()->route('clientes.index');
     }
 
     /**

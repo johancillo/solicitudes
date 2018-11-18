@@ -12,10 +12,8 @@
             <table class="table table-striped table-sm" >
               <thead>
                 <tr>
-                
-                 
                   <th>Rut Empresa</th>
-                  <th>Razon Social</th>
+              <!--    <th>Razon Social</th> -->	
                   <th>Nombre Empresa</th>
 				   <th>Telefono</th>
 					<th>Direccion</th>
@@ -29,22 +27,21 @@
                 <tr>
 
                     <td>{{  $empresa->rut_empresa   }}</td>   
-					<td>{{  $empresa->razon_social }}</td>
+				<!--	<td>{{  $empresa->razon_social }}</td> -->
 					<td>{{  $empresa->nombre_empresa }}</td>
 					<td>{{  $empresa->telefono }}</td>
 					<td>{{  $empresa->direccion }}</td>
-					<td>{{  $empresa->giro }}</td>
-			
+				<td>{{  $empresa->giro }}</td> 
 					<td>
 		
-			
 		<a href="/empresa/{{ $empresa->id }}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		
+		<a href="/conexion/{{ $empresa->rut_empresa }}" class="btn btn-success btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> 
+		</a>	
 	
-			<a href="#" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
-        </a>				
+				
 					
                 </tr>
                @endforeach

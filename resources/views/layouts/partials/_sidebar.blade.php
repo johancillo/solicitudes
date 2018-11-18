@@ -92,7 +92,7 @@
                         <a href="/empresas">Empresas</a>
                     </li>
                     <li>
-                        <a href="#menu">Clientes</a>
+                        <a href="/clientes">Clientes</a>
                         
                         
                     </li>
@@ -103,9 +103,7 @@
                     <li>
                         <a href="#">Usuarios</a>
                     </li>
-                    <li>
-                        <a href="#">contacto</a>
-                    </li>
+               
                     <br>
                     <br>  
                      <li>

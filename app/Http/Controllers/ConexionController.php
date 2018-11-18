@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\conexion;
 use Illuminate\Http\Request;
+use App\avanceSolicitud;
+use App\Empresa;
+use App\Ticket;
+use App\User;
 
 class ConexionController extends Controller
 {
@@ -12,9 +16,11 @@ class ConexionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request,$rut_empresa)
     {
-        //
+         $consulta = conexion::where('rut_empresa', $rut_empresa)->get();
+            //dd($tickets);
+            return view('conexion.index_conexion', compact('consulta'));
     }
 
     /**
