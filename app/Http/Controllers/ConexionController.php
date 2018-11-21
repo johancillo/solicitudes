@@ -39,9 +39,37 @@ class ConexionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function mostrar(empresa $empresa)
+    {
+
+         return view('conexion.create_conexion', compact('empresa'));
+    }
+
     public function store(Request $request)
     {
-        //
+             $this->validate($request,[
+            'rut_empresa'       => 'required',
+            'medio_conexion'   => 'required',
+            'ip'       => 'required',
+            'puerto'   => 'required',
+            'usuario'      => 'required',
+            'comentario'      => 'required',
+    
+            ]);
+                
+        conexion::create([
+
+            'rut_empresa' => request('rut_empresa'),
+            'medio_conexion' => request('medio_conexion'),
+            'ip' => request('ip'),
+            'puerto' => request('puerto'),
+            'usuario' => request('usuario'),
+            'comentario' => request('comentario'),
+            
+        ]);
+        
+        return redirect()->route('empresa.index');
     }
 
     /**
@@ -52,7 +80,7 @@ class ConexionController extends Controller
      */
     public function show(conexion $conexion)
     {
-        //
+          return view('conexion.show_conexion', compact('conexion'));
     }
 
     /**
@@ -75,7 +103,27 @@ class ConexionController extends Controller
      */
     public function update(Request $request, conexion $conexion)
     {
-        //
+          $this->validate($request,[
+            'rut_empresa'       => 'required',
+            'medio_conexion'    => 'required',
+            'ip'   => 'required',
+            'puerto'       => 'required',
+            'usuario'   => 'required',
+            'comentario'      => 'required',
+            
+                
+            ]);
+            
+        
+            $conexion->rut_empresa = request('rut_empresa');
+            $conexion->medio_conexion = request('medio_conexion');
+            $conexion->ip = request('ip');
+            $conexion->puerto = request('puerto');
+            $conexion->usuario = request('usuario');
+            $conexion->comentario = request('comentario');
+            $conexion->save();
+    
+        return redirect()->route('empresa.index');
     }
 
     /**
@@ -88,4 +136,6 @@ class ConexionController extends Controller
     {
         //
     }
+
+  
 }

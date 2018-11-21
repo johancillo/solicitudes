@@ -38,9 +38,11 @@
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		
 		<a href="/conexion/{{ $empresa->rut_empresa }}" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-plus"></span> 
+          <span class="glyphicon glyphicon-globe"></span> 
 		</a>	
-	
+	<a href="/conexion/mostrar/{{$empresa->id}}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-transfer"></span> 
+		</a>	
 				
 					
                 </tr>

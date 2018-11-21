@@ -54,8 +54,8 @@ Route::post('/empresa/{empresa}','EmpresaController@update')->name('empresa.upda
 //Route::get('/avance/{avanceSolicitud}','AvanceSolicitudController@show')->name('avanceSolicitud.show');
 	
 Route::get('/avance/{ticket}','AvanceSolicitudController@mostrar')->name('avanceSolicitud.mostrar');//abre ventana de creacion avance
-Route::post('/avance/{ticket}','AvanceSolicitudController@store')->name('avanceSolicitud.store');//almacenamiento
 
+Route::post('/avance/{ticket}','AvanceSolicitudController@store')->name('avanceSolicitud.store');//almacenamiento
 
 
 Route::get('/avances/solicitud/{ticket}','AvanceSolicitudController@index')->name('avanceSolicitud.index'); //muestra lista avances por id
@@ -66,6 +66,10 @@ Route::get('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudCont
 //ACTUALIZA UNA SOLICITUD
 Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@update')->name('avanceSolicitud.update');
 
+
+
+
+//------------------------------------------------------------------------------------
 // RUTAS DE CLIENTES
 
 Route::get('/clientes', 'ClienteController@index')->name('clientes.index');
@@ -83,6 +87,19 @@ Route::post('/clientes/{cliente}','ClienteController@update')->name('clientes.up
 // RUTAS DE CONEXION
 
 Route::get('/conexion/{empresa}','ConexionController@index')->name('conexion.index'); //muestra lista avances por id
+Route::get('/conexion/mostrar/{empresa}','ConexionController@mostrar')->name('conexion.mostrar');
+Route::post('/conexion/mostrar/{empresa}','ConexionController@store')->name('conexion.store');
+
+
+Route::get('/conexion/create','ConexionController@create')->name('conexion.create');
+
+
+Route::get('/conexion/delete/{conexion}','ConexionController@delete')->name('conexion.delete');
+Route::post('/conexion/delete/{conexion}','ConexionController@destroy')->name('conexion.destroy');
+
+ Route::get('/conexion/update/{conexion}','ConexionController@show')->name('conexion.show');
+Route::post('/conexion/update/{conexion}','ConexionController@update')->name('conexion.update');
+
 
 
 //USUARIOS
