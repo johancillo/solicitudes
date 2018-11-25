@@ -84,6 +84,7 @@ Route::get('/clientes/{cliente}','ClienteController@show')->name('clientes.show'
 Route::post('/clientes/{cliente}','ClienteController@update')->name('clientes.update');
 
 
+//----------------------------------------------------------------------------------------------------
 // RUTAS DE CONEXION
 
 Route::get('/conexion/{empresa}','ConexionController@index')->name('conexion.index'); //muestra lista avances por id
@@ -100,8 +101,37 @@ Route::post('/conexion/delete/{conexion}','ConexionController@destroy')->name('c
  Route::get('/conexion/update/{conexion}','ConexionController@show')->name('conexion.show');
 Route::post('/conexion/update/{conexion}','ConexionController@update')->name('conexion.update');
 
+//----------------------------------------------------------------
+//RUTAS DE FACTURA
+
+Route::get('/facturas', 'FacturaController@index')->name('facturas.index');
+
+Route::get('/factura/create','FacturaController@create')->name('facturas.create');
+Route::post('/factura/create','FacturaController@store')->name('facturas.store');
+
+Route::get('/factura/delete/{factura}','FacturaController@delete')->name('facturas.delete');
+Route::post('/factura/delete/{factura}','FacturaController@destroy')->name('facturas.destroy');
+
+Route::get('/factura/{factura}','FacturaController@show')->name('facturas.show');
+Route::post('/factura/{factura}','FacturaController@update')->name('facturas.update');
+
+//---------------------------------------------------------------------------------------------
+// RUTAS DE PAGOS
+Route::get('/pago/{factura}', 'PagoController@index')->name('pagos.index');
+
+Route::get('/pago/create/{factura}','PagoController@create')->name('pagos.create');
+Route::post('/pago/create/{factura}','PagoController@store')->name('pagos.store');
+
+Route::get('/pago/delete/{pago}','PagoController@delete')->name('pagos.delete');
+Route::post('/pago/delete/{pago}','PagoController@destroy')->name('pagos.destroy');
+
+Route::get('/pago/{pago}','PagoController@show')->name('pagos.show');
+Route::post('/pago/{pago}','PagoController@update')->name('pagos.update');
 
 
+
+
+//--------------------------------------------------------------------
 //USUARIOS
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

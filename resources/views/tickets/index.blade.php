@@ -30,6 +30,7 @@
 					<th>Estado</th>
 					<th>Tipo</th>
 					<th>Acciones</th>
+					<th>Avances</th>
 					
                 </tr>
               </thead>
@@ -53,16 +54,19 @@
 				-->
 		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
-		   
+		   		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-trash" ></span>  
+        </a>	
+    	</td>
+    	<td>
+    		  <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-success btn-lg">
+		    <span class=" glyphicon glyphicon-duplicate "></span>
+	   </a>	
 		<a href="/avance/{{ $ticket->id }}" class="btn btn-success btn-lg">
           <span class="glyphicon glyphicon-plus"></span> 
 		</a>	
-		   <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-warning btn-lg">
-		    <span class="glyphicon glyphicon-inbox"></span>
-	   </a>			
-						<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
-        </a>	
+		 		
+		</td>	
 
                 </tr>
                @endforeach

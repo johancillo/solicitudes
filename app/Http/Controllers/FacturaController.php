@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\factura;
+use App\avanceSolicitud;
+use App\Empresa;
+use App\Ticket;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class FacturaController extends Controller
@@ -14,7 +19,9 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        //
+       $facturas = factura::latest()->paginate(10);
+            //dd($tickets);
+            return view('factura.index_factura', compact('facturas'));
     }
 
     /**
@@ -24,7 +31,8 @@ class FacturaController extends Controller
      */
     public function create()
     {
-        //
+          $tickets = Ticket::all();
+          return view('factura.create_factura', compact('tickets'));
     }
 
     /**
@@ -35,7 +43,19 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Factura::create([
+
+            'num_factura' => request('num_factura'),
+             'id' =>request('id'),
+            'monto' => request('monto'),
+            'orden_compra' => request('orden_compra'),
+            'fecha_facturacion' => request('fecha_facturacion'),
+            'fecha_primer_pago' => request('fecha_primer_pago'),
+            'cantidad_cuotas' => request('cantidad_cuotas')        
+            
+        ]);
+        
+        return redirect()->route('facturas.index');
     }
 
     /**
@@ -46,7 +66,7 @@ class FacturaController extends Controller
      */
     public function show(factura $factura)
     {
-        //
+         return view('factura.show_factura', compact('factura'));
     }
 
     /**
@@ -69,7 +89,32 @@ class FacturaController extends Controller
      */
     public function update(Request $request, factura $factura)
     {
-        //
+        
+
+            $this->validate($request,[
+            'num_factura'       => 'required',
+            'id'    => 'required',
+            'monto'       => 'required',
+            'orden_compra'   => 'required',
+            'fecha_facturacion'      => 'required',
+            'fecha_primer_pago'      => 'required',
+            'cantidad_cuotas'      => 'required',
+            
+                
+            ]);
+            
+        
+            $factura->num_factura = request('num_factura');
+            $factura->id = request('id');
+            $factura->monto = request('monto');
+            $factura->orden_compra = request('orden_compra');
+            $factura->fecha_facturacion = request('fecha_facturacion');
+            $factura->fecha_primer_pago = request('fecha_primer_pago');
+            $factura->cantidad_cuotas = request('cantidad_cuotas');
+            $factura->save();
+    
+        return redirect()->route('facturas.index')->withSuccess('¡Datos han Modificados!');
+
     }
 
     /**

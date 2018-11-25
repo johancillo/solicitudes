@@ -96,6 +96,9 @@
                         
                         
                     </li>
+                     <li>
+                        <a href="/facturas">Facturas</a>
+                    </li>
                    
                     <li>
                         <a href="#">Reportes</a>

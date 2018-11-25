@@ -19,6 +19,7 @@
 					<th>Direccion</th>
 					<th>Giro</th>
 					<th>Acciones</th>
+					<th>Conexiones</th>
 					
                 </tr>
               </thead>
@@ -27,23 +28,23 @@
                 <tr>
 
                     <td>{{  $empresa->rut_empresa   }}</td>   
-				<!--	<td>{{  $empresa->razon_social }}</td> -->
 					<td>{{  $empresa->nombre_empresa }}</td>
 					<td>{{  $empresa->telefono }}</td>
 					<td>{{  $empresa->direccion }}</td>
-				<td>{{  $empresa->giro }}</td> 
+					<td>{{  $empresa->giro }}</td> 
 					<td>
 		
 		<a href="/empresa/{{ $empresa->id }}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
-		
+		</td>
+		<td>
 		<a href="/conexion/{{ $empresa->rut_empresa }}" class="btn btn-success btn-lg">
           <span class="glyphicon glyphicon-globe"></span> 
 		</a>	
-	<a href="/conexion/mostrar/{{$empresa->id}}" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-transfer"></span> 
+	<a href="/conexion/mostrar/{{$empresa->id}}" class="btn btn-success btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> 
 		</a>	
-				
+			</td>	
 					
                 </tr>
                @endforeach

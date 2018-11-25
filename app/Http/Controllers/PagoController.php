@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Pago;
+use App\factura;
+use App\avanceSolicitud;
+use App\Empresa;
+use App\Ticket;
+use App\User;
 use Illuminate\Http\Request;
 
 class PagoController extends Controller
@@ -12,9 +17,13 @@ class PagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request,$num_factura)
     {
-        //
+         $consulta =  Pago::where('num_factura', $num_factura)->get();
+            //dd($tickets);
+          $consulta2 =  factura::where('num_factura', $num_factura)->get();
+            //dd($tickets);
+            return view('pago.index_pago', compact('consulta'), compact('consulta2'));
     }
 
     /**
@@ -22,10 +31,21 @@ class PagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request,$num_factura)
     {
-        //
+         $consulta = factura::where('num_factura', $num_factura)->first();
+          return view('pago.create_pago', compact('consulta'));
     }
+
+
+
+       public function mostrar(factura $factura)
+    {
+
+      //   return view('conexion.create_conexion', compact('factura'));
+    }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +55,26 @@ class PagoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+            $this->validate($request,[
+            'num_factura'       => 'required',
+            'fecha_pago'   => 'required',
+            'cod_forma_pago'       => 'required',
+            'monto'   => 'required',
+
+    
+            ]);
+                
+        pago::create([
+
+            'num_factura' => request('num_factura'),
+            'fecha_pago' => request('fecha_pago'),
+            'cod_forma_pago' => request('cod_forma_pago'),
+            'monto' => request('monto'),
+           
+        ]);
+        
+        return redirect()->route('facturas.index');
     }
 
     /**

@@ -58,6 +58,7 @@ class ConexionController extends Controller
     
             ]);
                 
+            
         conexion::create([
 
             'rut_empresa' => request('rut_empresa'),
