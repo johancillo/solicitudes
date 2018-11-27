@@ -43,6 +43,22 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
+
+        //$messages= ['num_factura.required'=>'Ya existe esta factura','id.required'=>'Ingresa ID'];
+        
+        $messages = ['Revisar Campos'];
+            $this->validate($request,[
+            'num_factura'       => 'required|unique:facturas',
+            'id'    => 'required',
+            'monto'       => 'required',
+            'orden_compra'   => 'required',
+            'fecha_facturacion'      => 'required',
+            'fecha_primer_pago'      => 'required',
+            'cantidad_cuotas'      => 'required',
+             
+                
+            ],$messages);
+
         Factura::create([
 
             'num_factura' => request('num_factura'),

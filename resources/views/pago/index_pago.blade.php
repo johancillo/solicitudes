@@ -29,7 +29,7 @@
 					<td>{{  $consultas->monto }}</td>
 			
 		<td>
-		<a href="#" class="btn btn-success btn-lg">
+		<a href="/pago/update/{{$consultas->num_factura}}" class="btn btn-success btn-lg">
 		   <span class="glyphicon glyphicon-refresh"></span></a>
 		</td>
 

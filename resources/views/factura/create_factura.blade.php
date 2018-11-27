@@ -8,11 +8,20 @@
             <h1 class="h2">Ingreso de Factura</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
 			
-				
-        
             </div>
           </div>
+        @if (count($errors)>0)
+          <ul>
           
+          		@foreach($errors->all() as $error)
+          		
+          			<li class ="alert alert-danger">{{$error }} </li>
+
+          		@endforeach
+          </ul>
+          @endif
+	
+	
 	   <form action="" method="post">
 		   {{csrf_field() }}
 

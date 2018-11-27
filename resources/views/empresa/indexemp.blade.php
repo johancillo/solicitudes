@@ -41,11 +41,10 @@
 		<a href="/conexion/{{ $empresa->rut_empresa }}" class="btn btn-success btn-lg">
           <span class="glyphicon glyphicon-globe"></span> 
 		</a>	
-	<a href="/conexion/mostrar/{{$empresa->id}}" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-plus"></span> 
+		<a href="/conexion/mostrar/{{$empresa->id}}" class="btn btn-success btn-lg">
+        	  <span class="glyphicon glyphicon-plus"></span> 
 		</a>	
-			</td>	
-					
+		</td>	
                 </tr>
                @endforeach
               </tbody>

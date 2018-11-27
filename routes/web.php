@@ -125,9 +125,23 @@ Route::post('/pago/create/{factura}','PagoController@store')->name('pagos.store'
 Route::get('/pago/delete/{pago}','PagoController@delete')->name('pagos.delete');
 Route::post('/pago/delete/{pago}','PagoController@destroy')->name('pagos.destroy');
 
-Route::get('/pago/{pago}','PagoController@show')->name('pagos.show');
-Route::post('/pago/{pago}','PagoController@update')->name('pagos.update');
+Route::get('/pago/update/{pago}','PagoController@show')->name('pagos.show');
+Route::post('/pago/update/{pago}','PagoController@update')->name('pagos.update');
 
+
+
+// RUTA DE FORMA DE PAGO-----------------------------------------------------------------------
+
+Route::get('/formapago', 'FormaPagoController@index')->name('formapago.index');
+
+Route::get('/formapago/create/','FormaPagoController@create')->name('formapago.create');
+Route::post('/formapago/create/','FormaPagoController@store')->name('formapago.store');
+
+Route::get('/formapago/delete/{pago}','FormaPagoController@delete')->name('formapago.delete');
+Route::post('/formapago/delete/{pago}','FormaPagoController@destroy')->name('formapago.destroy');
+
+Route::get('/formapago/update/{pago}','FormaPagoController@show')->name('formapago.show');
+Route::post('/formapago/update/{pago}','FormaPagoController@update')->name('formapago.update');
 
 
 

@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\formaPago;
+use App\factura;
+use App\avanceSolicitud;
+use App\Empresa;
+use App\Ticket;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class FormaPagoController extends Controller
@@ -14,7 +20,9 @@ class FormaPagoController extends Controller
      */
     public function index()
     {
-        //
+            $formapagos = formaPago::latest()->paginate(10);
+            //dd($tickets);
+            return view('forma-pago.index_formapago', compact('formapagos'));
     }
 
     /**
@@ -24,7 +32,9 @@ class FormaPagoController extends Controller
      */
     public function create()
     {
-        //
+      
+        
+        return view('forma-pago.create_formapago');
     }
 
     /**
@@ -35,7 +45,17 @@ class FormaPagoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $messages = ['Revisar Campo'];
+            $this->validate($request,[
+            'descripcion'       => 'required|unique:forma_pagos'        
+            ],$messages);
+
+        formaPago::create([
+
+            'descripcion' => request('descripcion'),                
+        ]);
+        
+        return redirect()->route('formapago.index');
     }
 
     /**

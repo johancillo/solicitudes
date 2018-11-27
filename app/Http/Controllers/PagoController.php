@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pago;
+use App\formaPago;
 use App\factura;
 use App\avanceSolicitud;
 use App\Empresa;
@@ -34,7 +35,8 @@ class PagoController extends Controller
     public function create(Request $request,$num_factura)
     {
          $consulta = factura::where('num_factura', $num_factura)->first();
-          return view('pago.create_pago', compact('consulta'));
+         $formapago = formaPago::all();
+          return view('pago.create_pago', compact('consulta'),compact('formapago'));
     }
 
 
@@ -85,7 +87,8 @@ class PagoController extends Controller
      */
     public function show(Pago $pago)
     {
-        //
+          $formapago = formaPago::all();
+         return view('pago.show_pago', compact('pago'),compact('formapago'));
     }
 
     /**
@@ -108,7 +111,21 @@ class PagoController extends Controller
      */
     public function update(Request $request, Pago $pago)
     {
-        //
+        $this->validate($request,[
+            'num_factura'       => 'required',
+            'fecha_pago'    => 'required',
+            'cod_forma_pago'   => 'required',
+            'monto'       => 'required',          
+                
+            ]);
+        
+            $pago->num_factura = request('num_factura');
+            $pago->fecha_pago = request('fecha_pago');
+            $pago->cod_forma_pago = request('cod_forma_pago');
+            $pago->monto = request('monto');
+            $pago->save();
+    
+        return redirect()->route('facturas.index');
     }
 
     /**
