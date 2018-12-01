@@ -47,10 +47,13 @@
 		   		<label for="correo_cliente">Correo Cliente</label>
 		   		<input type="text" id="correo_cliente" name="correo_cliente" class="form-control" value="{{$ticket->correo_cliente}}" readonly="true"  />
 		   </div>
-		      <div class="form-group">
-		   		<label for="descripcion">Descripción</label>
-		   		<input type="text" id="descripcion" name="descripcion" class="form-control" value="{{$ticket->descripcion}}" disabled="true" />
-		   </div>
+		
+
+		   	 <div class="form-group">
+      			<label for="descripcion">Descripción</label>
+      		<textarea class="form-control" rows="5" id="descripcion" name="descripcion"  value="{{$ticket->descripcion}}"  disabled="true" maxlength="750">  {{$ticket->descripcion}}</textarea>
+    		</div>
+
 		    <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
 		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" value="{{$ticket->horas_estimadas}}" onkeypress="return isNumberKey(event)" maxlength="4" style=" height:35px; width:200px"  disabled="true"/>
@@ -69,20 +72,28 @@
 		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" value="{{$ticket->fecha_fin_estimada}}" style=" height:35px; width:200px"  disabled="true"/>
 		   </div>
 				      
-		<!--
-		   <div class="form-group">
-		   		<label for="tipo">Tipo</label>
-		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}" />
-		   </div>
-		  -->
-		  <div class="form-group">
-		   		<label for="tipo">Tipo</label>
-		   		<input type="text" id="tipo" name="tipo" class="form-control" value="{{$ticket->tipo}}" style=" height:35px; width:200px" disabled="true"/>
-		   </div>
-		   <div class="form-group">
-		   		<label for="estado">Estado</label>
-		   		<input type="text" id="estado" name="estado" class="form-control" value="{{$ticket->estado}}" style=" height:35px; width:200px"  disabled="true"/>
-		   </div>
+			 <div class="form-group col-xs-20">
+		  <label for="tipo">Tipo</label>
+			<select class="form-control " id="tipo" name="tipo" style=" height:35px; width:200px"  disabled="true" >
+				<option value="{{$ticket->tipo}}">{{$ticket->tipo}}</option>
+				<option value="Normal">Normal</option>
+				<option value="Emergencia">Emergencia</option>
+				<option value="Contrato mensual">Contrato mensual</option>
+			
+			</select>
+		</div>
+		 
+
+ <div class="form-group col-xs-20">
+		  <label for="estado">Estado</label>
+			<select class="form-control " id="estado" name="estado" style=" height:35px; width:200px"  disabled="true" >
+				<option value="{{$ticket->estado}}">{{$ticket->estado}}</option>
+				<option value="Progreso">Progreso</option>
+				<option value="Evaluacion">Evaluación</option>
+				<option value="Terminado">Terminado</option>
+			
+			</select>
+		</div>
 			  	   
 		   
 		   

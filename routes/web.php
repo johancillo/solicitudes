@@ -149,3 +149,13 @@ Route::post('/formapago/update/{pago}','FormaPagoController@update')->name('form
 //USUARIOS
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// PRUEBAS	
+/*
+Route::get('/', function () {
+
+	$pdf = PDF::loadView('index');
+
+    return $pdf->download();
+});

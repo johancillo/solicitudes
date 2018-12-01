@@ -36,7 +36,7 @@
 				<span class="glyphicon glyphicon-plus"></span> Añadir Empresa
 			</a>
 
-			<a href="#" class="btn btn-info btn-lg">
+			<a href="/clientes/create" class="btn btn-info btn-lg">
 				<span class="glyphicon glyphicon-plus"></span>  Añadir Cliente
 			</a>		
 
@@ -50,7 +50,7 @@
 			<option value="">-- Elegir Rut Empresa --</option>
 			@foreach($empresas as $empresa)
 			
-			<option value=" {{$empresa['rut_empresa']}}"> {{ $empresa['rut_empresa']}} </option>
+			<option value=" {{$empresa['rut_empresa']}}"> {{ $empresa['rut_empresa']}} {{$empresa['nombre_empresa']}}</option>
 		@endforeach
 		</select>
 		
@@ -62,16 +62,31 @@
 			   
 			   @endif
 	</div>  
-		    <div class="form-group">
-		   		<label for="correo_cliente">Correo Cliente</label>
-		   		<input type="email" id="correo_cliente" name="correo_cliente" class="form-control" aria-describedby="emailHelp" style="height:35px; width:240px" placeholder="Ingresa correo electrónico" />
-				<small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico.</small> 
-		   </div>
+
+	  <label for="correo_cliente">Correo Cliente</label>
+		<select class="form-control {{$errors->has('correo_cliente') ? 'is-invalid':''}}" id="correo_cliente" name="correo_cliente" style="height:35px; width:240px">
+			<option value="">-- Elegir Correo Cliente --</option>
+			@foreach($clientes as $cliente)
+			
+			<option value=" {{$cliente['correo_cliente']}}"> {{ $cliente['correo_cliente']}} </option>
+		@endforeach
+		</select>
 		
-		    <div class="form-group">
-		   		<label for="descripcion">Descripción</label>
-		   		<input type="text" id="descripcion" name="descripcion" class="date form-control"/>
-		   </div>
+		@if($errors->has('correo_cliente'))
+			   <span class ="form-text">
+					<strong  >Debes opción</strong>		   
+					
+			   </span>
+			   
+			   @endif
+	</div>  
+	
+		 
+		
+		   <div class="form-group">
+      			<label for="descripcion">Descripción del avance</label>
+      		<textarea class="form-control" rows="5" id="descripcion" name="descripcion" maxlength="800">  </textarea>
+    		</div>
 		       <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
 		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)"  maxlength="4"	 style="height:35px; width:240px"/>

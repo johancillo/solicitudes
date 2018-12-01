@@ -76,7 +76,8 @@ class PagoController extends Controller
            
         ]);
         
-        return redirect()->route('facturas.index');
+       // return redirect()->route('facturas.index');
+         return back();
     }
 
     /**

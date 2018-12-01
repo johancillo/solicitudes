@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Empresa;
 use App\Ticket;
 use App\User;
+use App\Cliente;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
@@ -28,8 +29,9 @@ class TicketController extends Controller
     public function create()
     {
 		$empresas = Empresa::all();
+		$clientes = Cliente::all();
 		
-        return view('tickets.create', compact('empresas'));
+        return view('tickets.create', compact('empresas'), compact('clientes'));
     }
 	
 	public function delete(Ticket $ticket){
@@ -76,6 +78,8 @@ class TicketController extends Controller
 			'tipo' => request('tipo'),
 			
 		]);
+
+	
 		
 		return redirect()->route('tickets.index');
     }

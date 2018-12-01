@@ -5,7 +5,7 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Ingreso de Factura</h1>  
+            <h1 class="h2">Ingreso de forma de pago</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
 			
             </div>
@@ -26,13 +26,12 @@
 		   {{csrf_field() }}
 
 	   		
-		    <div class="form-group">
-		   		<label for="descripcion">Descripción Forma de Pago</label>
-		   		<input type="text" id="descripcion" name="descripcion" class="form-control" style="height:35px; width:50%" maxlength="200" />
-		   </div>
-		   <br>
+	
 		   
-		   
+		   <div class="form-group">
+      			<label for="descripcion">Descripción Forma de Pago</label>
+      		<textarea class="form-control" rows="5" id="descripcion" name="descripcion" style="height:30%; width:50%" maxlength="100"">  </textarea>
+    		</div>
 		 
 		   
 		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>

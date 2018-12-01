@@ -9,7 +9,7 @@
    <main role="main" class="col-md-9 ml-sm-auto col-lg-30 pt-1 px-4" >
          
 	
-          <div class="table-responsive" style="width: 80%;" >
+          <div class="table-responsive" style="width: 100%;" >
 			  
 			  <a class="btn btn-primary" href="/formapago/create/" >Agregar forma de pago</a>
 			  
@@ -20,7 +20,7 @@
                 <tr>
                 
                   <th  >Código</th>
-                  <th ">Descripción</th>
+                  <th  style="width: 20%;">Descripción</th>
                         <th ">Acciones</th>
                 </tr>
               </thead>

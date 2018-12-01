@@ -20,7 +20,7 @@ class AvanceSolicitudController extends Controller
     {
 
 
-        $consulta = avanceSolicitud::where('id_solicitud', $id)->get();
+        $consulta = avanceSolicitud::where('id_solicitud', $id)->orderBy('id', 'desc')->get();
             //dd($tickets);
             return view('avance_solicitud.indexavance', compact('consulta'));
     }
@@ -82,15 +82,16 @@ class AvanceSolicitudController extends Controller
      */
     public function show(avanceSolicitud $avanceSolicitud)
     {
-         
-         return view('avance_solicitud.actualizaravance', compact('avanceSolicitud'));
+           $users = User::all();
+         return view('avance_solicitud.actualizaravance', compact('users'),compact('avanceSolicitud'));
     }
 
 
     public function mostrar(Ticket $ticket)
     {
 
-         return view('avance_solicitud.showavance', compact('ticket'));
+           $users = User::all();
+         return view('avance_solicitud.showavance', compact('users'),compact('ticket'));
     }
 
     public function porId(Ticket $tickets)

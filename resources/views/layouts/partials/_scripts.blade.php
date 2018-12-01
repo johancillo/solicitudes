@@ -167,14 +167,15 @@ function checkRut(id) {
   //desactivar campos para modficar soliitudes
 $("#boton").click(function() {
     
-  $("#descripcion").attr('disabled', !$("#descripcion").attr('disabled'));
+
   $("#horas_estimadas").attr('disabled', !$("#horas_estimadas").attr('disabled'));
   $("#fecha_solicitud").attr('disabled', !$("#fecha_solicitud").attr('disabled'));
   $("#fecha_inicio").attr('disabled', !$("#fecha_inicio").attr('disabled'));
   $("#fecha_fin_estimada").attr('disabled', !$("#fecha_fin_estimada").attr('disabled'));
-    $("#tipo").attr('disabled', !$("#tipo").attr('disabled'));
+  $("#tipo").attr('disabled', !$("#tipo").attr('disabled'));
   $("#estado").attr('disabled', !$("#estado").attr('disabled'));
-    $("#save").attr('disabled', !$("#save").attr('disabled'));
+  $("#descripcion").attr('disabled', !$("#descripcion").attr('disabled'));
+  $("#save").attr('disabled', !$("#save").attr('disabled'));
   
 
 
@@ -220,7 +221,7 @@ $(document).ready(function() {
   });
   $('#fecha_inicio').datepicker({
     dateFormat: "yy-mm-dd",
-    minDate: 1,
+   // minDate: 1,
     onClose: function() {
       var dt1 = $('#fecha_solicitud').datepicker('getDate');
       var dt2 = $('#fecha_inicio').datepicker('getDate');

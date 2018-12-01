@@ -57,7 +57,7 @@ class ClienteController extends Controller
             
         ]);
         
-        return redirect()->route('clientes.index');
+        return redirect()->route('tickets.create');
     }
 
     /**

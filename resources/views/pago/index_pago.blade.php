@@ -32,7 +32,7 @@
 		<a href="/pago/update/{{$consultas->num_factura}}" class="btn btn-success btn-lg">
 		   <span class="glyphicon glyphicon-refresh"></span></a>
 		</td>
-
+		
 
 		<td>
 
