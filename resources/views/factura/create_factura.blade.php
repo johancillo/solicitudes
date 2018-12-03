@@ -83,17 +83,6 @@
 	   </form>
          
         </main>
-<script type="text/javascript">
-
-    $('.date').datepicker({  
-
-  //     format: 'mm-dd-yyyy',
-	   Language: "es",
-        autoclose: true
-
-     });  
-
-</script>  
 
 
 

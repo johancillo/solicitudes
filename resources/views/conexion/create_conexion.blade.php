@@ -4,7 +4,7 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Avance de solicitud N°: {{$empresa->rut_empresa	}}</h1>  
+            <h1 class="h2">Conexión de empresa RUT: {{$empresa->rut_empresa	}}</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -15,17 +15,17 @@
 
     <div class="form-group">
 		   		<label for="rut_empresa">Rut Empresa</label>
-		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control" value="{{$empresa->rut_empresa}}"  />
+		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control" value="{{$empresa->rut_empresa}}" readonly="true"  />
 		   </div>
 
 		    <div class="form-group">
 		   		<label for="medio_conexion">Medio de Conexión</label>
-		   		<input type="text" id="medio_conexion" name="medio_conexion" class="form-control"   />
+		   		<input type="text" id="medio_conexion" name="medio_conexion" class="form-control"  maxlength="191" />
 		   </div>
 
 		      <div class="form-group">
-		   		<label for="ip">Nombre</label>
-		   		<input type="text" id="ip" name="ip" class="form-control"   />
+		   		<label for="ip">IP</label>
+		   		<input type="text" id="ip" name="ip" class="form-control"  onKeyUp="javascript:validateIp('ip')" />
 		   </div>
 
 

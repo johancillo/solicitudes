@@ -48,10 +48,12 @@ class ConexionController extends Controller
 
     public function store(Request $request)
     {
+
+           //  $request->merge(['ip' => $_SERVER['REMOTE_ADDR']]);
              $this->validate($request,[
             'rut_empresa'       => 'required',
             'medio_conexion'   => 'required',
-            'ip'       => 'required',
+            'ip'       => 'required|ip',
             'puerto'   => 'required',
             'usuario'      => 'required',
             'comentario'      => 'required',
@@ -104,10 +106,12 @@ class ConexionController extends Controller
      */
     public function update(Request $request, conexion $conexion)
     {
+
+        
           $this->validate($request,[
             'rut_empresa'       => 'required',
             'medio_conexion'    => 'required',
-            'ip'   => 'required',
+            'ip'   => 'required|ip',
             'puerto'       => 'required',
             'usuario'   => 'required',
             'comentario'      => 'required',

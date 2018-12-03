@@ -24,20 +24,17 @@
 
 	
 
-			    <div class="form-group">
-		   		<label for="cod_forma_pago">Codigo de Pago</label>
-		   		<input type="text" id="cod_forma_pago" name="cod_forma_pago"  class="form-control" style="height:35px; width:240px"/>
-		   </div>
+	
 
 
-	<div class="form-group col-xs-20">	
+	<div class="form-group">	
 		
-	  <label for="cod_forma_pago">Rut Empresa</label>
+	  <label for="cod_forma_pago">Forma de Pago</label>
 		<select class="form-control {{$errors->has('cod_forma_pago') ? 'is-invalid':''}}" id="cod_forma_pago" name="cod_forma_pago" style="height:35px; width:240px">
 			<option value="">-- Elegir Forma de pago --</option>
 			@foreach($formapago as $formapagos)
 			
-			<option value=" {{$formapagos['cod_forma_pago']}}"> {{ $formapagos['descripcion']}} </option>
+			<option value=" {{$formapagos['descripcion']}}"> {{ $formapagos['descripcion']}} </option>
 		@endforeach
 		</select>
 		
@@ -69,17 +66,7 @@
 	   </form>
          
         </main>
-<script type="text/javascript">
 
-    $('.date').datepicker({  
-
-      // format: 'mm-dd-yyyy',
-	   Language: "es",
-        autoclose: true
-
-     });  
-
-</script>  
 
 
 

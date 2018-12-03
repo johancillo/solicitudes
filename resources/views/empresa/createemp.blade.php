@@ -22,23 +22,23 @@
 		   </div>
 		    <div class="form-group">
 		   		<label for="razon_social">Razon Social</label>
-		   		<input type="text" id="razon_social" name="razon_social" class="form-control"  style="height:35px; width:50%" maxlength="200"/>
+		   		<input type="text" id="razon_social" name="razon_social" class="form-control"  style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="nombre_empresa">Nombre Empresa</label>
-		   		<input type="text" id="nombre_empresa" name="nombre_empresa" class="form-control" style="height:35px; width:50%"  maxlength="200"/>
+		   		<input type="text" id="nombre_empresa" name="nombre_empresa" class="form-control" style="height:35px; width:50%"  maxlength="191"/>
 		   </div>
 		    <div class="form-group">
-		   		<label for="telefono">Telefono</label>
-		   		<input type="text" id="telefono" name="telefono" class="form-control" style="height:35px; width:50%" maxlength="200"/>
+		   		<label for="telefono">Teléfono</label>
+		   		<input type="text" id="telefono" name="telefono" class="form-control" style="height:35px; width:50%" maxlength="15" onkeypress="return isNumberKey(event)"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="direccion">Dirección</label>
-		   		<input type="text" id="direccion" name="direccion" class="form-control" style="height:35px; width:50%" maxlength="200"/>
+		   		<input type="text" id="direccion" name="direccion" class="form-control" style="height:35px; width:50%" maxlength="191"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="giro">Giro</label>
-		   		<input type="text" id="giro" name="giro" class="form-control" style="height:35px; width:50%" maxlength="200" />
+		   		<input type="text" id="giro" name="giro" class="form-control" style="height:35px; width:50%" maxlength="191" />
 		   </div>
 
 		   <br>
