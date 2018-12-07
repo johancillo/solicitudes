@@ -135,6 +135,12 @@ Route::post('/pago/update/{pago}','PagoController@update')->name('pagos.update')
 
 Route::get('/formapago', 'FormaPagoController@index')->name('formapago.index');
 
+
+
+Route::get('/formapago/reporte/', 'FormaPagoController@reporte')->name('formapago.reporte');
+
+
+
 Route::get('/formapago/create/','FormaPagoController@create')->name('formapago.create');
 Route::post('/formapago/create/','FormaPagoController@store')->name('formapago.store');
 
@@ -152,3 +158,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+/*
+
+Route::get('/hola', function () {
+
+	$formapagos = formaPago::latest();
+    $pdf = PDF::loadView('forma-pago.index_formapago', compact('formapagos'));
+
+
+	return $pdf->stream();
+
+
+});
+
+*/

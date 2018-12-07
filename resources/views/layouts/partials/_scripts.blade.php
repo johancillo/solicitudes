@@ -204,15 +204,7 @@ $(document).ready(function() {
     }
   });
 
-  $(document).ready(function() {
-  //para validar fechas
-  $("#fecha_avance").datepicker({
-    dateFormat: "yy-mm-dd",
-    minDate: 'dateToday',
-    onSelect: function(date) {
-      populateEndDate();
-    }
-  });
+
 
  
   $('#fecha_inicio').datepicker({

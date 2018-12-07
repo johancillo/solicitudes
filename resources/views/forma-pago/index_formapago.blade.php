@@ -12,6 +12,8 @@
           <div class="table-responsive" style="width: 100%;" >
 			  
 			  <a class="btn btn-primary" href="/formapago/create/" >Agregar forma de pago</a>
+
+        <a class="btn btn-primary" href="/formapago/reporte/" >Reporte</a>
 			  
 			  <br><br>
 			  

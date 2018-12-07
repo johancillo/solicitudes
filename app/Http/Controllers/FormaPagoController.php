@@ -122,4 +122,24 @@ class FormaPagoController extends Controller
         return back()->with('notification', 'Se ha borrado ');
 
     }
+
+    public function reporte(){
+/*
+        $formaPago = formaPago::latest();
+        $view = view('forma-pago.index_formapago', compact('formaPago'));
+
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        return $pdf->stream('formaPago');
+
+        */
+
+    
+     $formaPago = formaPago::latest();
+    $pdf = PDF::loadView('forma-pago.index_formapago', compact('formaPago'));
+
+    return $pdf->stream();
+    }
 }
