@@ -33,8 +33,11 @@
 			
 					<td>
 		
-		<a href="#" class="btn btn-info btn-lg" >
+		<a href="/formapago/update/{{$formapago->cod_forma_pago}}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
+            <a href="/formapago/delete/{{$formapago->cod_forma_pago}}" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-trash" ></span>  
+        </a>
 		   </td>
 	
 

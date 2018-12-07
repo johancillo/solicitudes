@@ -21,6 +21,7 @@ class CreateClientesTable extends Migration
 			$table->string('telefono_alt');
 			$table->string('correo_alt');
 			$table->string('cod_area');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

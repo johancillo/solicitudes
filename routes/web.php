@@ -74,6 +74,7 @@ Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudCon
 
 Route::get('/clientes', 'ClienteController@index')->name('clientes.index');
 
+
 Route::get('/clientes/create','ClienteController@create')->name('clientes.create');
 Route::post('/clientes/create','ClienteController@store')->name('clientes.store');
 
@@ -138,10 +139,10 @@ Route::get('/formapago/create/','FormaPagoController@create')->name('formapago.c
 Route::post('/formapago/create/','FormaPagoController@store')->name('formapago.store');
 
 Route::get('/formapago/delete/{pago}','FormaPagoController@delete')->name('formapago.delete');
-Route::post('/formapago/delete/{pago}','FormaPagoController@destroy')->name('formapago.destroy');
+//Route::post('/formapago/delete/{pago}','FormaPagoController@destroy')->name('formapago.destroy');
 
-Route::get('/formapago/update/{pago}','FormaPagoController@show')->name('formapago.show');
-Route::post('/formapago/update/{pago}','FormaPagoController@update')->name('formapago.update');
+Route::get('/formapago/update/{formaPago}','FormaPagoController@show')->name('formapago.show');
+Route::post('/formapago/update/{formaPago}','FormaPagoController@update')->name('formapago.update');
 
 
 

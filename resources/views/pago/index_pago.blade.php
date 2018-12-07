@@ -11,9 +11,9 @@
        <table class="table table-striped table-sm" >
               <thead>
                 <tr>
-                  <th>N° Factura</th>
+      
                   <th>Fecha de Pago</th>
-				   <th>Codigo forma de pago</th>
+				   <th>Forma de pago</th>
 					<th>Monto</th>
 					<th>Actualizar</th>
 								
@@ -23,7 +23,7 @@
 			  @foreach($consulta as $consultas) 
                 <tr>
 
-                    <td>{{  $consultas->num_factura   }}</td>  
+    
 					<td>{{  $consultas->fecha_pago }}</td>
 					<td>{{  $consultas->cod_forma_pago }}</td>
 					<td>{{  $consultas->monto }}</td>

@@ -37,23 +37,23 @@
 
 		    <div class="form-group">
 		   		<label for="monto">Monto</label>
-		   		<input type="text" id="monto" name="monto" class="form-control" value ="{{$factura->monto}}"  style="height:35px; width:50%"  maxlength="200"/>
+		   		<input type="text" id="monto" name="monto" class="form-control" value ="{{$factura->monto}}"  style="height:35px; width:50%"  maxlength="10" onkeypress="return isNumberKey(event)"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="orden_compra">Orden de compra</label>
-		   		<input type="text" id="orden_compra" name="orden_compra" value ="{{$factura->orden_compra}}" class="form-control" style="height:35px; width:50%" maxlength="200"/>
+		   		<input type="text" id="orden_compra" name="orden_compra" value ="{{$factura->orden_compra}}" class="form-control" style="height:35px; width:50%" maxlength="20" onkeypress="return isNumberKey(event)"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_facturacion">Fecha facturación</label>
-		   		<input type="text" id="fecha_facturacion" name="fecha_facturacion" value ="{{$factura->fecha_facturacion}}" class="form-control" style="height:35px; width:50%" maxlength="200"/>
+		   		<input type="text" id="fecha_facturacion" name="fecha_facturacion" value ="{{$factura->fecha_facturacion}}" class="form-control" style="height:35px; width:50%" maxlength="0"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_primer_pago">Fecha primer pago</label>
-		   		<input type="text" id="fecha_primer_pago" name="fecha_primer_pago" value ="{{$factura->fecha_primer_pago}}"  class="form-control" style="height:35px; width:50%" maxlength="200" />
+		   		<input type="text" id="fecha_primer_pago" name="fecha_primer_pago" value ="{{$factura->fecha_primer_pago}}"  class="form-control" style="height:35px; width:50%" maxlength="0" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="cantidad_cuotas">Cantidad cuotas</label>
-		   		<input type="text" id="cantidad_cuotas" name="cantidad_cuotas" value ="{{$factura->cantidad_cuotas}}"  class="form-control" style="height:35px; width:50%" maxlength="200" />
+		   		<input type="text" id="cantidad_cuotas" name="cantidad_cuotas" value ="{{$factura->cantidad_cuotas}}"  class="form-control" style="height:35px; width:50%" maxlength="2"  onkeypress="return isNumberKey(event)" />
 		   </div>   
 		   
 		   <button class="btn btn-primary" type="submit" style="width:100px">Actualizar</button>

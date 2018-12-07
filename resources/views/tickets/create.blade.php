@@ -87,38 +87,34 @@
       			<label for="descripcion">Descripción del avance</label>
       		<textarea class="form-control" rows="5" id="descripcion" name="descripcion" maxlength="800">  </textarea>
     		</div>
+
 		       <div class="form-group">
 		   		<label for="horas_estimadas">Horas Estimadas</label>
-		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)"  maxlength="4"	 style="height:35px; width:240px"/>
+		   		<input type="text" id="horas_estimadas" name="horas_estimadas" class="form-control" 	onkeypress="return isNumberKey(event)"  maxlength="4"	style="height:35px; width:30%"/>
 		   </div>
 		
 		    <div class="form-group">
 		   		<label for="fecha_solicitud">Fecha Solicitud</label>
-		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:240px" autocomplete="off" maxlength="0"/>
+		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_inicio">Fecha Inicio</label>
-		   		<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control" style="height:35px; width:240px" autocomplete="off" maxlength="0"/>
+		   		<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
 		   </div>
 		
 
 		    <div class="form-group">
 		   		<label for="fecha_fin_estimada">Fecha Entrega Estimada</label>
-		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="height:35px; width:240px" autocomplete="off" maxlength="0"/>
+		   		<input type="text" id="fecha_fin_estimada" name="fecha_fin_estimada" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
 		   </div>
 
 
 
-<!--
-<label for="">start</label>
-<input type="text" class="form-control" id="dateStart" name="start">
-<label for="">end</label>
-<input type="text" class="form-control" id="dateEnd" name="end">
--->
+
 
 		 <div class="form-group col-xs-20">
 		  <label for="tipo">Tipo</label>
-			<select class="form-control " id="tipo" name="tipo" style=" height:35px; width:200px"   >
+			<select class="form-control " id="tipo" name="tipo" style="height:35px; width:30%"   >
 				<option value="Normal">Normal</option>
 				<option value="Emergencia">Emergencia</option>
 				<option value="Contrato mensual">Contrato mensual</option>
@@ -141,7 +137,7 @@
 		-->   
 	   <div class="form-group col-xs-20">
 		  <label for="estado">Estado</label>
-			<select class="form-control " id="estado" name="estado" style=" height:35px; width:200px"   >
+			<select class="form-control " id="estado" name="estado" style="height:35px; width:30%"   >
 				<option value="Progreso">Progreso</option>
 				<option value="Evaluacion">Evaluación</option>
 				<option value="Terminado">Terminado</option>

@@ -29,7 +29,7 @@
 
 	   	  <div class="form-group col-xs-20">	
 			  <label for="id">N° Solicitud</label>
-					<select class="form-control {{$errors->has('id') ? 'is-invalid':''}}" id="id" name="id" style="height:35px; width:240px">
+					<select class="form-control {{$errors->has('id') ? 'is-invalid':''}}" id="id" name="id" style="height:35px; width:30%">
 					<option value="">-- Elegir Solicitud --</option>
 					@foreach($tickets as $ticket)
 					<option value=" {{$ticket['id']}}"> {{ $ticket['id']}} </option>
@@ -44,33 +44,29 @@
 		  
 		   <div class="form-group">
 		   		<label for="num_factura">N° Factura</label>
-		   		<input type="text" id="num_factura" name="num_factura" class="form-control"  onkeypress="return isNumberKey(event)"  placeholder="Ingrese n° Factura" maxlength="20" style="height:35px; width:240px"/>
+		   		<input type="text" id="num_factura" name="num_factura" class="form-control"  onkeypress="return isNumberKey(event)"  placeholder="Ingrese n° Factura" maxlength="20" style="height:35px; width:30%"/>
 		   </div>
 	
- 
-
-
-
 
 		    <div class="form-group">
 		   		<label for="monto">Monto</label>
-		   		<input type="text" id="monto" name="monto" class="form-control" style="height:35px; width:50%"  maxlength="200"/>
+		   		<input type="text" id="monto" name="monto" class="form-control" style="height:35px; width:30%"  maxlength="10" onkeypress="return isNumberKey(event)" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="orden_compra">Orden de compra</label>
-		   		<input type="text" id="orden_compra" name="orden_compra" class="form-control" style="height:35px; width:50%" maxlength="200"/>
+		   		<input type="text" id="orden_compra" name="orden_compra" class="form-control" style="height:35px; width:30%" maxlength="20" onkeypress="return isNumberKey(event)" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_facturacion">Fecha facturación</label>
-		   		<input type="text" id="fecha_facturacion" name="fecha_facturacion" class="form-control" style="height:35px; width:50%" maxlength="200"/>
+		   		<input type="text" id="fecha_facturacion" name="fecha_facturacion" autocomplete="off" class="form-control" style="height:35px; width:30%" maxlength="0"/>
 		   </div>
 		    <div class="form-group">
 		   		<label for="fecha_primer_pago">Fecha primer pago</label>
-		   		<input type="text" id="fecha_primer_pago" name="fecha_primer_pago" class="form-control" style="height:35px; width:50%" maxlength="200" />
+		   		<input type="text" id="fecha_primer_pago" autocomplete="off" name="fecha_primer_pago" class="form-control" style="height:35px; width:30%" maxlength="0" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="cantidad_cuotas">Cantidad cuotas</label>
-		   		<input type="text" id="cantidad_cuotas" name="cantidad_cuotas" class="form-control" style="height:35px; width:50%" maxlength="200" />
+		   		<input type="text" id="cantidad_cuotas" name="cantidad_cuotas" class="form-control" style="height:35px; width:30%" maxlength="2" onkeypress="return isNumberKey(event)" />
 		   </div>
 		   <br>
 		   

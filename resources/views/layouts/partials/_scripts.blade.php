@@ -191,7 +191,6 @@ $("#boton").click(function() {
  // date2.setDate(date2.getDate() );
 //  $('#fecha_inicio').datepicker('setDate', date2);
   $("#fecha_inicio").datepicker("option", "minDate", date2);
-   $("#fecha_fin_estimada").datepicker("option", "minDate", date2);
      $("#fecha_avance").datepicker("option", "minDate", date2);
    
 }
@@ -204,13 +203,17 @@ $(document).ready(function() {
       populateEndDate();
     }
   });
-    $("#fecha_fin_estimada").datepicker({
+
+  $(document).ready(function() {
+  //para validar fechas
+  $("#fecha_avance").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: 'dateToday',
     onSelect: function(date) {
       populateEndDate();
     }
   });
+
  
   $('#fecha_inicio').datepicker({
     dateFormat: "yy-mm-dd",
@@ -232,6 +235,99 @@ $(document).ready(function() {
 });
 </script>
 
+
+
+<script type="text/javascript">
+//para calendarios
+   function populateEndDate() {
+  var date2 = $('#fecha_inicio').datepicker('getDate');
+ // date2.setDate(date2.getDate() );
+//  $('#fecha_inicio').datepicker('setDate', date2);
+  $("#fecha_fin_estimada").datepicker("option", "minDate", date2);
+    
+   
+}
+$(document).ready(function() {
+  //para validar fechas
+  $("#fecha_inicio").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  });
+
+ 
+  $('#fecha_fin_estimada').datepicker({
+    dateFormat: "yy-mm-dd",
+   // minDate: 1,
+    onClose: function() {
+      var dt1 = $('#fecha_inicio').datepicker('getDate');
+      var dt2 = $('#fecha_fin_estimada').datepicker('getDate');
+         
+      
+      if (dt2 <= dt1) {
+        var minDate = $('#fecha_fin_estimada').datepicker('option', 'minDate');
+        $('#fecha_fin_estimada').datepicker('setDate', minDate);
+
+
+      }
+
+    }
+  })//.datepicker("setDate", new Date());
+});
+</script>
+
+
+
+<script type="text/javascript">
+//FACTIRAS
+   function populateEndDate() {
+  var date2 = $('#fecha_facturacion').datepicker('getDate');
+ // date2.setDate(date2.getDate() );
+//  $('#fecha_inicio').datepicker('setDate', date2);
+  $("#fecha_primer_pago").datepicker("option", "minDate", date2);
+    $("#fecha_pago").datepicker("option", "minDate", date2);
+    
+   
+}
+$(document).ready(function() {
+  //para validar fechas
+  $("#fecha_facturacion").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  });
+   $("#fecha_pago").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  });
+
+ 
+  $('#fecha_primer_pago').datepicker({
+    dateFormat: "yy-mm-dd",
+   // minDate: 1,
+    onClose: function() {
+      var dt1 = $('#fecha_facturacion').datepicker('getDate');
+      var dt2 = $('#fecha_primer_pago').datepicker('getDate');
+         
+      
+      if (dt2 <= dt1) {
+        var minDate = $('#fecha_primer_pago').datepicker('option', 'minDate');
+        $('#fecha_primer_pago').datepicker('setDate', minDate);
+
+
+      }
+
+    }
+  })//.datepicker("setDate", new Date());
+});
+</script>
 <!--
 
 <script type="text/javascript">
@@ -279,7 +375,7 @@ $(document).ready(function() {
 </script>
 
 
-
+-->
 <script type="text/javascript">
 /*
  * Función para validar una dirección ip
@@ -310,4 +406,3 @@ function validateIp(idForm)
 }
 </script>
 
--->

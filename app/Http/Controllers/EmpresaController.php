@@ -38,6 +38,18 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
+
+             $messages = ['rut_empresa.required'=>'Ya existe esta Empresa'];
+            $this->validate($request,[
+            'rut_empresa'       => 'required|unique:empresas',
+            'razon_social'    => 'required',
+            'nombre_empresa'   => 'required',
+            'telefono'       => 'required',
+            'direccion'   => 'required',
+            'giro'      => 'required',
+            ],$messages);
+
+
         	Empresa::create([
 			'rut_empresa' => request('rut_empresa'),
 			'razon_social' => request('razon_social'),
@@ -85,7 +97,7 @@ class EmpresaController extends Controller
     public function update(Request $request, Empresa $empresa)
     {
         $this->validate($request,[
-            'rut_empresa'       => 'required',
+            'rut_empresa'       => 'required|unique:empresas',
             'razon_social'    => 'required',
             'nombre_empresa'   => 'required',
             'telefono'       => 'required',

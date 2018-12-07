@@ -13,7 +13,7 @@
               <thead>
                 <tr>
             
-                  <th>Rut Empresa</th>
+          
 				   <th>Medio de conexión</th>
 					<th>Ip</th>
 					<th>Puerto</th>
@@ -27,7 +27,6 @@
 			  @foreach($consulta as $consultas) 
                 <tr>
            
-                    <td>{{  $consultas->rut_empresa   }}</td>   
 					<td>{{  $consultas->medio_conexion }}</td>
 					<td>{{  $consultas->ip }}</td>
 					<td>{{  $consultas->puerto }}</td>

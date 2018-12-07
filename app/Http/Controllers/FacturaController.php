@@ -46,7 +46,7 @@ class FacturaController extends Controller
 
         //$messages= ['num_factura.required'=>'Ya existe esta factura','id.required'=>'Ingresa ID'];
         
-        $messages = ['Revisar Campos'];
+        $messages = ['YA EXISTE ESA FACTURA'];
             $this->validate($request,[
             'num_factura'       => 'required|unique:facturas',
             'id'    => 'required',
@@ -55,8 +55,6 @@ class FacturaController extends Controller
             'fecha_facturacion'      => 'required',
             'fecha_primer_pago'      => 'required',
             'cantidad_cuotas'      => 'required',
-             
-                
             ],$messages);
 
         Factura::create([

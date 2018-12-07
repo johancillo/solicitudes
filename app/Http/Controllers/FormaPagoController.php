@@ -66,7 +66,7 @@ class FormaPagoController extends Controller
      */
     public function show(formaPago $formaPago)
     {
-        //
+        return view('forma-pago.show_formapago', compact('formaPago'));
     }
 
     /**
@@ -89,7 +89,17 @@ class FormaPagoController extends Controller
      */
     public function update(Request $request, formaPago $formaPago)
     {
-        //
+            $this->validate($request,[
+            'descripcion'       => 'required|unique:forma_pagos' 
+                
+            ]);
+            
+        
+            $formaPago->descripcion = request('descripcion');
+            
+            $formaPago->save();
+    
+        return redirect()->route('formapago.index')->withSuccess('¡Solicitud Modificada!');
     }
 
     /**
@@ -98,8 +108,18 @@ class FormaPagoController extends Controller
      * @param  \App\formaPago  $formaPago
      * @return \Illuminate\Http\Response
      */
-    public function destroy(formaPago $formaPago)
+    public function destroy(formaPago $formapago)
     {
         //
+    }
+
+
+    public function delete($cod_forma_pago){
+
+        $formapago = formapago::find($cod_forma_pago);
+        $formapago->delete();
+
+        return back()->with('notification', 'Se ha borrado ');
+
     }
 }

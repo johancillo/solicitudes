@@ -15,36 +15,34 @@
 
     <div class="form-group">
 		   		<label for="rut_empresa">Rut Empresa</label>
-		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control" value="{{$empresa->rut_empresa}}" readonly="true"  />
+		   		<input type="text" id="rut_empresa" name="rut_empresa" class="form-control" value="{{$empresa->rut_empresa}}" readonly="true"   style=" height:35px; width:30%"/>
 		   </div>
 
 		    <div class="form-group">
 		   		<label for="medio_conexion">Medio de Conexión</label>
-		   		<input type="text" id="medio_conexion" name="medio_conexion" class="form-control"  maxlength="191" />
+		   		<input type="text" id="medio_conexion" name="medio_conexion" class="form-control"  maxlength="191"  style=" height:35px; width:30%" />
 		   </div>
 
 		      <div class="form-group">
 		   		<label for="ip">IP</label>
-		   		<input type="text" id="ip" name="ip" class="form-control"  onKeyUp="javascript:validateIp('ip')" />
+		   		<input type="text" id="ip" name="ip" class="form-control"  onKeyUp="javascript:validateIp('ip')"  style=" height:35px; width:30%" />
 		   </div>
 
 
 		    <div class="form-group">
 		   		<label for="puerto">Puerto</label>
-		   		<input type="text" id="puerto" name="puerto" class="form-control" onkeypress="return isNumberKey(event)" maxlength="14" style=" height:35px; width:200px"  />
+		   		<input type="text" id="puerto" name="puerto" class="form-control" onkeypress="return isNumberKey(event)" maxlength="14" style=" height:35px; width:30%"  />
 		   </div>
 		 
 		    <div class="form-group">
 		   		<label for="usuario">Usuario</label>
-		   		<input type="text" id="usuario" name="usuario" class="form-control" 
-		   				style=" height:35px; width:200px" />
+		   		<input type="text" id="usuario" name="usuario" class="form-control"  maxlength="50" style=" height:35px; width:30%"/>
 		   </div>
 
-		    <div class="form-group">
-		   		<label for="comentario">Comentarios	</label>
-		   		<input type="text" id="comentario" name="comentario" class="form-control" style=" height:35px; width:200px"  />
-		   </div>
-	
+			<div class="form-group">
+      			<label for="comentario">Comentarios</label>
+      		<textarea class="form-control" rows="5" id="comentario" name="comentario" maxlength="191">  </textarea>
+    		</div>
 				      
 
 		   

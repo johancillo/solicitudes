@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
 
 class ClienteController extends Controller
 {
@@ -38,7 +39,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'correo_cliente'       => 'required',
+            'correo_cliente'       => 'required|unique:clientes',
             'nombre'    => 'required',
             'telefono'   => 'required',
             'telefono_alt'       => 'required',
@@ -55,9 +56,9 @@ class ClienteController extends Controller
             'correo_alt' => request('correo_alt'),
             'cod_area' => request('cod_area'),
             
-        ]);
+        ],'Ya existe ese correo');
         
-        return redirect()->route('tickets.create');
+        return redirect()->route('clientes.index');
     }
 
     /**
@@ -114,6 +115,8 @@ class ClienteController extends Controller
         return redirect()->route('clientes.index');
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -123,5 +126,14 @@ class ClienteController extends Controller
     public function destroy(Cliente $cliente)
     {
         //
+    }
+
+    public function delete($id){
+
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+
+        return back()->with('notification', 'Se ha borrado ');
+
     }
 }

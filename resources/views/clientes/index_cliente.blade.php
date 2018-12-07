@@ -45,7 +45,7 @@
 		   <a  href="#" class="btn btn-warning btn-lg">
 		    <span class="glyphicon glyphicon-inbox"></span>
 	   </a>			
-						<a href="#" class="btn btn-danger btn-lg">
+						<a href="/clientes/delete/{{$cliente->id}}" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
         </a>	
 

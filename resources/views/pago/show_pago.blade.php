@@ -20,7 +20,7 @@
 	
 			    <div class="form-group">
 			   		<label for="fecha_pago">Fecha Pago</label>
-			   		<input type="text" id="fecha_pago" name="fecha_pago" value = "{{$pago->fecha_pago}}" class="form-control" style="height:35px; width:240px"/>
+			   		<input type="text" id="fecha_pago" name="fecha_pago" value = "{{$pago->fecha_pago}}" class="form-control" style="height:35px; width:240px" maxlength="0" />
 			   </div>	
 
 	
@@ -29,15 +29,15 @@
 		
 	  <label for="cod_forma_pago">Forma Pago</label>
 		<select class="form-control {{$errors->has('cod_forma_pago') ? 'is-invalid':''}}" id="cod_forma_pago" name="cod_forma_pago" style="height:35px; width:240px" hidden="true">
-	<option value=" {{$formapagos['cod_forma_pago']}}"> {{ $formapagos['descripcion']}} </option>
+				<option value=" {{$pago['cod_forma_pago']}}"> {{ $pago['cod_forma_pago']}} </option>
 			@foreach($formapago as $formapagos)
 			
-			<option value=" {{$formapagos['cod_forma_pago']}}"> {{ $formapagos['descripcion']}} </option>
+			<option value=" {{$formapagos['descripcion']}}"> {{ $formapagos['descripcion']}} </option>
 		@endforeach
 		</select>
 
 		
-		@if($errors->has('cod_forma_pago'))
+		@if($errors->has('descripcion'))
 			   <span class ="form-text">
 					<strong  >Debes ingresar opción correcta</strong>		   
 					
@@ -52,7 +52,7 @@
 
 		  <div class="form-group">
 		   		<label for="monto">Monto</label>
-		   		<input type="text" id="monto" name="monto" value = "{{$pago->monto}}" class="form-control" style="height:35px; width:240px"/>
+		   		<input type="text" id="monto" name="monto" value = "{{$pago->monto}}" class="form-control" style="height:35px; width:240px" maxlength="9" />
 		   </div>
 			
 
