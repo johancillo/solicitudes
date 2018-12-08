@@ -10,6 +10,7 @@ use App\Ticket;
 use App\User;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FormaPagoController extends Controller
 {
@@ -93,8 +94,7 @@ class FormaPagoController extends Controller
             'descripcion'       => 'required|unique:forma_pagos' 
                 
             ]);
-            
-        
+                   
             $formaPago->descripcion = request('descripcion');
             
             $formaPago->save();
@@ -137,9 +137,50 @@ class FormaPagoController extends Controller
         */
 
     
-     $formaPago = formaPago::latest();
-    $pdf = PDF::loadView('forma-pago.index_formapago', compact('formaPago'));
+        $formapagos = formaPago::all();
+    $pdf = \PDF::loadView('forma-pago.index2_formapago', compact('formapagos'));
+    return $pdf->download();
+    }
 
+
+        public function reporte2(){
+/*
+        $formaPago = formaPago::latest();
+        $view = view('forma-pago.index_formapago', compact('formaPago'));
+
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        return $pdf->stream('formaPago');
+
+        */
+
+    
+        $consulta  = avanceSolicitud::all();
+    $pdf = \PDF::loadView('avance_solicitud.indexavance2', compact('consulta'));
+    $pdf->setPaper('a4','landscape');
     return $pdf->stream();
+    }
+
+
+    public function reporte3(){
+/*
+        $formaPago = formaPago::latest();
+        $view = view('forma-pago.index_formapago', compact('formaPago'));
+
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        return $pdf->stream('formaPago');
+
+        */
+
+    
+        $consulta  = avanceSolicitud::all();
+    $pdf = \PDF::loadView('avance_solicitud.indexavance2', compact('consulta'));
+    $pdf->setPaper('a4','landscape');
+    return $pdf->download();
     }
 }

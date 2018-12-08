@@ -31,17 +31,15 @@
           
         </div>
       </nav>
-   -->
+ 
 
 
 
-
+-->
            <div id="content">
 
                 <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-
-                        <div class="navbar-header">
+                     <div class="navbar-header">
                         <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                         <i class="glyphicon glyphicon-align-left"></i>
                                 <span>Menu</span>
@@ -49,16 +47,5 @@
                             
                         </div>
 
-<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </nav>
-				
+				  

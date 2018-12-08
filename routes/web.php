@@ -137,7 +137,7 @@ Route::get('/formapago', 'FormaPagoController@index')->name('formapago.index');
 
 
 
-Route::get('/formapago/reporte/', 'FormaPagoController@reporte')->name('formapago.reporte');
+Route::get('/formapago/reporte/', 'FormaPagoController@reporte2')->name('formapago.reporte');
 
 
 
@@ -158,8 +158,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-/*
-
 Route::get('/hola', function () {
 
 	$formapagos = formaPago::latest();
@@ -171,4 +169,3 @@ Route::get('/hola', function () {
 
 });
 
-*/
