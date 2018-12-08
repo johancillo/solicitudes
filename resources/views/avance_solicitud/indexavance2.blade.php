@@ -9,7 +9,7 @@
             </div>
           </div>
         
-          <div class="table-responsive" style="width: 100%;" >			  
+          <div class="table-responsive" style="width: 80%;" >			  
 			  <br><br>
 			  
             <table class="table table-striped table-sm" >

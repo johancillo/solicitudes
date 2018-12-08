@@ -8,9 +8,9 @@ use App\avanceSolicitud;
 use App\Empresa;
 use App\Ticket;
 use App\User;
-
+use Excel;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
+
 
 class FormaPagoController extends Controller
 {
@@ -124,63 +124,40 @@ class FormaPagoController extends Controller
     }
 
     public function reporte(){
-/*
-        $formaPago = formaPago::latest();
-        $view = view('forma-pago.index_formapago', compact('formaPago'));
-
-
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-
-        return $pdf->stream('formaPago');
-
-        */
 
     
-        $formapagos = formaPago::all();
+    $formapagos = formaPago::all();
     $pdf = \PDF::loadView('forma-pago.index2_formapago', compact('formapagos'));
     return $pdf->download();
     }
 
 
-        public function reporte2(){
-/*
-        $formaPago = formaPago::latest();
-        $view = view('forma-pago.index_formapago', compact('formaPago'));
-
-
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-
-        return $pdf->stream('formaPago');
-
-        */
+   public function reporte2(){
 
     
-        $consulta  = avanceSolicitud::all();
+    $consulta  = avanceSolicitud::all();
     $pdf = \PDF::loadView('avance_solicitud.indexavance2', compact('consulta'));
     $pdf->setPaper('a4','landscape');
     return $pdf->stream();
     }
 
 
-    public function reporte3(){
-/*
-        $formaPago = formaPago::latest();
-        $view = view('forma-pago.index_formapago', compact('formaPago'));
 
 
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
 
-        return $pdf->stream('formaPago');
+    public function reportExcel($type){
 
-        */
+    $consulta  = avanceSolicitud::select('id_solicitud','rut_usuario')->get()->toArray();
 
-    
-        $consulta  = avanceSolicitud::all();
-    $pdf = \PDF::loadView('avance_solicitud.indexavance2', compact('consulta'));
-    $pdf->setPaper('a4','landscape');
-    return $pdf->download();
+    return EXCEL::create('avanceSolicitud', function($excel) use ($consulta) {
+        $excel->sheet('Avances solicitud', function($sheet) use ($consulta)
+        {
+            $sheet->fromArray($consulta);
+        });
+
+    })->download($type);
+
+
     }
+
 }

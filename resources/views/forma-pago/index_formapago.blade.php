@@ -13,7 +13,8 @@
 			  
 			  <a class="btn btn-primary" href="/formapago/create/" >Agregar forma de pago</a>
 
-        <a class="btn btn-primary" href="/formapago/reporte/" >Reporte</a>
+          <a href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}" class="btn btn-info btn-lg" >
+       <span class="glyphicon glyphicon-eye-open" ></span>Reporte</a>
 			  
 			  <br><br>
 			  

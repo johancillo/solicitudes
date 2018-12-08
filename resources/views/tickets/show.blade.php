@@ -13,7 +13,7 @@
 	  <a id="boton" class="btn btn-info" >
           <span class="glyphicon glyphicon-pencil" ></span> Modificar  
         </a>
-	   <a class="btn btn-success">
+	   <a  href="/avance/{{ $ticket->id }}" class="btn btn-success">
 		    <span class="glyphicon glyphicon-plus"></span> Agregar Avance
 	   </a>	
 	   <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-warning">

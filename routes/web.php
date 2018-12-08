@@ -137,7 +137,7 @@ Route::get('/formapago', 'FormaPagoController@index')->name('formapago.index');
 
 
 
-Route::get('/formapago/reporte/', 'FormaPagoController@reporte2')->name('formapago.reporte');
+Route::get('/formapago/reporte/{type}', 'FormaPagoController@reportExcel')->name('formapago.reporte');
 
 
 
