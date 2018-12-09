@@ -21,7 +21,7 @@
 
 
   		</div>
-  			<a href="{{ route('formapago.reportExcelSolicitud',['fi'=>'pico','fe'=>'fecha_inicio'])  }}" class="btn btn-primary">Generar</a>
+  			<a href="{{ route('formapago.reportExcelSolicitud',['fi'=>'#fecha_solicitud'])  }}" class="btn btn-primary">Generar</a>
 	</form>
 	<br>
 

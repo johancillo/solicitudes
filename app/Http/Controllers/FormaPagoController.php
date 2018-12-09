@@ -146,7 +146,7 @@ class FormaPagoController extends Controller
 
 
     public function reportExcel($type){
-    $consulta  = avanceSolicitud::select('*')->get()->toArray();
+    $consulta  = Ticket::select('*')->orderBY('correo_cliente')->get()->toArray();
 
     return EXCEL::create('avanceSolicitud', function($excel) use ($consulta) {
         $excel->sheet('Avances solicitud', function($sheet) use ($consulta)
@@ -159,12 +159,12 @@ class FormaPagoController extends Controller
 
     }
 
-        public function reportExcelSolicitud($fi,$fe){
+     public function reportExcelSolicitud(Request $request, $fi){
     //$consulta  = avanceSolicitud::whereBetween('array($fi, $fe)')->get()->toArray();
-    $query = avanceSolicitud::whereBetween("str_to_date(date, '%Y-%m-%d')", array($fi, $fe))->get();
+    $query = Ticket::where('fecha_solicitud','<=',$fi)->get()->toArray();
 
-    return EXCEL::create('avanceSolicitud', function($excel) use ($query) {
-        $excel->sheet('Avances solicitud', function($sheet) use ($query)
+    return EXCEL::create('Ticket', function($excel) use ($query) {
+        $excel->sheet('tickets', function($sheet) use ($query)
         {
             $sheet->fromArray($query);
         });
