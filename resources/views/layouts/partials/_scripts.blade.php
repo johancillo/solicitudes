@@ -81,7 +81,17 @@
 </script>
 
 
+<script>
+  $(function() {
+  $("#fecha_ini").datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+</script>
 
+<script>
+  $(function() {
+  $("#fecha_fin").datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+</script>
 <!-- 
 <script>
 $('#dp5').datepicker()

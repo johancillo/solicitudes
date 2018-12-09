@@ -8,21 +8,27 @@
 
    <main role="main" class="col-md-9 ml-sm-auto col-lg-30 pt-1 px-4" >
          
-   <form>
+
+   <form action="{{ route("formapago.reportExcelSolicitud") }}" method="GET	">
   		<div class="form-row">
   			    <div class="form-group">
-		   		<label for="fecha_solicitud">Fecha Solicitud</label>
-		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
-		   </div>
-		    <div class="form-group">
-		   		<label for="fecha_inicio">Fecha Inicio</label>
-		   		<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
-		   </div>
+		   		<label for="fecha_ini">Fecha Inicio</label>
+		   		<input type="text" id="fecha_ini" name="fecha_ini" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0" >
+		  		 </div>
 
+		  		   <div class="form-group">
+		   		<label for="fecha_fin">Fecha Fin</label>
+		   		<input type="text" id="fecha_fin" name="fecha_fin" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0" >
+		  		 </div>
 
   		</div>
-  			<a href="{{ route('formapago.reportExcelSolicitud',['fi'=>'#fecha_solicitud'])  }}" class="btn btn-primary">Generar</a>
+  		<button type="submit"> Generar</button>
 	</form>
+
+
+
+
+
 	<br>
 
           <div class="table-responsive" style="width: 140%;" >

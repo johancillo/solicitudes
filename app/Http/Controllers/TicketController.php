@@ -45,8 +45,8 @@ class TicketController extends Controller
 public function reportExcelTickets($type){
     $consulta  = Ticket::select('*')->get()->toArray();
 
-    return EXCEL::create('avanceSolicitud', function($excel) use ($consulta) {
-        $excel->sheet('Avances solicitud', function($sheet) use ($consulta)
+    return EXCEL::create('Solicitudes', function($excel) use ($consulta) {
+        $excel->sheet('Solicitudes', function($sheet) use ($consulta)
         {
             $sheet->fromArray($consulta);
         });

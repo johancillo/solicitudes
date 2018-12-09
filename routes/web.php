@@ -11,6 +11,8 @@ Route::get('/', function () {
 });
 */
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -18,9 +20,9 @@ Route::get('/', function () {
 // ------------------ RUTAS DE PRUEBA
 //Route::get('/x', 'TicketController@holamundo')->name('tickets.index'); // RUTA DE PRUEBAS
 
-
-
+Route::group(['Middleware' => ['auth','admin']], function(){
  //-------------RUTAS SOLICITUDES-------------
+
 Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
 
 Route::get('/solicitud/create','TicketController@create')->name('tickets.create');
@@ -33,7 +35,7 @@ Route::get('/solicitud/{ticket}','TicketController@show')->name('tickets.show');
 Route::post('/solicitud/{ticket}','TicketController@update')->name('tickets.update');
 //Route::post('/tickets/{ticket}', 'TicketController@update')->name('tickets.update');
 
-Route::get('/solicitud/reporte/{fi}/{fe}', 'TicketController@reportExcelTickets')->name('tickets.reporte');
+Route::get('/solicitud/reporte/{fi}', 'TicketController@reportExcelTickets')->name('tickets.reporte');
 
 
 //--------------------------------------------------------
@@ -148,7 +150,9 @@ Route::get('/formapago', 'FormaPagoController@index')->name('formapago.index');
 
 Route::get('/formapago/reporte/{type}', 'FormaPagoController@reportExcel')->name('formapago.reporte');
 
-Route::get('/formapago/reportExcelSolicitud/{fi}', 'FormaPagoController@reportExcelSolicitud')->name('formapago.reportExcelSolicitud');
+
+
+Route::get('/formapago/reportExcelSolicitud/', 'FormaPagoController@reportExcelSolicitud')->name('formapago.reportExcelSolicitud');
 
 
 
@@ -166,18 +170,8 @@ Route::post('/formapago/update/{formaPago}','FormaPagoController@update')->name(
 
 //--------------------------------------------------------------------
 //USUARIOS
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/hola', function () {
-
-	$formapagos = formaPago::latest();
-    $pdf = PDF::loadView('forma-pago.index_formapago', compact('formapagos'));
-
-
-	return $pdf->stream();
 
 
 });
-

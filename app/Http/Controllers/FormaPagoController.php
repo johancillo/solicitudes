@@ -12,6 +12,7 @@ use Excel;
 use Illuminate\Http\Request;
 
 
+
 class FormaPagoController extends Controller
 {
     /**
@@ -159,9 +160,34 @@ class FormaPagoController extends Controller
 
     }
 
-     public function reportExcelSolicitud(Request $request, $fi){
+// PARA FECHAS MENORES
+     public function reportExcelSolicitudTEST(Request $request){
+
+        $fi = $request->input('fecha_solicitud');
+
     //$consulta  = avanceSolicitud::whereBetween('array($fi, $fe)')->get()->toArray();
     $query = Ticket::where('fecha_solicitud','<=',$fi)->get()->toArray();
+
+    return EXCEL::create('Ticket', function($excel) use ($query) {
+        $excel->sheet('tickets', function($sheet) use ($query)
+        {
+            $sheet->fromArray($query);
+        });
+
+    })->download('xlsx');
+
+
+    }
+
+
+       public function reportExcelSolicitud(Request $request){
+
+        $fi = $request->input('fecha_ini');
+        $fe = $request->input('fecha_fin');
+
+
+    //$consulta  = avanceSolicitud::whereBetween('array($fi, $fe)')->get()->toArray();
+    $query = Ticket::whereBetween('fecha_solicitud',[$fi,$fe])->get()->toArray();
 
     return EXCEL::create('Ticket', function($excel) use ($query) {
         $excel->sheet('tickets', function($sheet) use ($query)

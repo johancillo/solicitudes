@@ -13,8 +13,7 @@
 			  
 			  <a class="btn btn-primary" href="/formapago/create/" >Agregar forma de pago</a>
 
-          <a href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}" class="btn btn-info btn-lg" >
-       <span class="glyphicon glyphicon-eye-open" ></span>Reporte</a>
+          <a href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}" class="btn btn-primary" >Reporte</a>
 			  
 			  <br><br>
 			  
@@ -31,7 +30,7 @@
 			  @foreach($formapagos as $formapago) 
                 <tr>
                   <td>{{  $formapago->cod_forma_pago }}</td>
-					<td>{{  $formapago->descripcion }}</td>
+			         		<td>{{  $formapago->descripcion }}</td>
 
 			
 					<td>
