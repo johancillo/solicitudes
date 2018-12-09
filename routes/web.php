@@ -74,6 +74,11 @@ Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudCon
 
 Route::get('/clientes', 'ClienteController@index')->name('clientes.index');
 
+Route::get('/clientes/solicitudes/{cliente}', 'ClienteController@mostrar_por_solicitud')->name('clientes.mostrar_por_solicitud');
+
+
+Route::get('/clientes/reporte/{cliente}', 'ClienteController@reportExcelCliente')->name('clientes.reportExcelCliente');// REPORTE
+
 
 Route::get('/clientes/create','ClienteController@create')->name('clientes.create');
 Route::post('/clientes/create','ClienteController@store')->name('clientes.store');

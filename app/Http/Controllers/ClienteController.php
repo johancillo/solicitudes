@@ -3,7 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+
+use App\Pago;
+use App\formaPago;
+use App\factura;
+use App\avanceSolicitud;
+use App\Empresa;
+use App\Ticket;
+use App\User;
 use Illuminate\Http\Request;
+use Excel;
+
 use Illuminate\Notifications\Notifiable;
 
 class ClienteController extends Controller
@@ -25,6 +35,31 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function mostrar_por_solicitud(Request $request,$correo)
+    {
+            $tickets = Ticket::where('correo_cliente',$correo)->orderBy('id', 'desc')->get();
+            //dd($tickets);
+            return view('clientes.index_cliente_ticket', compact('tickets'));
+    }
+
+
+    public function reportExcelCliente(Request $request,$correo){
+
+      $tickets = Ticket::where('correo_cliente',$correo)->orderBy('id', 'desc')->get()->toArray();
+
+    return EXCEL::create('ticket', function($excel) use ($tickets) {
+        $excel->sheet('ticket', function($sheet) use ($tickets)
+        {
+            $sheet->fromArray($tickets);
+        });
+
+    })->download('xlsx');
+
+
+    }
+
+
     public function create()
     {
          return view('clientes.create_cliente');

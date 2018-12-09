@@ -73,14 +73,14 @@
 
 <!-- ACA -->
 
-<!--
+
 <script>
   $(function() {
-  $("#fecha_solicitud").datepicker({ minDate: 0 });
+  $("#fecha_avance").datepicker({ dateFormat: 'yy-mm-dd',minDate: 'today' });
   });
 </script>
 
--->
+
 
 <!-- 
 <script>
@@ -191,7 +191,7 @@ $("#boton").click(function() {
  // date2.setDate(date2.getDate() );
 //  $('#fecha_inicio').datepicker('setDate', date2);
   $("#fecha_inicio").datepicker("option", "minDate", date2);
-     $("#fecha_avance").datepicker("option", "minDate", date2);
+    // $("#fecha_avance").datepicker("option", "minDate", date2);
    
 }
 $(document).ready(function() {
@@ -320,7 +320,41 @@ $(document).ready(function() {
   })//.datepicker("setDate", new Date());
 });
 </script>
+
+
+
+
 <!--
+<script type="text/javascript">
+//FACTIRAS
+   function populateEndDate() {
+ // var date2 = $('#fecha_avance').datepicker('getDate');
+ // date2.setDate(date2.getDate() );
+ // $('#fecha_avance').datepicker('setDate', date2);
+
+   
+}
+$(document).ready(function() {
+  //para validar fechas
+  $("#fecha_avance").datepicker({
+    dateFormat: "yy-mm-dd",
+    minDate: 'dateToday',
+    onSelect: function(date) {
+      populateEndDate();
+    }
+  });
+
+
+ 
+  });//.datepicker("setDate", new Date());
+</script>
+
+
+
+
+
+
+
 
 <script type="text/javascript">
 //para calendarios 2

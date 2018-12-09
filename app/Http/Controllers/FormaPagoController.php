@@ -155,7 +155,7 @@ class FormaPagoController extends Controller
             $sheet->fromArray($consulta);
         });
 
-    })->download($type);
+    })->download('xlsx');
 
 
     }

@@ -12,6 +12,9 @@
           <div class="table-responsive" style="width: 120%;" >
 			  
 			  <a class="btn btn-primary" href="/clientes/create" >Agregar Cliente</a>
+
+			          <a class="btn btn-primary"  href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}"> Reporte </a>
+
 			  
 			  <br><br>
 			  
@@ -39,10 +42,10 @@
 		<a href="/clientes/{{$cliente->id}}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
 		   
-		<a href="#" class="btn btn-success btn-lg">
+		<a href="/clientes/solicitudes/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
           <span class="glyphicon glyphicon-plus"></span> 
 		</a>	
-		   <a  href="#" class="btn btn-warning btn-lg">
+		   <a  href="/clientes/reporte/{{$cliente->correo_cliente}}" class="btn btn-warning btn-lg">
 		    <span class="glyphicon glyphicon-inbox"></span>
 	   </a>			
 						<a href="/clientes/delete/{{$cliente->id}}" class="btn btn-danger btn-lg">
