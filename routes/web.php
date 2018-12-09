@@ -32,6 +32,10 @@ Route::post('/solicitud/delete/{ticket}','TicketController@destroy')->name('tick
 Route::get('/solicitud/{ticket}','TicketController@show')->name('tickets.show');
 Route::post('/solicitud/{ticket}','TicketController@update')->name('tickets.update');
 //Route::post('/tickets/{ticket}', 'TicketController@update')->name('tickets.update');
+
+Route::get('/solicitud/reporte/{fi}/{fe}', 'TicketController@reportExcelTickets')->name('tickets.reporte');
+
+
 //--------------------------------------------------------
 
 //---RUTAS EMPRESA--------
@@ -143,6 +147,9 @@ Route::get('/formapago', 'FormaPagoController@index')->name('formapago.index');
 
 
 Route::get('/formapago/reporte/{type}', 'FormaPagoController@reportExcel')->name('formapago.reporte');
+
+Route::get('/formapago/reportExcelSolicitud/{fi}/{f2}', 'FormaPagoController@reportExcelSolicitud')->name('formapago.reportExcelSolicitud');
+
 
 
 

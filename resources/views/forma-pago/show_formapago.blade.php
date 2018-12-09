@@ -30,7 +30,7 @@
 		   
 		   <div class="form-group">
       			<label for="descripcion">Descripción Forma de Pago</label>
-      		<textarea class="form-control" rows="5" id="descripcion" value="{{$formaPago->descripcion}}" name="descripcion" style="height:30%; width:50%" maxlength="50"">{{$formaPago->descripcion}}  </textarea>
+      		<textarea class="form-control" rows="5" id="descripcion" value="{{$formaPago->descripcion}}" name="descripcion" style="height:30%; width:50%" maxlength="50" >{{$formaPago->descripcion}}  </textarea>
     		</div>
 		 
 		   

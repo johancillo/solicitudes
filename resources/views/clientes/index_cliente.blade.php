@@ -22,11 +22,12 @@
               <thead>
                 <tr>
                 
-                  <th  >N°</th>
+                  <th style="width: 10%" >N°</th>
                   <th style="width: 30%;">Correo Cliente</th>
-				   <th style="width: 40%;">Nombre</th>
-					<th>Teléfono</th>
-					<th>Acciones</th>
+				   <th style="width: 20%;">Nombre</th>
+					<th style="width: 10%">Teléfono</th>
+					<th style="width: 20%">Acciones</th>
+					<th style="width: 20%">Solicitudes</th>
 					
                 </tr>
               </thead>
@@ -41,16 +42,19 @@
 		
 		<a href="/clientes/{{$cliente->id}}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
-		   
-		<a href="/clientes/solicitudes/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-plus"></span> 
-		</a>	
-		   <a  href="/clientes/reporte/{{$cliente->correo_cliente}}" class="btn btn-warning btn-lg">
-		    <span class="glyphicon glyphicon-inbox"></span>
-	   </a>			
-						<a href="/clientes/delete/{{$cliente->id}}" class="btn btn-danger btn-lg">
+		   				<a href="/clientes/delete/{{$cliente->id}}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
-        </a>	
+        </a>
+    </td>
+    <td>
+		   	
+		<a href="/clientes/solicitudes/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
+          <span class="glyphicon glyphicon-duplicate"></span> 
+		</a>	
+		   <a  href="/clientes/reporte/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
+		    <span class="glyphicon glyphicon-save"></span>
+	   </a>			
+		</td>	
 
                 </tr>
                @endforeach

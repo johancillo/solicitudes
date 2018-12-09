@@ -8,7 +8,23 @@
 
    <main role="main" class="col-md-9 ml-sm-auto col-lg-30 pt-1 px-4" >
          
-	
+   <form>
+  		<div class="form-row">
+  			    <div class="form-group">
+		   		<label for="fecha_solicitud">Fecha Solicitud</label>
+		   		<input type="text" id="fecha_solicitud" name="fecha_solicitud" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
+		   </div>
+		    <div class="form-group">
+		   		<label for="fecha_inicio">Fecha Inicio</label>
+		   		<input type="text" id="fecha_inicio" name="fecha_inicio" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0"/>
+		   </div>
+
+
+  		</div>
+  			<a href="{{ route('formapago.reportExcelSolicitud',['fi'=>'pico','fe'=>'fecha_inicio'])  }}" class="btn btn-primary">Generar</a>
+	</form>
+	<br>
+
           <div class="table-responsive" style="width: 140%;" >
 			  
 			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>

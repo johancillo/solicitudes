@@ -106,7 +106,7 @@ class PagoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $requests
      * @param  \App\Pago  $pago
      * @return \Illuminate\Http\Response
      */

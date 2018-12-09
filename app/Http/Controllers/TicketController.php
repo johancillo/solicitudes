@@ -6,6 +6,7 @@ use App\Ticket;
 use App\User;
 use App\Cliente;
 use Illuminate\Http\Request;
+use Excel;
 
 class TicketController extends Controller
 {
@@ -41,6 +42,19 @@ class TicketController extends Controller
 		return view('tickets.delete', compact('ticket'));
 	}
 
+public function reportExcelTickets($type){
+    $consulta  = Ticket::select('*')->get()->toArray();
+
+    return EXCEL::create('avanceSolicitud', function($excel) use ($consulta) {
+        $excel->sheet('Avances solicitud', function($sheet) use ($consulta)
+        {
+            $sheet->fromArray($consulta);
+        });
+
+    })->download('xlsx');
+
+
+    }
     /**
      * Store a newly created resource in storage.
      *

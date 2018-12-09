@@ -12,6 +12,7 @@
           <div class="table-responsive" style="width: 140%;" >
 			  
 			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
+			    <a class="btn btn-primary"  href="{{ route('tickets.reporte',['type'=>'xlsx'])  }}"> Exportar </a>
 			  
 			  <br><br>
 			  
