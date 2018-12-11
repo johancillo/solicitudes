@@ -12,7 +12,7 @@
           <div class="table-responsive" style="width: 120%;" >
 			  
 			  <a class="btn btn-primary" href="/clientes/create" >Agregar Cliente</a>
-			  <a class="btn btn-primary"  href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}"> Reporte </a>
+			  
 			  
 			  <br><br>
 			  

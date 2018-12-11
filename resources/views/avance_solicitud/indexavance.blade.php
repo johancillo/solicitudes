@@ -53,7 +53,7 @@
 		   <span class="glyphicon glyphicon-pencil" ></span></a>
 		   
 		   
-		<a href="#" class="btn btn-danger btn-lg">
+		<a href="/avances/delete/{{$consultas->id  }}" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
         </a>				
 				

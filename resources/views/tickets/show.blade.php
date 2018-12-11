@@ -85,17 +85,18 @@
 		</div>
 		 
 
- <div class="form-group col-xs-20">
+
+	<div class="form-group col-xs-20">
 		  <label for="estado">Estado</label>
 			<select class="form-control " id="estado" name="estado" style=" height:35px; width:200px"  disabled="true" >
 				<option value="{{$ticket->estado}}">{{$ticket->estado}}</option>
-				<option value="Progreso">Progreso</option>
-				<option value="Evaluacion">Evaluación</option>
-				<option value="Terminado">Terminado</option>
+				<option value="Recibida">Recibida</option>
+				<option value="En Curso">En Curso</option>
+				<option value="Terminada">Terminada</option>
+				
 			
 			</select>
-		</div>
-			  	   
+		</div>   
 		   
 		   
 		   

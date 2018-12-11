@@ -53,10 +53,15 @@
 				<small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico.</small> 
 		   </div>
 
-		     <div class="form-group">
-		   		<label for="cod_area">Área</label>
-		   		<input type="text" id="cod_area" name="cod_area" class="form-control" maxlength="20" 	style="height:35px; width:30%"/>
-		   </div>
+		  <div class="form-group col-xs-20">
+		  <label for="cod_area">Area</label>
+			<select class="form-control " id="cod_area" name="cod_area" style="height:35px; width:30%"   >
+				<option value="Administracion">Administracion</option>
+				<option value="Informatica">Informarica</option>
+				<option value="Finanzas">Finanzas</option>
+				<option value="Gerencia">Gerencia</option>
+			</select>
+		</div>
 		
 		  
 

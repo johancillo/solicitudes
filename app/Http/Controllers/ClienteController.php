@@ -39,8 +39,14 @@ class ClienteController extends Controller
     public function mostrar_por_solicitud(Request $request,$correo)
     {
             $tickets = Ticket::where('correo_cliente',$correo)->orderBy('id', 'desc')->get();
+
             //dd($tickets);
-            return view('clientes.index_cliente_ticket', compact('tickets'));
+            if ($tickets->isEmpty()) { 
+                return back();
+            }
+            else{
+                return view('clientes.index_cliente_ticket', compact('tickets'));
+            }
     }
 
 
@@ -168,7 +174,8 @@ class ClienteController extends Controller
         $cliente = Cliente::find($id);
         $cliente->delete();
 
-        return back()->with('notification', 'Se ha borrado ');
+           return redirect('/clientes');
 
     }
+
 }

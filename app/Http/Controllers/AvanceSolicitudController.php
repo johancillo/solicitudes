@@ -165,7 +165,7 @@ class AvanceSolicitudController extends Controller
 
      //   $consulta = avanceSolicitud::latest()->paginate(10)->where('id_solicitud',$id);
         //  return back()->with('notification', 'Se ha borrado ');
-             return   redirect()->route('tickets.index');
+             return   redirect('/solicitudes');
 
 
 

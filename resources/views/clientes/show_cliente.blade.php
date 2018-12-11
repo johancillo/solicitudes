@@ -4,14 +4,14 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Actualización de Cliente: {{$cliente->id}}</h1>  
+            <h1 class="h2">Actualización de Cliente: {{$cliente->nombre}}</h1>  
 			
 			
 			
 			<a id="boton" class="btn btn-info" >
           <span class="glyphicon glyphicon-pencil" ></span> Modificar  
         </a>
-	   <a href="" class="btn btn-danger">
+	   <a href="/clientes/delete/{{$cliente->id}}" class="btn btn-danger">
           <span class="glyphicon glyphicon-trash" ></span> Eliminar  
         </a>
 			
@@ -53,10 +53,17 @@
 		   		<label for="correo_alt">Correo Alternativo</label>
 		   		<input type="text" id="correo_alt" name="correo_alt" class="form-control" value="{{$cliente->correo_alt}}" style="height:35px; width:30%"  />
 		   </div>
-		    <div class="form-group">
-		   		<label for="cod_area">Área</label>
-		   		<input type="text" id="cod_area" name="cod_area" class="form-control" value="{{$cliente->cod_area}}" style="height:35px; width:30%"  maxlength="20"/>
-		   </div>
+		 <div class="form-group col-xs-20">
+		  <label for="cod_area">Area</label>
+			<select class="form-control " id="cod_area" name="cod_area" style="height:35px; width:30%"   >
+				<option value="{{$cliente->cod_area}}">{{$cliente->cod_area}}</option>
+				<option value="Administracion">Administracion</option>
+				<option value="Informatica">Informarica</option>
+				<option value="Finanzas">Finanzas</option>
+				<option value="Gerencia">Gerencia</option>
+			</select>
+		</div>
+		
 				      
 
 		   

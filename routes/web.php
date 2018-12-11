@@ -55,7 +55,8 @@ Route::get('/empresa/create','EmpresaController@create')->name('empresa.create')
 Route::post('/empresa/create','EmpresaController@store')->name('empresa.store');
 
 Route::get('/empresa/delete/{empresa}','EmpresaController@delete')->name('empresa.delete');
-Route::post('/empresa/delete/{empresa}','EmpresaController@destroy')->name('empresa.destroy');
+
+//Route::post('/empresa/delete/{empresa}','EmpresaController@destroy')->name('empresa.destroy');
 
 
 Route::get('/empresa/{empresa}','EmpresaController@show')->name('empresa.show');
@@ -81,7 +82,7 @@ Route::get('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudCont
 Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@update')->name('avanceSolicitud.update');
 
 
-//ELIMINACIÓN FÍSICA
+//ELIMINACIÓN logica
 Route::get('/avances/delete/{avanceSolicitud}','AvanceSolicitudController@delete')->name('avanceSolicitud.delete');
 
 
@@ -101,7 +102,7 @@ Route::get('/clientes/create','ClienteController@create')->name('clientes.create
 Route::post('/clientes/create','ClienteController@store')->name('clientes.store');
 
 Route::get('/clientes/delete/{cliente}','ClienteController@delete')->name('clientes.delete');
-Route::post('/clientes/delete/{cliente}','ClienteController@destroy')->name('clientes.destroy');
+//Route::post('/clientes/delete/{cliente}','ClienteController@destroy')->name('clientes.destroy');
 
 Route::get('/clientes/{cliente}','ClienteController@show')->name('clientes.show');
 Route::post('/clientes/{cliente}','ClienteController@update')->name('clientes.update');

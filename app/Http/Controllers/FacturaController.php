@@ -81,7 +81,7 @@ class FacturaController extends Controller
     public function show(factura $factura)
     {
 
-            
+
          return view('factura.show_factura', compact('factura'));
     }
 
@@ -108,7 +108,7 @@ class FacturaController extends Controller
         
 
             $this->validate($request,[
-            'num_factura'       => 'required',
+            'num_factura'       => 'required|unique:facturas',
             'id'    => 'required',
             'monto'       => 'required',
             'orden_compra'   => 'required',

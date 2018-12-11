@@ -22,7 +22,7 @@
 	   <a  href="" class="btn btn-warning">
 		    <span class="glyphicon glyphicon-inbox"></span> Mostrar Clientes
 	   </a>
-	   <a href="" class="btn btn-danger">
+	   <a href="/empresa/delete/{{$empresa->id}}" class="btn btn-danger">
           <span class="glyphicon glyphicon-trash" ></span> Eliminar  
         </a>
 		

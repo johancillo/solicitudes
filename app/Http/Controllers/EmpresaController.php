@@ -97,7 +97,7 @@ class EmpresaController extends Controller
     public function update(Request $request, Empresa $empresa)
     {
         $this->validate($request,[
-            'rut_empresa'       => 'required|unique:empresas',
+            'rut_empresa'       => 'required',
             'razon_social'    => 'required',
             'nombre_empresa'   => 'required',
             'telefono'       => 'required',
@@ -133,5 +133,18 @@ class EmpresaController extends Controller
     public function destroy(Empresa $empresa)
     {
         //
+    }
+
+
+    public function delete($id){
+        
+        
+        $tickets2 = empresa::find($id);
+        $tickets2->delete();
+
+        $empresas = Ticket::latest()->paginate(10);
+       //  return view('empresa.indexemp', compact('empresas'));
+        return redirect('/empresas');
+        
     }
 }

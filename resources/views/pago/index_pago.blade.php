@@ -20,6 +20,7 @@
       
                   <th>Fecha de Pago</th>
 				   <th>Forma de pago</th>
+				   	<th>Estado</th>
 					<th>Monto</th>
 					<th>Acciones</th>
 								
@@ -32,10 +33,11 @@
     
 					<td>{{  $consultas->fecha_pago }}</td>
 					<td>{{  $consultas->cod_forma_pago }}</td>
+					<td>{{  $consultas->estado }}</td>
 					<td>{{  $consultas->monto }}</td>
 			
 		<td>
-		<a href="/pago/update/{{$consultas->num_factura}}" class="btn btn-info btn-lg">
+		<a href="/pago/update/{{$consultas->id}}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-pencil"></span></a>
 		   <a href="#" class="btn btn-success btn-lg">
 		   <span class="glyphicon glyphicon-ok"></span></a>

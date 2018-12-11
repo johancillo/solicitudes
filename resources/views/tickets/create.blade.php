@@ -111,17 +111,13 @@
 
 
 
-
-		 <div class="form-group col-xs-20">
-		  <label for="tipo">Tipo</label>
-			<select class="form-control " id="tipo" name="tipo" style="height:35px; width:30%"   >
-				<option value="Normal">Normal</option>
-				<option value="Emergencia">Emergencia</option>
-				<option value="Contrato mensual">Contrato mensual</option>
-			
+<div class="form-group col-xs-20">
+		  <label for="estado">Estado</label>
+			<select class="form-control " id="estado" name="estado" style="height:35px; width:30%"   >
+				<option value="Recibida">Recibida</option>
+				<option value="En curso">En curso</option>			
 			</select>
 		</div>
-		 
 
 		   <!--
 		     	<div class="form-group">
@@ -135,15 +131,8 @@
 		</select>
 	</div>   
 		-->   
-	   <div class="form-group col-xs-20">
-		  <label for="estado">Estado</label>
-			<select class="form-control " id="estado" name="estado" style="height:35px; width:30%"   >
-				<option value="Progreso">Progreso</option>
-				<option value="Evaluacion">Evaluación</option>
-				<option value="Terminado">Terminado</option>
-			
-			</select>
-		</div>
+	
+	
 		   <br>
 		  
 		   <a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>
