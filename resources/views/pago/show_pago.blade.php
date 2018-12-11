@@ -20,7 +20,7 @@
 	
 			    <div class="form-group">
 			   		<label for="fecha_pago">Fecha Pago</label>
-			   		<input type="text" id="fecha_pago" name="fecha_pago" value = "{{$pago->fecha_pago}}" class="form-control" style="height:35px; width:240px" maxlength="0" />
+			   		<input type="text" id="fecha_pago" name="fecha_pago" value = "{{$pago->fecha_pago}}" class="form-control" style="height:35px; width:240px" maxlength="0"  readonly="true" />
 			   </div>	
 
 	

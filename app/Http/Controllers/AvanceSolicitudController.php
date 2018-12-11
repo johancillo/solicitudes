@@ -20,9 +20,12 @@ class AvanceSolicitudController extends Controller
     {
 
 
+
         $consulta = avanceSolicitud::where('id_solicitud', $id)->orderBy('id', 'desc')->get();
+        $consulta2 = ticket::where('id', $id)->orderBy('id', 'desc')->get();
+
             //dd($tickets);
-            return view('avance_solicitud.indexavance', compact('consulta'));
+            return view('avance_solicitud.indexavance', compact('consulta'), compact('consulta2'));
     }
 
 
@@ -39,6 +42,8 @@ class AvanceSolicitudController extends Controller
         
          return view('ticket.index',compact('users'));
     }
+
+ 
 
     /**
      * Store a newly created resource in storage.

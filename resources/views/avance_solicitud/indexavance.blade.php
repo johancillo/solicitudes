@@ -10,8 +10,8 @@
           </div>
         
           <div class="table-responsive" style="width: 120%;" >
-			  
-			  <a  href="#" class="btn btn-success">
+			  <h1 class="h2">Solicitud: {{$consulta2[0]->id}}</h1>   
+			  <a  href="/avance/{{$consulta2[0]->id}}" class="btn btn-success">
 		    <span class="glyphicon glyphicon-plus"></span> Agregar Avance
 	   </a>	
 			  <a class="btn btn-info" href="javascript:history.back()" >Volver</a>

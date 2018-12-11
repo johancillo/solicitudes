@@ -109,7 +109,15 @@
 		   </div>
 
 
-
+	 <div class="form-group col-xs-20">
+		  <label for="tipo">Tipo</label>
+			<select class="form-control " id="tipo" name="tipo" style="height:35px; width:30%"   >
+				<option value="Normal">Normal</option>
+				<option value="Emergencia">Emergencia</option>
+				<option value="Contrato mensual">Contrato mensual</option>
+			
+			</select>
+		</div>
 
 <div class="form-group col-xs-20">
 		  <label for="estado">Estado</label>
