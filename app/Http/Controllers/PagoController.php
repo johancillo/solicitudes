@@ -10,6 +10,7 @@ use App\Empresa;
 use App\Ticket;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagoController extends Controller
 {
@@ -36,7 +37,11 @@ class PagoController extends Controller
     {
          $consulta = factura::where('num_factura', $num_factura)->first();
          $formapago = formaPago::all();
-          return view('pago.create_pago', compact('consulta'),compact('formapago'));
+         $query = DB::select('select monto -(select SUM(monto) as prod from pagos where pagos.num_factura ='.$num_factura.') from facturas WHERE facturas.num_factura = '.$num_factura);
+
+           //   dd($query);
+                //var_dump($query);
+          return view('pago.create_pago', compact('consulta'),compact('formapago'), compact('query'));
     }
 
 

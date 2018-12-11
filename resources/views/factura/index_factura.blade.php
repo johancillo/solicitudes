@@ -8,8 +8,8 @@
           <div class="table-responsive" style="width: 120%;" >
 			  
 			  <a class="btn btn-primary" href="/factura/create" >Agregar Factura</a>
-			   <a class="btn btn-primary" href="/formapago">Formas de Pago</a>
-                   
+			  <a class="btn btn-primary" href="/formapago">Formas de Pago</a>
+			  <br><br>
 			  
             <table class="table table-striped table-sm" >
               <thead>
@@ -40,17 +40,17 @@
 					<td>{{  $factura->cantidad_cuotas }}</td> 
 					<td>
 		
-		<a href="/factura/{{$factura->id}}" class="btn btn-success btn-lg">
-		   <span class="glyphicon glyphicon-refresh"></span></a>
+		<a href="/factura/{{$factura->num_factura}}" class="btn btn-info btn-lg">
+		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		</td>
 		<td>
 	
-	<a href="/pago/{{$factura->num_factura}}" class="btn btn-info btn-lg">
-          <span class=" glyphicon glyphicon-eye-open "></span> 
+	
+		
+		<a href="/pago/{{$factura->num_factura}}" class="btn btn-warning btn-lg">
+          <span class=" glyphicon glyphicon-duplicate"></span> 
 		</a>	
-			<a href="/pago/create/{{$factura->num_factura}}" class="btn btn-info btn-lg ">
-          <span class="glyphicon glyphicon-plus-sign"></span> 
-		</a>	
+				
 				</td>
 					
                 </tr>

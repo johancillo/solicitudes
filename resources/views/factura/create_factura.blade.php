@@ -50,7 +50,7 @@
 
 		    <div class="form-group">
 		   		<label for="monto">Monto</label>
-		   		<input type="text" id="monto" name="monto" class="form-control" style="height:35px; width:30%"  maxlength="12" onkeypress="return isNumberKey(event)" />
+		   		<input type="text" id="monto" name="monto" class="form-control" style="height:35px; width:30%"  maxlength="10" onkeypress="return isNumberKey(event)" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="orden_compra">Orden de compra</label>
@@ -72,9 +72,9 @@
 		   
 		   
 		 
-		   
+		   <a href="{{route('facturas.index')}}" class="btn btn-info" style="width:100px">Volver</a>
 		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
-		   <a href="{{route('facturas.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
+		   
 		   
 	   </form>
          

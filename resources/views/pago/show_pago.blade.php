@@ -58,9 +58,9 @@
 
 		 
 		   
+		   <a href="{{route('facturas.index')}}" class="btn btn-info" style="width:100px">Volver</a>
+		   <button class="btn btn-primary" type="submit" style="width:100px">Guardar</button>
 		   
-		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
-		   <a href="#" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 		   
 	   </form>

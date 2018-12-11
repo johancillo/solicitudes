@@ -11,8 +11,7 @@
 	
           <div class="table-responsive" style="width: 140%;" >
 			  
-			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
-			  <a href="{{ route('tickets.reporte',['type'=>'xlsx'])  }}" class="btn btn-primary" >Exportar EXCEL</a>
+			  <a class="btn btn-primary" href="/solicitud/create" >Nueva Solicitud</a>
 			  
 			  <br><br>
 			  
@@ -30,7 +29,7 @@
 			<!--		<th>Fecha Estimada</th> -->
 					<th>Estado</th>
 					<th>Tipo</th>
-					<th>Ver</th>
+					<th>Acciones</th>
 					<th>Avances</th>
 					
                 </tr>
@@ -49,20 +48,22 @@
 					<td>{{  $ticket->estado }}</td>
 					<td>{{  $ticket->tipo }}</td>
 					<td>
-			
+				<!--	<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" style="width:100px">Actualizar</a> 
+		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger" style="width:100px">Eliminar</a>
+					</td>		
+				-->
 		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
-
-
-		
+		   		
     	</td>
     	<td>
-    		  <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-success btn-lg">
-		    <span class=" glyphicon glyphicon-duplicate "></span>
-	   </a>	
-		<a href="/avance/{{ $ticket->id }}" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-plus"></span> 
-		</a>	
+			<a href="/avance/{{ $ticket->id }}" class="btn btn-success btn-lg">
+			  <span class="glyphicon glyphicon-plus"></span> 
+			</a>	
+    		<a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-warning btn-lg">
+				<span class=" glyphicon glyphicon-duplicate "></span>
+			</a>	
+		
 		 		
 		</td>	
 
@@ -74,9 +75,8 @@
             {{ $tickets->links() }}
 
           </div>
-
-
-          	  <h1 class="h2">Reportes</h1>  
+		  
+		  <h1 class="h2">Reportes</h1>  
 
 
              <form action="{{ route("tickets.reportExcelSolicitudFechas") }}" method="GET">
@@ -94,7 +94,10 @@
   		</div>
   		<button type="submit"> Generar</button>
 	</form>
-
+		  
+		  
+		  
+		  
         </main>
 
 @endsection

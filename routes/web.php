@@ -20,7 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ------------------ RUTAS DE PRUEBA
 //Route::get('/x', 'TicketController@holamundo')->name('tickets.index'); // RUTA DE PRUEBAS
 
-Route::group(['Middleware' => ['auth','admin']], function(){
+Route::group(['middleware' => 'auth'], function () {
  //-------------RUTAS SOLICITUDES-------------
 
 Route::get('/solicitudes', 'TicketController@index')->name('tickets.index');
@@ -119,7 +119,7 @@ Route::get('/conexion/create','ConexionController@create')->name('conexion.creat
 
 
 Route::get('/conexion/delete/{conexion}','ConexionController@delete')->name('conexion.delete');
-Route::post('/conexion/delete/{conexion}','ConexionController@destroy')->name('conexion.destroy');
+//Route::post('/conexion/delete/{conexion}','ConexionController@destroy')->name('conexion.destroy');
 
  Route::get('/conexion/update/{conexion}','ConexionController@show')->name('conexion.show');
 Route::post('/conexion/update/{conexion}','ConexionController@update')->name('conexion.update');
@@ -184,6 +184,10 @@ Route::post('/formapago/update/{formaPago}','FormaPagoController@update')->name(
 
 //--------------------------------------------------------------------
 //USUARIOS
+Route::get('/usuarios', 'UserController@index')->name('user.index');
+//Route::get('/registro', 'UserController@registro')->name('user.registro');
+
+
 
 
 

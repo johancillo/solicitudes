@@ -50,7 +50,7 @@
 
 		   
 		   
-		   <a href="{{route('empresa.index')}}" class="btn btn-secundary" style="width:100px">Volver</a>
+		   <a href="{{route('empresa.index')}}" class="btn btn-info" style="width:100px">Volver</a>
 		    <button id="save" class="btn btn-primary" type="submit" style="width:100px" >Guardar</button>
 			
 

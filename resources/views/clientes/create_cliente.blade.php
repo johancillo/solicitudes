@@ -54,7 +54,7 @@
 		   </div>
 
 		     <div class="form-group">
-		   		<label for="cod_area">Código de Área</label>
+		   		<label for="cod_area">Área</label>
 		   		<input type="text" id="cod_area" name="cod_area" class="form-control" maxlength="20" 	style="height:35px; width:30%"/>
 		   </div>
 		
@@ -63,9 +63,9 @@
 
 
 
-		  
-		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
 		   <a href="{{route('clientes.index')}}" class="btn btn-info" style="width:100px">Volver</a>
+		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
+		   
 		   
 	   </form>
          

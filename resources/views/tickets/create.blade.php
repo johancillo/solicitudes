@@ -32,12 +32,12 @@
 		   </div>
 		   
 		    -->
-		    <a href="/empresa/create" class="btn btn-info btn-lg">
-				<span class="glyphicon glyphicon-plus"></span> Añadir Empresa
+		    <a href="/empresa/create" class="btn btn-success">
+				<span class="glyphicon glyphicon-plus"></span> Registrar Empresa
 			</a>
 
-			<a href="/clientes/create" class="btn btn-info btn-lg">
-				<span class="glyphicon glyphicon-plus"></span>  Añadir Cliente
+			<a href="/clientes/create" class="btn btn-success">
+				<span class="glyphicon glyphicon-plus"></span>  Registrar Cliente
 			</a>		
 
 		  
@@ -146,8 +146,9 @@
 		</div>
 		   <br>
 		  
-		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
 		   <a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>
+		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
+		   
 		   
 	   </form>
          

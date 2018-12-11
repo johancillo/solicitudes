@@ -43,7 +43,7 @@ class TicketController extends Controller
 
         $tickets = Ticket::latest()->paginate(10);
          return view('tickets.index', compact('tickets'));
-		//return view('tickets.delete', compact('ticket'));
+		
 	}
 
 public function reportExcelTickets($type){

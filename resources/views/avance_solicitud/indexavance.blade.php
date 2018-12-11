@@ -8,19 +8,21 @@
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
-
-         
         
           <div class="table-responsive" style="width: 120%;" >
 			  
+			  <a  href="#" class="btn btn-success">
+		    <span class="glyphicon glyphicon-plus"></span> Agregar Avance
+	   </a>	
+			  <a class="btn btn-info" href="javascript:history.back()" >Volver</a>
 			  <br><br>
 			  
             <table class="table table-striped table-sm" >
               <thead>
                 <tr>
                 
-             
-                  <th>Registro</th>  
+                  <th>Fecha Registro</th>   
+                  <th>Hora Registro</th>  
 				          <th>Descripción</th>
 					        <th>Rut Usuario</th>
 					        <th>Horas netas</th>
@@ -32,9 +34,10 @@
               <tbody>
 			  @foreach($consulta as $consultas) 
                 <tr>
-        <!--  <td>{{  $consultas->id }}</td>
-					 <td>{{  $consultas->id_solicitud }}</td>  -->
-              <td>{{  date('d-m-Y H:i', strtotime( $consultas->fecha_reg_avance)) }}</td>  
+   
+					 <!--  <td>{{  $consultas->id_solicitud }}</td>-->
+              <td>{{  date('d-m-Y', strtotime( $consultas->fecha_reg_avance)) }}</td>  
+              <td>{{  date('H:i', strtotime( $consultas->fecha_reg_avance)) }}</td>  
               <td>{{  $consultas->detalle_avance }}</td>  
               <td>{{  $consultas->rut_usuario }}</td>  
               <td>{{  $consultas->horas_netas }}</td>
@@ -47,10 +50,12 @@
 		
 				
 		<a href="/avances/solicitud/modificar/{{$consultas->id}}" class="btn btn-info btn-lg" >
-		   <span class="glyphicon glyphicon-eye-open" ></span></a>
+		   <span class="glyphicon glyphicon-pencil" ></span></a>
 		   
 		   
-	
+		<a href="#" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-trash" ></span>  
+        </a>				
 				
                 </tr>
                @endforeach

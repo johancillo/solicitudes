@@ -142,5 +142,18 @@ class ConexionController extends Controller
         //
     }
 
+
+    public function delete($id){    
+        
+        
+        $consulta2 = conexion::find($id);
+        $consulta2->delete();
+
+            $empresas = Empresa::latest()->paginate(10);
+             return view('empresa.indexemp', compact('empresas'));
+            //dd($tickets);
+        
+    }
+
   
 }

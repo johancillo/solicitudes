@@ -446,7 +446,7 @@ function validateIp(idForm)
 
 <script type="text/javascript">
 // PARA FORMATEAR CAMPOS CON DINERO  
-  $("#monto").on({
+  $("#monto2").on({
   "focus": function(event) {
     $(event.target).select();
   },

@@ -12,9 +12,7 @@
           <div class="table-responsive" style="width: 120%;" >
 			  
 			  <a class="btn btn-primary" href="/clientes/create" >Agregar Cliente</a>
-
-			          <a class="btn btn-primary"  href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}"> Reporte </a>
-
+			  <a class="btn btn-primary"  href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}"> Reporte </a>
 			  
 			  <br><br>
 			  
@@ -22,12 +20,13 @@
               <thead>
                 <tr>
                 
-                  <th style="width: 10%" >N°</th>
+                  <th  >N°</th>
                   <th style="width: 30%;">Correo Cliente</th>
-				   <th style="width: 20%;">Nombre</th>
-					<th style="width: 10%">Teléfono</th>
-					<th >Ver</th>
-					<th >Solicitudes</th>
+				   <th style="width: 40%;">Nombre</th>
+					<th>Teléfono</th>
+					<th>Acciones</th>
+					
+					<th style="width: 20%">Solicitudes</th>
 					
                 </tr>
               </thead>
@@ -40,21 +39,21 @@
 					<td>{{  $cliente->telefono }}</td>
 					<td>
 		
-		<a href="/clientes/{{$cliente->id}}" class="btn btn-info btn-lg" >
-		   <span class="glyphicon glyphicon-eye-open" ></span></a>
-		   				<a href="/clientes/delete/{{$cliente->id}}" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
-        </a>
-    </td>
-    <td>
+						<a href="/clientes/{{$cliente->id}}" class="btn btn-info btn-lg" >
+						   <span class="glyphicon glyphicon-pencil" ></span>
+						</a>			
+							
+					</td>
+					
+					<td> 	
 		   	
-		<a href="/clientes/solicitudes/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-duplicate"></span> 
-		</a>	
-		   <a  href="/clientes/reporte/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
-		    <span class="glyphicon glyphicon-save"></span>
-	   </a>			
-		</td>	
+						<a href="/clientes/solicitudes/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
+						  <span class="glyphicon glyphicon-duplicate"></span> 
+						</a>	
+					   <a  href="/clientes/reporte/{{$cliente->correo_cliente}}" class="btn btn-success btn-lg">
+							<span class="glyphicon glyphicon-save"></span>
+					   </a>			
+					</td>	
 
                 </tr>
                @endforeach

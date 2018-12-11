@@ -3,8 +3,32 @@
 
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+   
+   
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Actualización de Empresa Rut: {{$empresa->rut_empresa}}</h1>  
+		  
+		  
+		  
+		  
+		  
+            <h1 class="h2">Empresa Rut: {{$empresa->rut_empresa}}</h1>  
+			
+			<a id="boton" class="btn btn-info" >
+          <span class="glyphicon glyphicon-pencil" ></span> Modificar  
+        </a>
+	   <a  href="" class="btn btn-success">
+		    <span class="glyphicon glyphicon-plus"></span> Agregar Clientes
+	   </a>	
+	   <a  href="" class="btn btn-warning">
+		    <span class="glyphicon glyphicon-inbox"></span> Mostrar Clientes
+	   </a>
+	   <a href="" class="btn btn-danger">
+          <span class="glyphicon glyphicon-trash" ></span> Eliminar  
+        </a>
+		
+          </br></br>
+			
+			
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -51,9 +75,9 @@
 
 		   
 		   
+		   <a href="{{route('empresa.index')}}" class="btn btn-info" style="width:100px">Volver</a>
+		   <button class="btn btn-primary" type="submit" style="width:100px">Guardar</button>
 		   
-		   <button class="btn btn-primary" type="submit" style="width:100px">Actualizar</button>
-		   <a href="{{route('empresa.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 	   </form>
          

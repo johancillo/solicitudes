@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@extends('layouts.partials._scripts')
 @section('content')
 <div class="container">
     <div class="row">
@@ -60,6 +60,14 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+
+           <div class="form-group{{ $errors->has('rut_usuario') ? ' has-error' : '' }}">
+                <label for="rut_usuario" class="col-md-4 control-label">Rut </label>
+                 <div class="col-md-6">
+                <input type="text" id="rut_usuario" name="rut_usuario" class="form-control" required oninput="checkRut(this)"  onkeypress="return isNumberKey(event)"  placeholder="Ingrese RUT" maxlength="11" style="height:35px; width:240px"/>
+           </div>
+             </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

@@ -12,8 +12,9 @@
           <div class="table-responsive" style="width: 100%;" >
 			  
 			  <a class="btn btn-primary" href="/formapago/create/" >Agregar</a>
+			  <a href="javascript:history.back()" class="btn btn-info" style="width:100px">Volver</a>
 
-          
+
 			  
 			  <br><br>
 			  
@@ -30,13 +31,13 @@
 			  @foreach($formapagos as $formapago) 
                 <tr>
                   <td>{{  $formapago->cod_forma_pago }}</td>
-			         		<td>{{  $formapago->descripcion }}</td>
+					<td>{{  $formapago->descripcion }}</td>
 
 			
 					<td>
 		
 		<a href="/formapago/update/{{$formapago->cod_forma_pago}}" class="btn btn-info btn-lg" >
-		   <span class="glyphicon glyphicon-eye-open" ></span></a>
+		   <span class="glyphicon glyphicon-pencil" ></span></a>
             <a href="/formapago/delete/{{$formapago->cod_forma_pago}}" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-trash" ></span>  
         </a>

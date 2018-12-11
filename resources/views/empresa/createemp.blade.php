@@ -45,9 +45,9 @@
 		   
 		   
 		 
-		   
+		   <a href="{{route('empresa.index')}}" class="btn btn-info" style="width:100px">Volver</a>
 		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
-		   <a href="{{route('empresa.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
+		   
 		   
 	   </form>
          

@@ -6,6 +6,12 @@
    
 	
           <div class="table-responsive" style="width: 120%;" >
+		  
+		  <a  href="#" class="btn btn-success">
+		    <span class="glyphicon glyphicon-plus"></span> Agregar Conexion
+	   </a>	
+			  <a class="btn btn-info" href="javascript:history.back()" >Volver</a>
+			  </br></br>
 			  
 			
 			  
@@ -35,7 +41,11 @@
 					<td>
 		
 		<a href="/conexion/update/{{$consultas->id}}" class="btn btn-info btn-lg">
-		   <span class="glyphicon glyphicon-eye-open"></span></a>
+		   <span class="glyphicon glyphicon-pencil"></span></a>
+		   <a href="/conexion/delete/{{ $consultas->id }}" class="btn btn-danger btn-lg">
+		   <span class="glyphicon glyphicon-trash"></span></a>
+		   
+		   
 		
 			
 					

@@ -5,6 +5,19 @@
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Factura de Solicitud: {{$factura->id}}</h1>  
+			
+			
+			<a id="boton" class="btn btn-info" >
+          <span class="glyphicon glyphicon-pencil" ></span> Modificar  
+        </a>
+
+		<a  href="/pago/{{$factura->num_factura}}" class="btn btn-warning">
+		    <span class="glyphicon glyphicon-duplicate"></span> Mostrar Pagos
+	   </a>	   
+	   <a href="" class="btn btn-danger">
+          <span class="glyphicon glyphicon-trash" ></span> Eliminar  
+        </a>
+			</br></br>
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -56,8 +69,9 @@
 		   		<input type="text" id="cantidad_cuotas" name="cantidad_cuotas" value ="{{$factura->cantidad_cuotas}}"  class="form-control" style="height:35px; width:50%" maxlength="2"  onkeypress="return isNumberKey(event)" />
 		   </div>   
 		   
+		   <a href="{{route('facturas.index')}}" class="btn btn-info" style="width:100px">Volver</a>
 		   <button class="btn btn-primary" type="submit" style="width:100px">Actualizar</button>
-		   <a href="{{route('facturas.index')}}" class="btn btn-secondary" style="width:100px">Volver</a>
+		   
 		   
 	   </form>
          

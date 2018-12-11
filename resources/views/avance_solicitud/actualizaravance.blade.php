@@ -4,20 +4,38 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Actualización de Avance Rut: {{$avanceSolicitud->id_solicitud}}</h1>  	
+		  
+		  
+			
+			
+			
+            <h1 class="h2">Actualización de Avance: {{$avanceSolicitud->id_solicitud}}</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
+		  
+		  
+		  
+		  
           
 	   <form action="" method="post">
 		   {{csrf_field() }}
-
-				   		
-		   	    <div class="form-group">
-			   		<label for="id_solicitud">ID Solicitud</label>
-			   		<input type="text" id="id_solicitud" name="id_solicitud" value = "{{$avanceSolicitud->id_solicitud}}" class="form-control" style="height:35px; width:240px"  readonly="true" />
-			   </div>	
-
+	   		
+			   <!-- Agregue esto -->
+			   
+			   
+			   <div class="form-group">
+		   		<label for="empresa">Empresa</label>
+		   		<input type="text" id="empresa" name="empresa" class="form-control" style="height:35px; width:240px" readonly="true" value="Stracke PLC"/>
+		   </div>
+		    <div class="form-group">
+		   		<label for="descripcion">Descripción de Solicitud</label>
+		   		<input type="text" id="descripcion" name="descripcion" class="date form-control" readonly="true" value="Solicitud de prueba d parte de la empresa Stracke PLC"/>
+		   </div>
+		   
+		   
+			<!-- Hasta aqui -->
+		   
 			 <div class="form-group">
       			<label for="detalle_avance">Descripción del avance</label>
       		<textarea class="form-control" rows="5" id="detalle_avance" name="detalle_avance"  value="{{$avanceSolicitud->detalle_avance}}" maxlength="750">  {{$avanceSolicitud->detalle_avance}}</textarea>
@@ -70,9 +88,9 @@
 		   </div>
 		   -->
 		   
+		   <a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>
+		   <button class="btn btn-primary" type="submit" style="width:100px">Guardar</button>
 		   
-		   <button class="btn btn-primary" type="submit" style="width:100px">Actualizar</button>
-		   <a href="javascript:history.back()" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 	   </form>
          
@@ -88,9 +106,7 @@
      });  
 
 </script>  
-		<a href="/avances/delete/{{$avanceSolicitud->id}}" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
-        </a>	
+
 
 
 

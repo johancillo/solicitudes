@@ -5,6 +5,19 @@
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Actualización de Cliente: {{$cliente->id}}</h1>  
+			
+			
+			
+			<a id="boton" class="btn btn-info" >
+          <span class="glyphicon glyphicon-pencil" ></span> Modificar  
+        </a>
+	   <a href="" class="btn btn-danger">
+          <span class="glyphicon glyphicon-trash" ></span> Eliminar  
+        </a>
+			
+			
+			<br><br>
+			
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -41,14 +54,14 @@
 		   		<input type="text" id="correo_alt" name="correo_alt" class="form-control" value="{{$cliente->correo_alt}}" style="height:35px; width:30%"  />
 		   </div>
 		    <div class="form-group">
-		   		<label for="cod_area">Código de Área</label>
+		   		<label for="cod_area">Área</label>
 		   		<input type="text" id="cod_area" name="cod_area" class="form-control" value="{{$cliente->cod_area}}" style="height:35px; width:30%"  maxlength="20"/>
 		   </div>
 				      
 
 		   
 		   
-		   <a href="{{route('clientes.index')}}" class="btn btn-secundary" style="width:100px">Volver</a>
+		   <a href="javascript:history.back()" class="btn btn-info" style="width:100px">Volver</a>
 		    <button id="save" class="btn btn-primary" type="submit" style="width:100px" >Guardar</button>
 		   
 	   </form>

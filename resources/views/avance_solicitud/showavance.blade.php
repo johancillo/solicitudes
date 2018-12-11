@@ -24,7 +24,7 @@
 					<select class="form-control {{$errors->has('rut_usuario') ? 'is-invalid':''}}" id="rut_usuario" name="rut_usuario" style="height:35px; width:240px">
 					<option value="">-- Elegir un RUT --</option>
 					@foreach($users as $user)
-					<option value=" {{$user['rut_usuario']}}"> {{ $user['rut_usuario']}} {{$user['name']}}</option>
+					<option value=" {{$user['rut_usuario']}}"> {{ $user['rut_usuario']}} </option>
 					@endforeach
 					</select>
 				@if($errors->has('rut_usuario'))
@@ -63,8 +63,9 @@
 		   		<input type="text" id="fecha_avance" name="fecha_avance" class="date form-control" style="height:35px; width:240px" autocomplete="off" />
 		   </div>
 	   
-		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
-		   <a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>	
+		<a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>	
+		<button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
+		   
 		   
 	   </form>
          

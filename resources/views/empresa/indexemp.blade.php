@@ -7,7 +7,8 @@
 	
           <div class="table-responsive" style="width: 120%;" >
 			  
-			  <a class="btn btn-primary" href="/empresa/create" >Agregar</a>
+			  <a class="btn btn-primary" href="/empresa/create" >Agregar Empresa</a>
+			  <br><br>
 			  
             <table class="table table-striped table-sm" >
               <thead>
@@ -18,7 +19,7 @@
 				   <th>Telefono</th>
 					<th>Direccion</th>
 					<th>Giro</th>
-					<th>Ver</th>
+					<th>Acciones</th>
 					<th>Conexiones</th>
 					
                 </tr>
@@ -38,12 +39,13 @@
 		   <span class="glyphicon glyphicon-eye-open"></span></a>
 		</td>
 		<td>
-		<a href="/conexion/{{ $empresa->rut_empresa }}" class="btn btn-success btn-lg">
-          <span class="glyphicon glyphicon-globe"></span> 
-		</a>	
 		<a href="/conexion/mostrar/{{$empresa->id}}" class="btn btn-success btn-lg">
         	  <span class="glyphicon glyphicon-plus"></span> 
 		</a>	
+		<a href="/conexion/{{ $empresa->rut_empresa }}" class="btn btn-warning btn-lg">
+          <span class="glyphicon glyphicon-globe"></span> 
+		</a>	
+		
 		</td>	
                 </tr>
                @endforeach

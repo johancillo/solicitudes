@@ -4,10 +4,16 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" >
    
-	  <h1 class="h2">Crear de pago para Factura: {{$consulta2[0]->num_factura}}</h1>  
+	  <h1 class="h2">Pagos para Factura: {{$consulta2[0]->num_factura}}</h1>  
           <div class="table-responsive" style="width: 120%;" >
-  <a class="btn btn-primary" href="/pago/create/{{ $consulta2[0]->num_factura  }}" >Agregar Pago</a>
-			  	
+		  
+
+  
+  
+  
+  <a href="{{route('facturas.index')}}" class="btn btn-info" style="width:100px">Volver</a>
+  </br></br>
+			 
        <table class="table table-striped table-sm" >
               <thead>
                 <tr>
@@ -15,7 +21,7 @@
                   <th>Fecha de Pago</th>
 				   <th>Forma de pago</th>
 					<th>Monto</th>
-					<th>Actualizar</th>
+					<th>Acciones</th>
 								
                 </tr>
               </thead>
@@ -29,8 +35,12 @@
 					<td>{{  $consultas->monto }}</td>
 			
 		<td>
-		<a href="/pago/update/{{$consultas->num_factura}}" class="btn btn-success btn-lg">
-		   <span class="glyphicon glyphicon-refresh"></span></a>
+		<a href="/pago/update/{{$consultas->num_factura}}" class="btn btn-info btn-lg">
+		   <span class="glyphicon glyphicon-pencil"></span></a>
+		   <a href="#" class="btn btn-success btn-lg">
+		   <span class="glyphicon glyphicon-ok"></span></a>
+		</td>
+		
 		</td>
 		
 

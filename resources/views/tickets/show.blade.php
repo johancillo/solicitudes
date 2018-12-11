@@ -4,7 +4,7 @@
 @section('content')
    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Actualización de Solicitud: {{$ticket->id}}</h1>  
+            <h1 class="h2">Solicitud: {{$ticket->id}}</h1>  
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -17,11 +17,12 @@
 		    <span class="glyphicon glyphicon-plus"></span> Agregar Avance
 	   </a>	
 	   <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-warning">
-		    <span class="glyphicon glyphicon-inbox"></span> Mostrar Avances
+		    <span class="glyphicon glyphicon-duplicate"></span> Mostrar Avances
 	   </a>
 	   <a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger">
           <span class="glyphicon glyphicon-trash" ></span> Eliminar  
         </a>
+		
           <br>
 	   <form action="" method="post" class="fluid">
 		   {{csrf_field() }}
@@ -98,7 +99,7 @@
 		   
 		   
 		   
-		   <a href="{{route('tickets.index')}}" class="btn btn-secundary" style="width:100px">Volver</a>
+		   <a href="{{route('tickets.index')}}" class="btn btn-info" style="width:100px">Volver</a>
 		    <button id="save" class="btn btn-primary" type="submit" style="width:100px" disabled="true">Guardar</button>
 		   
 	   </form>

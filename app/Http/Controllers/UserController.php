@@ -10,7 +10,7 @@ use App\User;
 
 use Illuminate\Http\Request;
 
-class FacturaController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +19,10 @@ class FacturaController extends Controller
      */
     public function index()
     {
-       $facturas = factura::latest()->paginate(10);
+       $users = User::latest()->where('is_admin','<>','1')->paginate(10);
             //dd($tickets);
-            return view('factura.index_factura', compact('facturas'));
+            return view('usuarios.index', compact('users'));
+
     }
 
     /**
@@ -29,6 +30,13 @@ class FacturaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function registro(){
+
+        return view('auth.register');
+
+    }
+
+
     public function create()
     {
           $tickets = Ticket::all();
@@ -80,8 +88,6 @@ class FacturaController extends Controller
      */
     public function show(factura $factura)
     {
-
-            
          return view('factura.show_factura', compact('factura'));
     }
 
