@@ -35,11 +35,15 @@ class TicketController extends Controller
         return view('tickets.create', compact('empresas'), compact('clientes'));
     }
 	
-	public function delete(Ticket $ticket){
+	public function delete($id){
 		
 		
-		
-		return view('tickets.delete', compact('ticket'));
+		$tickets2 = Ticket::find($id);
+        $tickets2->delete();
+
+        $tickets = Ticket::latest()->paginate(10);
+         return view('tickets.index', compact('tickets'));
+		//return view('tickets.delete', compact('ticket'));
 	}
 
 public function reportExcelTickets($type){
@@ -181,5 +185,39 @@ public function reportExcelTickets($type){
 			//dd($tickets);
 	        return view('tickets.index', compact('tickets'));
 	    }
+
+
+	public function reportExcelSolicitudFechas(Request $request){
+
+        $fi = $request->input('fecha_ini');
+        $fe = $request->input('fecha_fin');
+        
+    //$consulta  = avanceSolicitud::whereBetween('array($fi, $fe)')->get()->toArray();
+    $query = Ticket::whereBetween('fecha_solicitud',[$fi,$fe])->get()->toArray();
+
+    return EXCEL::create('Reporte Solicitudes'.$fi.$fe, function($excel) use ($query) {
+        $excel->sheet('Solicitudes', function($sheet) use ($query)
+        {
+            $sheet->fromArray($query);
+        });
+
+    })->download('xlsx');
+
+
+    }
+
+        public function reportExcelGeneral(){
+    $consulta  = Ticket::select('*')->orderBY('correo_cliente')->get()->toArray();
+
+    return EXCEL::create('avanceSolicitud', function($excel) use ($consulta) {
+        $excel->sheet('Avances solicitud', function($sheet) use ($consulta)
+        {
+            $sheet->fromArray($consulta);
+        });
+
+    })->download('xlsx');
+
+
+    }
 
 }

@@ -26,8 +26,8 @@
                   <th style="width: 30%;">Correo Cliente</th>
 				   <th style="width: 20%;">Nombre</th>
 					<th style="width: 10%">Teléfono</th>
-					<th style="width: 20%">Acciones</th>
-					<th style="width: 20%">Solicitudes</th>
+					<th >Ver</th>
+					<th >Solicitudes</th>
 					
                 </tr>
               </thead>

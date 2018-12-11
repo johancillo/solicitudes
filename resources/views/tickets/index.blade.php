@@ -12,7 +12,7 @@
           <div class="table-responsive" style="width: 140%;" >
 			  
 			  <a class="btn btn-primary" href="/solicitud/create" >Agregar Solicitud</a>
-			    <a class="btn btn-primary"  href="{{ route('tickets.reporte',['type'=>'xlsx'])  }}"> Exportar </a>
+			  <a href="{{ route('tickets.reporte',['type'=>'xlsx'])  }}" class="btn btn-primary" >Exportar EXCEL</a>
 			  
 			  <br><br>
 			  
@@ -30,7 +30,7 @@
 			<!--		<th>Fecha Estimada</th> -->
 					<th>Estado</th>
 					<th>Tipo</th>
-					<th>Acciones</th>
+					<th>Ver</th>
 					<th>Avances</th>
 					
                 </tr>
@@ -49,15 +49,12 @@
 					<td>{{  $ticket->estado }}</td>
 					<td>{{  $ticket->tipo }}</td>
 					<td>
-				<!--	<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" style="width:100px">Actualizar</a> 
-		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger" style="width:100px">Eliminar</a>
-					</td>		
-				-->
+			
 		<a href="/solicitud/{{ $ticket->id }}" class="btn btn-info btn-lg" >
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
-		   		<a href="/solicitud/delete/{{ $ticket->id }}" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
-        </a>	
+
+
+		
     	</td>
     	<td>
     		  <a  href="/avances/solicitud/{{$ticket->id}}" class="btn btn-success btn-lg">
@@ -77,6 +74,27 @@
             {{ $tickets->links() }}
 
           </div>
+
+
+          	  <h1 class="h2">Reportes</h1>  
+
+
+             <form action="{{ route("tickets.reportExcelSolicitudFechas") }}" method="GET">
+  			    <div class="form-group">
+		   		<label for="fecha_ini">Fecha Inicio</label>
+		   		<input type="text" id="fecha_ini" name="fecha_ini" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0" >
+		  		 </div>
+
+		  		   <div class="form-group">
+		   		<label for="fecha_fin">Fecha Fin</label>
+		   		<input type="text" id="fecha_fin" name="fecha_fin" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0" >
+		  		 </div>
+
+
+  		</div>
+  		<button type="submit"> Generar</button>
+	</form>
+
         </main>
 
 @endsection

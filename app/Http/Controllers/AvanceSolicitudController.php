@@ -155,4 +155,22 @@ class AvanceSolicitudController extends Controller
     {
         //
     }
+
+
+    public function delete($id){
+        
+        
+        $avance = avanceSolicitud::find($id);
+        $avance->delete();
+
+     //   $consulta = avanceSolicitud::latest()->paginate(10)->where('id_solicitud',$id);
+        //  return back()->with('notification', 'Se ha borrado ');
+             return   redirect()->route('tickets.index');
+
+
+
+         //return view('avance_solicitud.indexavance', compact('consulta'));
+        //return view('tickets.delete', compact('ticket'));
+    }
+
 }

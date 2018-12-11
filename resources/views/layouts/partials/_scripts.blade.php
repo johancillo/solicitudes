@@ -297,7 +297,7 @@ $(document).ready(function() {
   //para validar fechas
   $("#fecha_facturacion").datepicker({
     dateFormat: "yy-mm-dd",
-    minDate: 'dateToday',
+   
     onSelect: function(date) {
       populateEndDate();
     }
@@ -442,3 +442,20 @@ function validateIp(idForm)
 }
 </script>
 
+
+
+<script type="text/javascript">
+// PARA FORMATEAR CAMPOS CON DINERO  
+  $("#monto").on({
+  "focus": function(event) {
+    $(event.target).select();
+  },
+  "keyup": function(event) {
+    $(event.target).val(function(index, value) {
+      return value.replace(/\D/g, "")
+        .replace(/([0-9])([0-9]{2})$/, '$1.$2')
+        .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+    });
+  }
+});
+</script>

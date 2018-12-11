@@ -99,17 +99,11 @@
                      <li>
                         <a href="/facturas">Facturas</a>
                     </li>
-                     
-                    <li>
-                        <a href="#">Reportes</a>
-                    </li>
-                    
+            
                     <li>
                         <a href="#">Usuarios</a>
                     </li>
-                  <li>
-                        <a href="/formapago">Formas de Pago</a>
-                    </li>
+              
                     <br>
                     <br>  
                      <li>

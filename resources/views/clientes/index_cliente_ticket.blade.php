@@ -21,6 +21,11 @@
 		   		<input type="text" id="fecha_fin" name="fecha_fin" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0" >
 		  		 </div>
 
+
+		  		   <div class="form-group">
+		   		<label for="correo">Correo</label>
+		   		<input type="text" id="correo" name="correo" class="form-control" style="height:35px; width:30%" autocomplete="off" maxlength="0" readonly="true"  value="{{$tickets[0]->correo_cliente}}">
+		  		 </div>
   		</div>
   		<button type="submit"> Generar</button>
 	</form>

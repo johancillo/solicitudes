@@ -19,8 +19,8 @@
               <thead>
                 <tr>
                 
-                  <th>Fecha Registro</th>   
-                  <th>Hora Registro</th>  
+             
+                  <th>Registro</th>  
 				          <th>Descripción</th>
 					        <th>Rut Usuario</th>
 					        <th>Horas netas</th>
@@ -32,10 +32,9 @@
               <tbody>
 			  @foreach($consulta as $consultas) 
                 <tr>
-   
-					 <!--  <td>{{  $consultas->id_solicitud }}</td>-->
-              <td>{{  date('d-m-Y', strtotime( $consultas->fecha_reg_avance)) }}</td>  
-              <td>{{  date('H:i', strtotime( $consultas->fecha_reg_avance)) }}</td>  
+        <!--  <td>{{  $consultas->id }}</td>
+					 <td>{{  $consultas->id_solicitud }}</td>  -->
+              <td>{{  date('d-m-Y H:i', strtotime( $consultas->fecha_reg_avance)) }}</td>  
               <td>{{  $consultas->detalle_avance }}</td>  
               <td>{{  $consultas->rut_usuario }}</td>  
               <td>{{  $consultas->horas_netas }}</td>
@@ -51,9 +50,7 @@
 		   <span class="glyphicon glyphicon-eye-open" ></span></a>
 		   
 		   
-		<a href="#" class="btn btn-danger btn-lg">
-          <span class="glyphicon glyphicon-trash" ></span>  
-        </a>				
+	
 				
                 </tr>
                @endforeach

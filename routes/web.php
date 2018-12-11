@@ -29,13 +29,21 @@ Route::get('/solicitud/create','TicketController@create')->name('tickets.create'
 Route::post('/solicitud/create','TicketController@store')->name('tickets.store');
 
 Route::get('/solicitud/delete/{ticket}','TicketController@delete')->name('tickets.delete');
-Route::post('/solicitud/delete/{ticket}','TicketController@destroy')->name('tickets.destroy');
+//Route::post('/solicitud/delete/{ticket}','TicketController@destroy')->name('tickets.destroy');
+
+
+
 
 Route::get('/solicitud/{ticket}','TicketController@show')->name('tickets.show');
 Route::post('/solicitud/{ticket}','TicketController@update')->name('tickets.update');
 //Route::post('/tickets/{ticket}', 'TicketController@update')->name('tickets.update');
 
-Route::get('/solicitud/reporte/{fi}', 'TicketController@reportExcelTickets')->name('tickets.reporte');
+
+Route::get('/solicitudes/reportExcelSolicitudFechas/', 'TicketController@reportExcelSolicitudFechas')->name('tickets.reportExcelSolicitudFechas');
+
+Route::get('/solicitudes/reportegeneral/', 'TicketController@reportExcelGeneral')->name('tickets.reporte');
+
+
 
 
 //--------------------------------------------------------
@@ -72,6 +80,9 @@ Route::get('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudCont
 //ACTUALIZA UNA SOLICITUD
 Route::post('/avances/solicitud/modificar/{avanceSolicitud}','AvanceSolicitudController@update')->name('avanceSolicitud.update');
 
+
+//ELIMINACIÓN FÍSICA
+Route::get('/avances/delete/{avanceSolicitud}','AvanceSolicitudController@delete')->name('avanceSolicitud.delete');
 
 
 
@@ -152,7 +163,10 @@ Route::get('/formapago/reporte/{type}', 'FormaPagoController@reportExcel')->name
 
 
 
-Route::get('/formapago/reportExcelSolicitud/', 'FormaPagoController@reportExcelSolicitud')->name('formapago.reportExcelSolicitud');
+Route::get('/formapago/reportExcelSolicitud/', 'FormaPagoController@reportExcelSolicitudFechasCorreo')->name('formapago.reportExcelSolicitud');
+
+Route::get('/formapago/reportExcelSolicitudFechas/', 'FormaPagoController@reportExcelSolicitudFechas')->name('formapago.reportExcelSolicitudFechas');
+
 
 
 

@@ -11,9 +11,9 @@
 	
           <div class="table-responsive" style="width: 100%;" >
 			  
-			  <a class="btn btn-primary" href="/formapago/create/" >Agregar forma de pago</a>
+			  <a class="btn btn-primary" href="/formapago/create/" >Agregar</a>
 
-          <a href="{{ route('formapago.reporte',['type'=>'xlsx'])  }}" class="btn btn-primary" >Reporte</a>
+          
 			  
 			  <br><br>
 			  

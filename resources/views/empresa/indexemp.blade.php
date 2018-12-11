@@ -7,7 +7,7 @@
 	
           <div class="table-responsive" style="width: 120%;" >
 			  
-			  <a class="btn btn-primary" href="/empresa/create" >Agregar Empresa</a>
+			  <a class="btn btn-primary" href="/empresa/create" >Agregar</a>
 			  
             <table class="table table-striped table-sm" >
               <thead>
@@ -18,7 +18,7 @@
 				   <th>Telefono</th>
 					<th>Direccion</th>
 					<th>Giro</th>
-					<th>Acciones</th>
+					<th>Ver</th>
 					<th>Conexiones</th>
 					
                 </tr>

@@ -180,17 +180,36 @@ class FormaPagoController extends Controller
     }
 
 
-       public function reportExcelSolicitud(Request $request){
+       public function reportExcelSolicitudFechasCorreo(Request $request){
 
         $fi = $request->input('fecha_ini');
         $fe = $request->input('fecha_fin');
+        $correo = $request->input('correo');
 
 
     //$consulta  = avanceSolicitud::whereBetween('array($fi, $fe)')->get()->toArray();
+    $query = Ticket::whereBetween('fecha_solicitud',[$fi,$fe])->Where('correo_cliente',$correo)->get()->toArray();
+
+    return EXCEL::create('Reporte Solicitudes'.$fi.$fe, function($excel) use ($query) {
+        $excel->sheet('Solicitudes', function($sheet) use ($query)
+        {
+            $sheet->fromArray($query);
+        });
+
+    })->download('xlsx');
+
+
+    }
+        public function reportExcelSolicitudFechas(Request $request){
+
+        $fi = $request->input('fecha_ini');
+        $fe = $request->input('fecha_fin');
+        
+    //$consulta  = avanceSolicitud::whereBetween('array($fi, $fe)')->get()->toArray();
     $query = Ticket::whereBetween('fecha_solicitud',[$fi,$fe])->get()->toArray();
 
-    return EXCEL::create('Ticket', function($excel) use ($query) {
-        $excel->sheet('tickets', function($sheet) use ($query)
+    return EXCEL::create('Reporte Solicitudes'.$fi.$fe, function($excel) use ($query) {
+        $excel->sheet('Solicitudes', function($sheet) use ($query)
         {
             $sheet->fromArray($query);
         });

@@ -61,7 +61,7 @@
 		   
 		   
 		   <button class="btn btn-primary" type="submit" style="width:100px">Agregar</button>
-		   <a href="#" class="btn btn-secondary" style="width:100px">Volver</a>
+		   <a href="javascript:history.back()" class="btn btn-secondary" style="width:100px">Volver</a>
 		   
 		   
 	   </form>

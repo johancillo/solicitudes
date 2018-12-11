@@ -8,6 +8,8 @@
           <div class="table-responsive" style="width: 120%;" >
 			  
 			  <a class="btn btn-primary" href="/factura/create" >Agregar Factura</a>
+			   <a class="btn btn-primary" href="/formapago">Formas de Pago</a>
+                   
 			  
             <table class="table table-striped table-sm" >
               <thead>

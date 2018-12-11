@@ -50,7 +50,7 @@
 
 		    <div class="form-group">
 		   		<label for="monto">Monto</label>
-		   		<input type="text" id="monto" name="monto" class="form-control" style="height:35px; width:30%"  maxlength="10" onkeypress="return isNumberKey(event)" />
+		   		<input type="text" id="monto" name="monto" class="form-control" style="height:35px; width:30%"  maxlength="12" onkeypress="return isNumberKey(event)" />
 		   </div>
 		    <div class="form-group">
 		   		<label for="orden_compra">Orden de compra</label>
