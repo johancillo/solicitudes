@@ -208,7 +208,7 @@ $(document).ready(function() {
   //para validar fechas
   $("#fecha_solicitud").datepicker({
     dateFormat: "yy-mm-dd",
-    minDate: 'dateToday',
+//    minDate: 'dateToday',
     onSelect: function(date) {
       populateEndDate();
     }

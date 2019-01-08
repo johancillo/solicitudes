@@ -39,7 +39,7 @@
 		<td>
 		<a href="/pago/update/{{$consultas->id}}" class="btn btn-info btn-lg">
 		   <span class="glyphicon glyphicon-pencil"></span></a>
-		   <a href="#" class="btn btn-success btn-lg">
+		   <a href="/pago/pagar/{{$consultas->id}}" class="btn btn-success btn-lg">
 		   <span class="glyphicon glyphicon-ok"></span></a>
 		</td>
 		

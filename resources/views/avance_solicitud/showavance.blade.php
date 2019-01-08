@@ -24,7 +24,7 @@
 					<select class="form-control {{$errors->has('rut_usuario') ? 'is-invalid':''}}" id="rut_usuario" name="rut_usuario" style="height:35px; width:240px">
 					<option value="">-- Elegir un RUT --</option>
 					@foreach($users as $user)
-					<option value=" {{$user['rut_usuario']}}"> {{ $user['rut_usuario']}} </option>
+					<option value=" {{$user['rut_usuario']}}"> {{ $user['rut_usuario']}} {{$user['name']}}</option>
 					@endforeach
 					</select>
 				@if($errors->has('rut_usuario'))

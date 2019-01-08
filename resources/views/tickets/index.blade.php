@@ -92,10 +92,10 @@
 
 
   		</div>
-  		<button type="submit"> Generar</button>
+  		<button type="submit"  > Generar</button>
 	</form>
 		  
-		  
+
 		  
 		  
         </main>

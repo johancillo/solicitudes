@@ -108,7 +108,7 @@ class FacturaController extends Controller
         
 
             $this->validate($request,[
-            'num_factura'       => 'required|unique:facturas',
+            'num_factura'       => 'required',
             'id'    => 'required',
             'monto'       => 'required',
             'orden_compra'   => 'required',

@@ -144,4 +144,13 @@ class PagoController extends Controller
     {
         //
     }
+
+    public function actualizar($id){
+
+       $consulta =  Pago::where('id', $id)
+            ->update(['estado' => 'Pagado']);
+
+        return back();
+
+    }
 }

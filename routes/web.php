@@ -152,6 +152,8 @@ Route::post('/pago/delete/{pago}','PagoController@destroy')->name('pagos.destroy
 Route::get('/pago/update/{pago}','PagoController@show')->name('pagos.show');
 Route::post('/pago/update/{pago}','PagoController@update')->name('pagos.update');
 
+Route::get('/pago/pagar/{pago}','PagoController@actualizar')->name('pagos.actualizar');
+
 
 
 // RUTA DE FORMA DE PAGO-----------------------------------------------------------------------

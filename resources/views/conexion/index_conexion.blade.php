@@ -7,8 +7,7 @@
 	
           <div class="table-responsive" style="width: 120%;" >
 		  
-		  <a  href="#" class="btn btn-success">
-		    <span class="glyphicon glyphicon-plus"></span> Agregar Conexion
+		  
 	   </a>	
 			  <a class="btn btn-info" href="javascript:history.back()" >Volver</a>
 			  </br></br>
